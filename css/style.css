@@ -1,10 +1,61 @@
-/* Definição de fontes e estilos base */
+/* ===== VARIÁVEIS CSS PARA CORES E ESPAÇAMENTOS ===== */
+:root {
+    /* Cores principais */
+    --emerald-50: #ecfdf5;
+    --emerald-100: #d1fae5;
+    --emerald-500: #10b981;
+    --emerald-600: #059669;
+    --emerald-700: #047857;
+    --emerald-800: #065f46;
+    --verde: #1d3621;
+    
+    /* Cores neutras */
+    --stone-50: #fafaf9;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+
+    /* Cores Paleta Id Visual*/
+    --peridot-light: #eeebd4;
+    --peridot-dark: #284d2c;
+
+    --olive-dark: #1d3621;
+    --olive-light: #c7bd43;
+
+    --orange-light: #efa13d;
+    --orange-dark: #e85900;
+
+    --peach: #f4cdc8;
+
+    --black: #000000; /* títulos */
+    --peridot-pe: #284d2c; /* textos variações */
+    
+    /* Fontes */
+    --font-primary: 'Inter', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+    
+    /* Transições */
+    --transition-default: all 0.3s ease;
+    --transition-transform: transform 0.3s ease;
+}
+
+/* ===== ESTILOS BASE ===== */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-primary);
 }
 
 h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
+}
+
+/* ===== CLASSES PERSONALIZADAS ===== */
+/* Logo no cabeçalho */
+.logo-text {
+    font-family: var(--font-heading);
 }
 
 /* Imagem de fundo da seção principal (Hero) */
@@ -24,4 +75,191 @@ h1, h2, h3 {
 .fade-in-element.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ===== CARDS DE FILOSOFIA ===== */
+.philosophy-card-1 {
+    transition-delay: 0ms;
+}
+
+.philosophy-card-2 {
+    transition-delay: 200ms;
+}
+
+.philosophy-card-3 {
+    transition-delay: 400ms;
+}
+
+/* ===== CARDS DE E-BOOKS ===== */
+.ebook-card-1 {
+    transition-delay: 0ms;
+}
+
+.ebook-card-2 {
+    transition-delay: 200ms;
+}
+
+.ebook-card-3 {
+    transition-delay: 400ms;
+}
+
+/* ===== ELEMENTOS CUSTOMIZÁVEIS ===== */
+/* Cores principais que podem ser facilmente alteradas */
+.primary-bg {
+    background-color: var(--emerald-600);
+}
+
+.primary-bg:hover {
+    background-color: var(--emerald-700);
+}
+
+.primary-text {
+    color: var(--emerald-600);
+}
+
+.primary-text:hover {
+    color: var(--emerald-700);
+}
+
+.primary-border {
+    border-color: var(--emerald-600);
+}
+
+.accent-bg {
+    background-color: var(--emerald-800);
+}
+
+.accent-text {
+    color: var(--emerald-800);
+}
+
+/* Botões */
+.btn-primary {
+    background-color: var(--emerald-600);
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: var(--transition-default);
+}
+
+.btn-primary:hover {
+    background-color: var(--emerald-700);
+    transform: scale(1.05);
+}
+
+/* Botão específico para navbar - melhor alinhamento */
+.btn-navbar {
+    background-color: var(--emerald-600);
+    color: white;
+    padding: 0.375rem 1.25rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: var(--transition-default);
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    line-height: 1.5;
+    vertical-align: middle;
+}
+
+.btn-navbar:hover {
+    background-color: var(--emerald-70);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: var(--gray-800);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: var(--transition-default);
+}
+
+.btn-secondary:hover {
+    background-color: var(--gray-900);
+}
+
+/* Cards com hover effect */
+.card-hover {
+    transition: var(--transition-default);
+}
+
+.card-hover:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== CUSTOMIZAÇÕES ESPECÍFICAS DO BOTÃO DE CONTATO NO HERO ===== */
+.btn-hero {
+    background-color: white;
+    color: var(--emerald-700);
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    transition: var(--transition-default);
+}
+
+.btn-hero:hover {
+    background-color: var(--emerald-50);
+    transform: scale(1.05);
+}
+
+/* ===== CORES ESPECÍFICAS PARA SEÇÕES ===== */
+.section-contact {
+    background-color: var(--emerald-700);
+}
+
+/* ===== ELEMENTOS COM CORES CUSTOMIZÁVEIS ===== */
+.emerald-divider {
+    background-color: var(--emerald-500);
+    width: 6rem;
+    height: 0.25rem;
+}
+
+.emerald-icon-bg {
+    background-color: var(--peridot-light);
+}
+
+.emerald-icon {
+    color: var(--orange-light);
+}
+
+/* ===== BADGES E ETIQUETAS ===== */
+.badge-free {
+    background-color: var(--emerald-600);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+}
+
+.badge-price {
+    background-color: var(--gray-800);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 700;
+    padding: 0.25rem 1rem;
+    border-radius: 9999px;
+}
+
+.badge-coming-soon {
+    background-color: var(--gray-400);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+}
+
+/* ===== BOTÃO DESABILITADO ===== */
+.btn-disabled {
+    background-color: var(--gray-300);
+    color: var(--gray-500);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: not-allowed;
 }
