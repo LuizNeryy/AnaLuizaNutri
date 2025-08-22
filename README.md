@@ -1,32 +1,41 @@
-Landing Page - Ana Luiza Nutricionista
-📖 Sobre
+# Landing Page - Ana Luiza Nutricionista
+
+## 📖 Sobre
+
 Landing page profissional para apresentação da nutricionista Ana Luiza, graduanda em Nutrição. Este site informativo foi desenvolvido para apresentar sua biografia, filosofia de trabalho, futuros serviços e informações de contato, construindo sua presença digital e conectando-se com futuros clientes.
 
-✨ Funcionalidades
-Design Responsivo: Totalmente adaptado para visualização em desktops, tablets e celulares.
+**➡️ [Veja o site no ar](LINK_PARA_O_SITE_AQUI)** *(Substitua este link pelo link do GitHub Pages ou do seu domínio)*
 
-Animações Sutis: Efeitos de fade-in que tornam a navegação mais fluida e moderna.
+---
 
-Navegação Intuitiva: Menu fixo e seções bem definidas para uma experiência de usuário agradável.
+## ✨ Funcionalidades
 
-Contato Direto: Links diretos para WhatsApp, E-mail e redes sociais.
+-   **Design Responsivo**: Totalmente adaptado para visualização em desktops, tablets e celulares.
+-   **Animações Sutis**: Efeitos para uma navegação mais fluida e moderna.
+-   **Navegação Intuitiva**: Menu fixo e seções bem definidas para uma experiência de usuário agradável.
+-   **Contato Direto**: Links diretos para WhatsApp, E-mail e redes sociais.
+-   **Página Dedicada para Materiais**: Uma seção exclusiva para e-books e cursos, mantendo a página inicial focada.
 
-🛠️ Tecnologias Utilizadas
+---
+
+## 🛠️ Tecnologias Utilizadas
+
 O projeto foi construído utilizando as seguintes tecnologias:
 
-HTML5
+-   **HTML5**
+-   **CSS3**
+-   **Tailwind CSS**
+-   **JavaScript**
+-   **Lucide Icons**
 
-CSS3
+---
 
-Tailwind CSS
+## 📄 Licença
 
-JavaScript
-
-Lucide Icons
-
-📄 Licença
 Este projeto é de propriedade privada. Todos os direitos são reservados.
 
-Consulte o arquivo LICENSE para mais detalhes.
+Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-Desenvolvido por Luiz Nery.
+---
+
+Desenvolvido por **Luiz Nery**.
