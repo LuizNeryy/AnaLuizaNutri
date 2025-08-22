@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Luiza | Nutricionista</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-stone-50 text-gray-800">
+
+    <!-- Cabeçalho e Navegação -->
+    <header id="header" class="bg-white/80 backdrop-blur-md shadow-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-emerald-800" style="font-family: 'Playfair Display', serif;">Ana Luiza</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#sobre" class="text-gray-600 hover:text-emerald-600 transition duration-300">Sobre Mim</a>
+                <a href="#filosofia" class="text-gray-600 hover:text-emerald-600 transition duration-300">Minha Filosofia</a>
+                <a href="#servicos" class="text-gray-600 hover:text-emerald-600 transition duration-300">Serviços</a>
+                <a href="ebooks.html" class="text-gray-600 hover:text-emerald-600 transition duration-300">E-books</a>
+                <a href="#contato" class="bg-emerald-600 text-white px-4 py-2 rounded-full hover:bg-emerald-700 transition duration-300">Contato</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu" class="text-gray-700"></i>
+            </button>
+        </div>
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#sobre" class="block py-2 text-gray-600 hover:text-emerald-600">Sobre Mim</a>
+            <a href="#filosofia" class="block py-2 text-gray-600 hover:text-emerald-600">Minha Filosofia</a>
+            <a href="#servicos" class="block py-2 text-gray-600 hover:text-emerald-600">Serviços</a>
+            <a href="ebooks.html" class="block py-2 text-gray-600 hover:text-emerald-600">E-books</a>
+            <a href="#contato" class="block mt-2 bg-emerald-600 text-white px-4 py-2 rounded-full text-center hover:bg-emerald-700">Contato</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção Hero -->
+        <section id="home" class="relative min-h-screen flex items-center hero-bg">
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div class="container mx-auto px-6 text-center text-white relative z-10">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Transformando vidas através da nutrição</h1>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Descubra o poder de uma alimentação equilibrada e conquiste uma relação mais saudável com a comida.</p>
+                <a href="#sobre" class="bg-emerald-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-emerald-700 transition-transform hover:scale-105 duration-300">Conheça a sua futura nutri</a>
+            </div>
+        </section>
+
+        <!-- Seção Sobre Mim -->
+        <section id="sobre" class="py-20 bg-white overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 fade-in-element">
+                        <img src="assets/images/AnaLuiza.png" 
+                             alt="Foto Ana Luiza" 
+                             class="rounded-lg shadow-2xl w-full max-w-md mx-auto"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x800/a3e635/ffffff?text=Ana+Luiza';">
+                    </div>
+                    <div class="md:w-1/2 text-center md:text-left fade-in-element">
+                        <h2 class="text-3xl md:text-4xl font-bold text-emerald-800 mb-4">Olá, eu sou a Ana Luiza!</h2>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Desde muito nova sempre tive o desejo de ajudar as pessoas e encontrei na Nutrição a forma de transformar esse propósito em realidade.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Acredito em uma Nutrição simples, acessível, baseada em ciência e sem terrorismo alimentar. A alimentação deve se adaptar à sua rotina, à sua realidade e aos seus objetivos — nunca o contrário.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            Meu propósito é te ajudar a desenvolver uma relação saudável com a comida, para que você conquiste seus objetivos de forma leve, prática e duradoura.
+                        </p>
+                        <a href="#contato" class="bg-emerald-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-emerald-700 transition duration-300">Vamos conversar?</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Minha Filosofia -->
+        <section id="filosofia" class="py-20 bg-stone-50 overflow-hidden">
+            <div class="container mx-auto px-6 text-center">
+                <div class="fade-in-element">
+                    <h2 class="text-3xl md:text-4xl font-bold text-emerald-800 mb-4">Minha Filosofia de Trabalho</h2>
+                    <p class="max-w-3xl mx-auto text-gray-600 mb-12">Acredito em uma nutrição gentil, individualizada e baseada em ciência.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in-element">
+                        <div class="bg-emerald-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="heart" class="text-emerald-600 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Nutrição sem Neuras</h3>
+                        <p class="text-gray-600">Foco em uma relação positiva com a comida, sem culpa ou restrições severas. O equilíbrio é a chave.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in-element" style="transition-delay: 200ms;">
+                        <div class="bg-emerald-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="user" class="text-emerald-600 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Plano Individualizado</h3>
+                        <p class="text-gray-600">Cada pessoa é única. O plano alimentar deve respeitar sua rotina, preferências e objetivos específicos.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in-element" style="transition-delay: 400ms;">
+                        <div class="bg-emerald-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="book-open" class="text-emerald-600 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Ciência e Educação</h3>
+                        <p class="text-gray-600">Minhas orientações são baseadas em evidências científicas, e meu foco é te ensinar a fazer as melhores escolhas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Serviços -->
+        <section id="servicos" class="py-20 bg-white overflow-hidden">
+            <div class="container mx-auto px-6 text-center">
+                <div class="fade-in-element">
+                    <h2 class="text-3xl md:text-4xl font-bold text-emerald-800 mb-4">Como Posso Te Ajudar?</h2>
+                    <div class="w-24 h-1 bg-emerald-500 mx-auto mt-4 mb-12"></div>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left fade-in-element">
+                    <div class="border border-gray-200 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg text-emerald-700 mb-2">Acompanhamento Nutricional</h3>
+                        <p class="text-gray-600">Consultas individuais para criar um plano alimentar focado em seus objetivos e necessidades.</p>
+                    </div>
+                    <div class="border border-gray-200 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg text-emerald-700 mb-2">Reeducação Alimentar</h3>
+                        <p class="text-gray-600">Aprenda a construir hábitos saudáveis e sustentáveis para uma vida inteira.</p>
+                    </div>
+                    <div class="border border-gray-200 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg text-emerald-700 mb-2">Nutrição para Emagrecimento</h3>
+                        <p class="text-gray-600">Alcance seu peso ideal de forma saudável, sem dietas malucas e com foco na saúde.</p>
+                    </div>
+                    <div class="border border-gray-200 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg text-emerald-700 mb-2">Nutrição Esportiva</h3>
+                        <p class="text-gray-600">Potencialize seu desempenho e recuperação com uma alimentação estratégica.</p>
+                    </div>
+                    <div class="border border-gray-200 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg text-emerald-700 mb-2">Nutrição Vegetariana/Vegana</h3>
+                        <p class="text-gray-600">Orientações para uma dieta baseada em plantas completa, equilibrada e rica em nutrientes.</p>
+                    </div>
+                    <div class="border border-gray-200 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg text-emerald-700 mb-2">Grupos de Desafio</h3>
+                        <p class="text-gray-600">Participe de grupos motivacionais para alcançar objetivos em comum com apoio e orientação.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contato" class="py-20 bg-emerald-700 text-white overflow-hidden">
+            <div class="container mx-auto px-6 text-center fade-in-element">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">Vamos dar o primeiro passo?</h2>
+                
+                <a href="https://wa.me/+553185153846?text=Olá,%20Ana%20Luiza!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20mais%20informações." 
+                   target="_blank" 
+                   class="bg-white text-emerald-700 px-8 py-3 rounded-full font-bold hover:bg-emerald-50 transition duration-300 inline-flex items-center space-x-2 text-lg">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    <span>Agende sua consulta</span>
+                </a>
+
+                <p class="max-w-2xl mx-auto mt-8 mb-6">Me siga nas redes sociais para dicas diárias!</p>
+                
+                <div class="flex justify-center space-x-6">
+                    <a href="https://www.instagram.com/aluizanutri/" target="_blank" class="hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="instagram" class="w-8 h-8"></i>
+                    </a>
+                    <a href="#" class="hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="linkedin" class="w-8 h-8"></i>
+                    </a>
+                    <a href="mailto:analuizaribeiro2011@gmail.com" class="hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="mail" class="w-8 h-8"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; <span id="year"></span> Ana Luiza Nutricionista. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>

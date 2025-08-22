@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-books e Materiais | Ana Luiza Nutricionista</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-stone-50 text-gray-800">
+
+    <!-- Cabeçalho e Navegação -->
+    <header id="header" class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-emerald-800" style="font-family: 'Playfair Display', serif;">Ana Luiza</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html#sobre" class="text-gray-600 hover:text-emerald-600 transition duration-300">Sobre Mim</a>
+                <a href="index.html#filosofia" class="text-gray-600 hover:text-emerald-600 transition duration-300">Minha Filosofia</a>
+                <a href="index.html#servicos" class="text-gray-600 hover:text-emerald-600 transition duration-300">Serviços</a>
+                <a href="ebooks.html" class="text-emerald-600 font-semibold transition duration-300">E-books</a>
+                <a href="index.html#contato" class="bg-emerald-600 text-white px-4 py-2 rounded-full hover:bg-emerald-700 transition duration-300">Contato</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu" class="text-gray-700"></i>
+            </button>
+        </div>
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="index.html#sobre" class="block py-2 text-gray-600 hover:text-emerald-600">Sobre Mim</a>
+            <a href="index.html#filosofia" class="block py-2 text-gray-600 hover:text-emerald-600">Minha Filosofia</a>
+            <a href="index.html#servicos" class="block py-2 text-gray-600 hover:text-emerald-600">Serviços</a>
+            <a href="ebooks.html" class="block py-2 text-emerald-600 font-semibold">E-books</a>
+            <a href="index.html#contato" class="block mt-2 bg-emerald-600 text-white px-4 py-2 rounded-full text-center hover:bg-emerald-700">Contato</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção Principal de E-books -->
+        <section id="ebooks-page" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <div class="fade-in-element">
+                    <h1 class="text-4xl md:text-5xl font-bold text-emerald-800 mb-4">E-books & Materiais</h1>
+                    <div class="w-24 h-1 bg-emerald-500 mx-auto mt-4 mb-12"></div>
+                    <p class="max-w-3xl mx-auto text-gray-600 mb-16 text-lg">Aqui você encontra materiais, pagos e gratuitos, para te ajudar a construir uma relação mais saudável e prazerosa com a comida.</p>
+                </div>
+
+                <!-- Grid de E-books -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    
+                    <!-- Card E-book 1 (Gratuito) -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 fade-in-element">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x400/a3e635/ffffff?text=Capa+do+E-book" alt="Capa do E-book de Receitas Saudáveis" class="w-full h-64 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/a3e635/ffffff?text=E-book';">
+                            <span class="absolute top-4 left-4 bg-emerald-600 text-white text-sm font-semibold px-3 py-1 rounded-full">GRATUITO</span>
+                        </div>
+                        <div class="p-6 text-left">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Guia de Receitas Saudáveis</h3>
+                            <p class="text-gray-600 mb-4">Receitas práticas e deliciosas para o dia a dia, sem abrir mão do sabor.</p>
+                            <a href="#" class="w-full text-center bg-emerald-600 text-white py-2 rounded-lg hover:bg-emerald-700 transition-colors duration-300 block">Baixar agora</a>
+                        </div>
+                    </div>
+
+                    <!-- Card E-book 2 (Pago) -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 fade-in-element" style="transition-delay: 200ms;">
+                         <div class="relative">
+                            <img src="https://placehold.co/600x400/34d399/ffffff?text=Capa+do+E-book" alt="Capa do E-book sobre Mitos da Nutrição" class="w-full h-64 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/34d399/ffffff?text=E-book';">
+                            <span class="absolute top-4 right-4 bg-gray-800 text-white text-sm font-bold px-4 py-1 rounded-full">R$ 29,90</span>
+                        </div>
+                        <div class="p-6 text-left">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Desvendando Mitos da Nutrição</h3>
+                            <p class="text-gray-600 mb-4">Aprenda o que é verdade e o que é mito no mundo da alimentação saudável.</p>
+                            <a href="#" class="w-full text-center bg-gray-800 text-white py-2 rounded-lg hover:bg-gray-900 transition-colors duration-300 block">Comprar agora</a>
+                        </div>
+                    </div>
+
+                    <!-- Card E-book 3 (Em Breve) -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 fade-in-element" style="transition-delay: 400ms;">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x400/e5e7eb/8f8f8f?text=EM+BREVE" alt="Capa de E-book em breve" class="w-full h-64 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5e7eb/8f8f8f?text=EM+BREVE';">
+                             <span class="absolute top-4 left-4 bg-gray-400 text-white text-sm font-semibold px-3 py-1 rounded-full">EM BREVE</span>
+                        </div>
+                        <div class="p-6 text-left">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Planejamento Semanal de Refeições</h3>
+                            <p class="text-gray-600 mb-4">Um guia completo para você organizar suas refeições da semana de forma prática.</p>
+                            <button class="w-full text-center bg-gray-300 text-gray-500 py-2 rounded-lg cursor-not-allowed">Aguarde</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; <span id="year"></span> Ana Luiza Nutricionista. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
