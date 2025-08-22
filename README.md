@@ -4,7 +4,7 @@
 
 Landing page profissional para apresentação da nutricionista Ana Luiza, graduanda em Nutrição. Este site informativo foi desenvolvido para apresentar sua biografia, filosofia de trabalho, futuros serviços e informações de contato, construindo sua presença digital e conectando-se com futuros clientes.
 
-**➡️ [Veja o site no ar](LINK_PARA_O_SITE_AQUI)** *(Substitua este link pelo link do GitHub Pages ou do seu domínio)*
+## ➡️ [Veja o site no ar](https://luizneryy.github.io/AnaLuizaNutri/)
 
 ---
 
