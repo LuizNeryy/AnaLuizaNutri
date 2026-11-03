@@ -4,7 +4,6 @@ import {
   MessageCircle,
   BookOpen,
   Heart,
-  ArrowRight,
   MapPin,
   CheckCircle2,
   ShieldCheck,
