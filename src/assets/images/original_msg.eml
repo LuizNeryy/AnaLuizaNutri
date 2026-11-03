@@ -1,0 +1,687 @@
+Delivered-To: notneryzin@gmail.com
+Received: by 2002:a05:6f02:c046:10b0:133:9229:3a8 with SMTP id b6-n1csp3714112rcd;
+        Sat, 31 Oct 2026 16:40:48 -0700 (PDT)
+X-Received: by 2002:aa7:da56:0:b0:6b4:746a:1dcf with SMTP id 4fb4d7f45d1cf-6b4d65a997fmr3444232a12.43.1793490047948;
+        Sat, 31 Oct 2026 16:40:47 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1793490047; cv=pass;
+        d=google.com; s=arc-20260327;
+        b=DCAuxU7wDzqXSE+NMxp3+30bbSFqXG9iJl3vV86Suz/dFBbN0mMqpLvIKxemUvSCZY
+         P5/wl3X3PHvd0k1BahO047BXdUzkVy3yYzdD6u60dA4oCBWFpIA3YEfwDhYhLv4+CuMG
+         AbZwRlUJ7h0c9DSozXGxMrwp7V+jDpevTxo5aKR5UTVxcpsgW/knLT6+KbCzVYVesOJP
+         3Getn3cbAkNJHA3Mo673pvE7bDWXNcn32DdLjXc9XqLSbyx2Pdig8DUIwVOZmivpIF2i
+         w2zGYH+aS6fYm4GMNdLiGrLLzzTZ5vBRdPoUQwyLRNA2O257dghzbdPVrm2LYAP9OC4A
+         aDNw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=hn31MFV6y0Ww68SgzN97ZEWWAK2K47axybtj4J44ivY=;
+        fh=TR97TUm9VboBjqjMU/MEQSQpvO6M0Y3fZAbNC9WoFeY=;
+        b=Efb56UpxIsJ1TZNbsME5ke7hRHT13oNFnI5D4getil8vxllikSLE1TEcORCb4Zfp6k
+         QhKKGJRQEpXQGDFegY2it6AthepMUy6ySMv53/mJ7MHiySaYSTUoAqk9B8yOdphnHUHE
+         g2Cw5KJo8uUPU56Tx8qlD//qj7XdT0V6n86NNo2cXFCeO3YIQCwRowHUp3Yct6Wdd9yE
+         wr/A8MADMgawzgymGfLmMVTxn5tID7ECTk6kytaCeTZtn3BIhTf3dhE1vk6jvlyqmz9r
+         /MklldCkZ9aHjGECEUjTK3FCFysWgKsL/HdTyEaHHEnV96i7PSVOBJaLhbPpF/7xR/zm
+         lthw==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20260707 header.b=SiHRuM1K;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of analuizaribeiro2011@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=analuizaribeiro2011@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <analuizaribeiro2011@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 4fb4d7f45d1cf-6b4d73c4bfbsor1628374a12.2.2026.10.31.16.40.47
+        for <notneryzin@gmail.com>
+        (Google Transport Security);
+        Sat, 31 Oct 2026 16:40:47 -0700 (PDT)
+Received-SPF: pass (google.com: domain of analuizaribeiro2011@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20260707 header.b=SiHRuM1K;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of analuizaribeiro2011@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=analuizaribeiro2011@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+ARC-Seal: i=1; a=rsa-sha256; t=1793490047; cv=none;
+        d=google.com; s=arc-20260327;
+        b=iMEvc/c2vX18pAs+uyUOg0amyfLvmaznp53AquvAsAECkBImOVTapMeBoGQzNQXD8U
+         Gs+rafpJiG+qxdP1SZWF8neaPP4a4M9jw/fKZxkrVq7tIxUIq4E2AyGJjtjROJ670saH
+         O0IHMU5qRlzU4CEkeBCFlA6JJd1xszBSgeeMCSGzRRwhtDNDaYH3Zytz6waAUB7t3OLO
+         tPR++0C5q4hZjZ0cEh2712zNhoQgBcNB6fvkk0kp0EplyzWu9LJtVVAtQOV9HxLpxdu3
+         ly0Qw6gK2vyXXj2+vO4DrsIzzc1qJ85fyKLILBdGH3l/Iz16io1V8XYZVMbIgpWWuZHr
+         DzNg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=hn31MFV6y0Ww68SgzN97ZEWWAK2K47axybtj4J44ivY=;
+        fh=TR97TUm9VboBjqjMU/MEQSQpvO6M0Y3fZAbNC9WoFeY=;
+        b=Pz2KJQwUO3E82+UZU1TGCfanyVUZDryIvBdp4XCjrkX80o0Gr6dVIzLDGsBPxAgc8W
+         fPeSgaAW1K8xnRAEbm0C9PJO8PoSnNwpXXE3nQ/tT/1Zf2+m24fTnfpPRC1bRIQ43pzS
+         iqRBt6MINid03p3EEruMhJWOYUKpx716chtr4s9VT8QeNi+KJ9Mxw8Zuu6T8EA72cvTv
+         IuB/BivQA43LfNp+Z5lBn06xJmkSAaiyRvLlVNgzVLI9cfBDO4nIVfNPNh3ja+uEoxTI
+         wvpYVYx/Al/CyMnfJlPTTYQKu3hFRacEUeyI+tu1G9LLNB4wls4kxbfW9GR1pfUHZNZp
+         lG8w==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1793490047; x=1794094847; dara=google.com;
+        h=content-type:to:subject:message-id:date:from:mime-version:from:to
+         :cc:subject:date:message-id:reply-to:content-type;
+        bh=hn31MFV6y0Ww68SgzN97ZEWWAK2K47axybtj4J44ivY=;
+        b=SiHRuM1KUltrExSKuRDavkifwQEsCHYuDToYn8w9WY9/tAp84WGnFahKNHPgXIrLz5
+         pRAEiQisLILnOR9Xci9jY4/mp/eLZXq24UL66k2LhjsGYTmYz/9UCTT3bbOjHsjBoYdY
+         uqd3vJbQAaAOKw4Yz51rWOR5mr37cwRMdMJvtOLtVXQ3JnZLEk1seqZZIzpiTzhCOZd0
+         SnhKJk+KhitvTyrXzj6dMAQlDYF7hafX8n9E9n2ldutfRaN/C8gHeTfuKwP7F18UhlcK
+         ONDCAo4yHpWMyAta4hLYT6O5Kj7Zuc5xH8JVe159ykuSaomrwCtj1M/4WP1ACvDV7hAQ
+         XuEg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1793490047; x=1794094847;
+        h=content-type:to:subject:message-id:date:from:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=hn31MFV6y0Ww68SgzN97ZEWWAK2K47axybtj4J44ivY=;
+        b=IiAEBQOQ/Ooz0GiazNU7H3D78ULGk9n1CB55nlTZb0UWX52UDhj3bZQJvwyxhwfegk
+         7uh0L417Jq7ggalJVdyLPnc9IGaZXL7fKXb53iqDLmOk+CO8aW5HNQ0b04VvyUa/1T/D
+         Ll6mO1+VqpNWxG/4xEd4qEqhj0jxo07Zk5gLdl2ztjn9IVq+sxVGhklb+qRlW7VOj2ip
+         o7GnoBZByTeC+GcYPpkLD4Lcs8fUIn4LWkg6d6vNJw6+4FZNrLGnTcwB40QESdcPchVl
+         Z9dHfypSO86Ww3+WNLc7Xa/j+MqhBA3P3lha1gyGcatF+NPJS5MSAHIzV3pq/1EIfV0s
+         r5kA==
+X-Gm-Message-State: AFq9FYKo79NwFbKFKLBvhvhPQdZBNlFnfW727MboJiMnG2a2GXrXqhjg
+	H1y2FHJJEC5nZjTO8Y7Clytqk45GeaynxlGrX1Hc8AcoorDpFOzMhU9mslY028tHUIEKoWDSO7R
+	RDf3DJvLbbQ32CLQUudf8KAN/K1QXMOUjag==
+X-Gm-Gg: AYBFou0NoGgwQJNsISoSAtGtoJTDI087XB2zBHscRGdDeI6Ufsydlo4xP2MA+lYRNA/
+	4TwYtA0HFmB94sAEtGrICLyIGDay41vw8phIXpGEYeSjQbi+v4QYJqMaPX70exoERNgkl8C18pY
+	ODJIVHUXNrLcffMDGs5Ant65qTbFOQWzAQC4PQn9okJyo6KGL0P353qmhtFvZkjWlwmai8HfAOp
+	H9rZUH7BqvJLxc5KMvIqCmAJm+tZBj4lhK9Jn425omfC0NmQ1Zqlp5+L/VVsoVmEO1f1WFw/C4i
+	pz+R/sR8I46Fxsmj/IHYhBuh/H4vLOYN7Y54VfE+eoCbKy0EU9pIlubuO3icIAnJvH7wTOoBzbK
+	UehiCpT+5cnXuP4zcigK0HPIJ97TECRvgohSBAD1gBUldVe8U4vlCXfV52VSVS7kdW6s=
+X-Received: by 2002:a05:6402:5190:b0:6af:d968:dd26 with SMTP id
+ 4fb4d7f45d1cf-6b4d4d7f9c2mr4333625a12.25.1793490047214; Sat, 31 Oct 2026
+ 16:40:47 -0700 (PDT)
+MIME-Version: 1.0
+From: Ana Luiza <analuizaribeiro2011@gmail.com>
+Date: Sat, 31 Oct 2026 20:40:35 -0300
+X-Gm-Features: AclHuK-RvXWF6hXeov14xwGCgVzrPyWYnxdCExfzuYiEjGjUO8MVWhiGJLLvhz4
+Message-ID: <CADuM_eSw4x9ZyDntaOFPv2eBpcZe4sM=fkPrxEp-z+4Au=-9VA@mail.gmail.com>
+Subject: 
+To: Nery <notneryzin@gmail.com>
+Content-Type: multipart/alternative; boundary="0000000000002c2963065f2b7146"
+
+--0000000000002c2963065f2b7146
+Content-Type: text/plain; charset="UTF-8"
+
+[image: Imagem]
+<https://drive.google.com/file/d/1bPgn7eGCk29g2leaBO8ijHylToxPz9Dw>
+luiza 3.PNG
+<https://drive.google.com/file/d/1bPgn7eGCk29g2leaBO8ijHylToxPz9Dw>
+
+[image: Imagem]
+<https://drive.google.com/file/d/1iocblD08vhs_ZNpqCwBuEG-Yy5hKFJhc>
+luiza 4.PNG
+<https://drive.google.com/file/d/1iocblD08vhs_ZNpqCwBuEG-Yy5hKFJhc>
+
+[image: Imagem]
+<https://drive.google.com/file/d/1-c_XjbnL3uycN_efLst8l41ntTXhOJzJ>
+luiza 5.PNG
+<https://drive.google.com/file/d/1-c_XjbnL3uycN_efLst8l41ntTXhOJzJ>
+
+[image: Imagem]
+<https://drive.google.com/file/d/18Fv_hFh88NBXYk0G9qpyBycbUAeHZT2->
+luiza 6.PNG
+<https://drive.google.com/file/d/18Fv_hFh88NBXYk0G9qpyBycbUAeHZT2->
+
+[image: Imagem]
+<https://drive.google.com/file/d/15EVIjLMazJouca0cXCv6lrJ8F8hx9e4C>
+luiza 7.PNG
+<https://drive.google.com/file/d/15EVIjLMazJouca0cXCv6lrJ8F8hx9e4C>
+
+[image: Imagem]
+<https://drive.google.com/file/d/1CmfjpRmWcaKz5CwjvGvaE6N8iz9y4Si->
+luiza 8.PNG
+<https://drive.google.com/file/d/1CmfjpRmWcaKz5CwjvGvaE6N8iz9y4Si->
+
+[image: Imagem]
+<https://drive.google.com/file/d/1Uy8zazXY15J4I8aOFUzyYod97q9IuUrS>
+luiza 9.PNG
+<https://drive.google.com/file/d/1Uy8zazXY15J4I8aOFUzyYod97q9IuUrS>
+
+[image: Imagem]
+<https://drive.google.com/file/d/1YKfSCQDRv5haSHqLNA-LlJj7uv2FINsk>
+luiza 10.PNG
+<https://drive.google.com/file/d/1YKfSCQDRv5haSHqLNA-LlJj7uv2FINsk>
+
+[image: Imagem]
+<https://drive.google.com/file/d/1m8hXK0SWFXxEzMM2bIhX8tAuFSuFBlhP>
+luiza 11.PNG
+<https://drive.google.com/file/d/1m8hXK0SWFXxEzMM2bIhX8tAuFSuFBlhP>
+
+[image: Imagem]
+<https://drive.google.com/file/d/1rypVnNpTyXVWRz2MDyi1OZjPEvKWBwk8>
+luiza 12.PNG
+<https://drive.google.com/file/d/1rypVnNpTyXVWRz2MDyi1OZjPEvKWBwk8>
+
+[image: Imagem]
+<https://drive.google.com/file/d/1aH-sFyLHvX7NK-LX1FjlzC8C3JKnvezX>
+luiza 13.PNG
+<https://drive.google.com/file/d/1aH-sFyLHvX7NK-LX1FjlzC8C3JKnvezX>
+
+[image: Imagem]
+<https://drive.google.com/file/d/1Gl0gwfiktRDRTt5zBvq9-k44ICF3uFtF>
+luiza 14.PNG
+<https://drive.google.com/file/d/1Gl0gwfiktRDRTt5zBvq9-k44ICF3uFtF>
+
+[image: Imagem]
+<https://drive.google.com/file/d/1on6uFpjVHUJQRlZMbCnNaLMt3UxSX8-2>
+luiza 15.PNG
+<https://drive.google.com/file/d/1on6uFpjVHUJQRlZMbCnNaLMt3UxSX8-2>
+
+[image: Imagem]
+<https://drive.google.com/file/d/1T6-VMnlBubBorRvU1RD4F3dOk8ZZfR2H>
+luiza 16.PNG
+<https://drive.google.com/file/d/1T6-VMnlBubBorRvU1RD4F3dOk8ZZfR2H>
+
+[image: Imagem]
+<https://drive.google.com/file/d/1nqUJZIJfMqcwWrSOmudOdsf22qoyM_hO>
+luiza 17.PNG
+<https://drive.google.com/file/d/1nqUJZIJfMqcwWrSOmudOdsf22qoyM_hO>
+
+[image: Imagem]
+<https://drive.google.com/file/d/1FtLQMYUTA4cKllkJaat8TSBSM8jC-FNw>
+luiza 21.PNG
+<https://drive.google.com/file/d/1FtLQMYUTA4cKllkJaat8TSBSM8jC-FNw>
+
+[image: Imagem]
+<https://drive.google.com/file/d/1AotDj8vVCTKVkNcz3l_6YvdAy4fJgedr>
+D66C2F83-34F0-4DA0-B96E-DC845654D29C-73913-000018CCDBEA4D18.JPG
+<https://drive.google.com/file/d/1AotDj8vVCTKVkNcz3l_6YvdAy4fJgedr>
+
+[image: Imagem]
+<https://drive.google.com/file/d/1e2Isp9uTNZxhupS1Wc7dwkLBwaln81pu>
+luiza 19.PNG
+<https://drive.google.com/file/d/1e2Isp9uTNZxhupS1Wc7dwkLBwaln81pu>
+
+[image: Imagem]
+<https://drive.google.com/file/d/1Z5_-vS6R_o5VrWYbcKVlOb46CBG0oKrm>
+luiza 20.PNG
+<https://drive.google.com/file/d/1Z5_-vS6R_o5VrWYbcKVlOb46CBG0oKrm>
+
+[image: Imagem]
+<https://drive.google.com/file/d/1FCY4RyV0dz_zypYlqg7YYMGx5DfPOJ6s>
+luiza 22.PNG
+<https://drive.google.com/file/d/1FCY4RyV0dz_zypYlqg7YYMGx5DfPOJ6s>
+
+[image: Imagem]
+<https://drive.google.com/file/d/1fk8o2yeZ4sxPuZGOiS9vQBpIggnj9TL6>
+C64ECABC-6965-4184-A31E-5BE5909D4CAD-74868-0000190B6D9A9A98.JPG
+<https://drive.google.com/file/d/1fk8o2yeZ4sxPuZGOiS9vQBpIggnj9TL6>
+
+--0000000000002c2963065f2b7146
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div><div dir=3D"ltr"><div><br></div><div id=3D"8DF63DAE-83BF-4183-98DE-A65=
+A7631BF2D" role=3D"group" class=3D"gmail_inbodymedia gmail_chip gmail_drive=
+_chip" style=3D"display:block;min-height:56px;max-height:500px;margin:8px 0=
+;width:303px;background-color:#dde3ea;border-radius:16px;font-weight:500;fo=
+nt-size:0.875em"><div style=3D"display:inline-block;vertical-align:middle;m=
+argin:auto 10px;padding:16px 0"><a href=3D"https://drive.google.com/file/d/=
+1bPgn7eGCk29g2leaBO8ijHylToxPz9Dw"><img alt=3D"Imagem" src=3D"https://drive=
+-thirdparty.googleusercontent.com/32/type/image/png" style=3D"display:block=
+;height:18px;width:18px;padding:3px"></a></div><div style=3D"display:inline=
+-block;vertical-align:middle"><div title=3D"luiza 3.PNG" style=3D"color:rgb=
+(11,87,208)"><a style=3D"text-decoration:none;color:inherit" href=3D"https:=
+//drive.google.com/file/d/1bPgn7eGCk29g2leaBO8ijHylToxPz9Dw"><span style=3D=
+"display:inline-block;width:211px;overflow:hidden;text-overflow:ellipsis;wh=
+ite-space:nowrap;vertical-align:middle;line-height:56px;text-align:left">lu=
+iza 3.PNG</span></a></div><div><span class=3D"gmail_drive_chip_status_text"=
+ style=3D"display:none;width:211px;overflow:hidden;text-overflow:ellipsis;w=
+hite-space:nowrap;vertical-align:top;text-align:left"></span><span class=3D=
+"gmail_drive_chip_retry_text" style=3D"display:none;width:211px;overflow:hi=
+dden;text-overflow:ellipsis;white-space:nowrap;vertical-align:top;text-alig=
+n:left"></span></div></div><div aria-label=3D"Remover anexo" role=3D"button=
+" tabindex=3D"0" class=3D"gmail_drive_chip_delete_button" style=3D"display:=
+none"><div class=3D"gmail_drive_chip_delete_button_icon"></div></div></div>=
+</div><div dir=3D"ltr"><div><br></div><div id=3D"671A8EBA-80EB-4448-BBDA-7D=
+98960A4585" role=3D"group" class=3D"gmail_inbodymedia gmail_chip gmail_driv=
+e_chip" style=3D"display:block;min-height:56px;max-height:500px;margin:8px =
+0;width:303px;background-color:#dde3ea;border-radius:16px;font-weight:500;f=
+ont-size:0.875em"><div style=3D"display:inline-block;vertical-align:middle;=
+margin:auto 10px;padding:16px 0"><a href=3D"https://drive.google.com/file/d=
+/1iocblD08vhs_ZNpqCwBuEG-Yy5hKFJhc"><img alt=3D"Imagem" src=3D"https://driv=
+e-thirdparty.googleusercontent.com/32/type/image/png" style=3D"display:bloc=
+k;height:18px;width:18px;padding:3px"></a></div><div style=3D"display:inlin=
+e-block;vertical-align:middle"><div title=3D"luiza 4.PNG" style=3D"color:rg=
+b(11,87,208)"><a style=3D"text-decoration:none;color:inherit" href=3D"https=
+://drive.google.com/file/d/1iocblD08vhs_ZNpqCwBuEG-Yy5hKFJhc"><span style=
+=3D"display:inline-block;width:211px;overflow:hidden;text-overflow:ellipsis=
+;white-space:nowrap;vertical-align:middle;line-height:56px;text-align:left"=
+>luiza 4.PNG</span></a></div><div><span class=3D"gmail_drive_chip_status_te=
+xt" style=3D"display:none;width:211px;overflow:hidden;text-overflow:ellipsi=
+s;white-space:nowrap;vertical-align:top;text-align:left"></span><span class=
+=3D"gmail_drive_chip_retry_text" style=3D"display:none;width:211px;overflow=
+:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:top;text-a=
+lign:left"></span></div></div><div aria-label=3D"Remover anexo" role=3D"but=
+ton" tabindex=3D"0" class=3D"gmail_drive_chip_delete_button" style=3D"displ=
+ay:none"><div class=3D"gmail_drive_chip_delete_button_icon"></div></div></d=
+iv></div><div dir=3D"ltr"><div><br></div><div id=3D"FC25139C-2144-4960-B2F2=
+-8E2686B07130" role=3D"group" class=3D"gmail_inbodymedia gmail_chip gmail_d=
+rive_chip" style=3D"display:block;min-height:56px;max-height:500px;margin:8=
+px 0;width:303px;background-color:#dde3ea;border-radius:16px;font-weight:50=
+0;font-size:0.875em"><div style=3D"display:inline-block;vertical-align:midd=
+le;margin:auto 10px;padding:16px 0"><a href=3D"https://drive.google.com/fil=
+e/d/1-c_XjbnL3uycN_efLst8l41ntTXhOJzJ"><img alt=3D"Imagem" src=3D"https://d=
+rive-thirdparty.googleusercontent.com/32/type/image/png" style=3D"display:b=
+lock;height:18px;width:18px;padding:3px"></a></div><div style=3D"display:in=
+line-block;vertical-align:middle"><div title=3D"luiza 5.PNG" style=3D"color=
+:rgb(11,87,208)"><a style=3D"text-decoration:none;color:inherit" href=3D"ht=
+tps://drive.google.com/file/d/1-c_XjbnL3uycN_efLst8l41ntTXhOJzJ"><span styl=
+e=3D"display:inline-block;width:211px;overflow:hidden;text-overflow:ellipsi=
+s;white-space:nowrap;vertical-align:middle;line-height:56px;text-align:left=
+">luiza 5.PNG</span></a></div><div><span class=3D"gmail_drive_chip_status_t=
+ext" style=3D"display:none;width:211px;overflow:hidden;text-overflow:ellips=
+is;white-space:nowrap;vertical-align:top;text-align:left"></span><span clas=
+s=3D"gmail_drive_chip_retry_text" style=3D"display:none;width:211px;overflo=
+w:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:top;text-=
+align:left"></span></div></div><div aria-label=3D"Remover anexo" role=3D"bu=
+tton" tabindex=3D"0" class=3D"gmail_drive_chip_delete_button" style=3D"disp=
+lay:none"><div class=3D"gmail_drive_chip_delete_button_icon"></div></div></=
+div></div><div dir=3D"ltr"><div><br></div><div id=3D"9AFC5A16-4793-404E-997=
+3-5B3CAF27EDCA" role=3D"group" class=3D"gmail_inbodymedia gmail_chip gmail_=
+drive_chip" style=3D"display:block;min-height:56px;max-height:500px;margin:=
+8px 0;width:303px;background-color:#dde3ea;border-radius:16px;font-weight:5=
+00;font-size:0.875em"><div style=3D"display:inline-block;vertical-align:mid=
+dle;margin:auto 10px;padding:16px 0"><a href=3D"https://drive.google.com/fi=
+le/d/18Fv_hFh88NBXYk0G9qpyBycbUAeHZT2-"><img alt=3D"Imagem" src=3D"https://=
+drive-thirdparty.googleusercontent.com/32/type/image/png" style=3D"display:=
+block;height:18px;width:18px;padding:3px"></a></div><div style=3D"display:i=
+nline-block;vertical-align:middle"><div title=3D"luiza 6.PNG" style=3D"colo=
+r:rgb(11,87,208)"><a style=3D"text-decoration:none;color:inherit" href=3D"h=
+ttps://drive.google.com/file/d/18Fv_hFh88NBXYk0G9qpyBycbUAeHZT2-"><span sty=
+le=3D"display:inline-block;width:211px;overflow:hidden;text-overflow:ellips=
+is;white-space:nowrap;vertical-align:middle;line-height:56px;text-align:lef=
+t">luiza 6.PNG</span></a></div><div><span class=3D"gmail_drive_chip_status_=
+text" style=3D"display:none;width:211px;overflow:hidden;text-overflow:ellip=
+sis;white-space:nowrap;vertical-align:top;text-align:left"></span><span cla=
+ss=3D"gmail_drive_chip_retry_text" style=3D"display:none;width:211px;overfl=
+ow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:top;text=
+-align:left"></span></div></div><div aria-label=3D"Remover anexo" role=3D"b=
+utton" tabindex=3D"0" class=3D"gmail_drive_chip_delete_button" style=3D"dis=
+play:none"><div class=3D"gmail_drive_chip_delete_button_icon"></div></div><=
+/div></div><div dir=3D"ltr"><div><br></div><div id=3D"7E4A0FA8-1EE6-4B05-92=
+A3-665ED854B5EB" role=3D"group" class=3D"gmail_inbodymedia gmail_chip gmail=
+_drive_chip" style=3D"display:block;min-height:56px;max-height:500px;margin=
+:8px 0;width:303px;background-color:#dde3ea;border-radius:16px;font-weight:=
+500;font-size:0.875em"><div style=3D"display:inline-block;vertical-align:mi=
+ddle;margin:auto 10px;padding:16px 0"><a href=3D"https://drive.google.com/f=
+ile/d/15EVIjLMazJouca0cXCv6lrJ8F8hx9e4C"><img alt=3D"Imagem" src=3D"https:/=
+/drive-thirdparty.googleusercontent.com/32/type/image/png" style=3D"display=
+:block;height:18px;width:18px;padding:3px"></a></div><div style=3D"display:=
+inline-block;vertical-align:middle"><div title=3D"luiza 7.PNG" style=3D"col=
+or:rgb(11,87,208)"><a style=3D"text-decoration:none;color:inherit" href=3D"=
+https://drive.google.com/file/d/15EVIjLMazJouca0cXCv6lrJ8F8hx9e4C"><span st=
+yle=3D"display:inline-block;width:211px;overflow:hidden;text-overflow:ellip=
+sis;white-space:nowrap;vertical-align:middle;line-height:56px;text-align:le=
+ft">luiza 7.PNG</span></a></div><div><span class=3D"gmail_drive_chip_status=
+_text" style=3D"display:none;width:211px;overflow:hidden;text-overflow:elli=
+psis;white-space:nowrap;vertical-align:top;text-align:left"></span><span cl=
+ass=3D"gmail_drive_chip_retry_text" style=3D"display:none;width:211px;overf=
+low:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:top;tex=
+t-align:left"></span></div></div><div aria-label=3D"Remover anexo" role=3D"=
+button" tabindex=3D"0" class=3D"gmail_drive_chip_delete_button" style=3D"di=
+splay:none"><div class=3D"gmail_drive_chip_delete_button_icon"></div></div>=
+</div></div><div dir=3D"ltr"><div><br></div><div id=3D"1DE7184A-FA11-4B19-A=
+B09-FF750BC7A1DC" role=3D"group" class=3D"gmail_inbodymedia gmail_chip gmai=
+l_drive_chip" style=3D"display:block;min-height:56px;max-height:500px;margi=
+n:8px 0;width:303px;background-color:#dde3ea;border-radius:16px;font-weight=
+:500;font-size:0.875em"><div style=3D"display:inline-block;vertical-align:m=
+iddle;margin:auto 10px;padding:16px 0"><a href=3D"https://drive.google.com/=
+file/d/1CmfjpRmWcaKz5CwjvGvaE6N8iz9y4Si-"><img alt=3D"Imagem" src=3D"https:=
+//drive-thirdparty.googleusercontent.com/32/type/image/png" style=3D"displa=
+y:block;height:18px;width:18px;padding:3px"></a></div><div style=3D"display=
+:inline-block;vertical-align:middle"><div title=3D"luiza 8.PNG" style=3D"co=
+lor:rgb(11,87,208)"><a style=3D"text-decoration:none;color:inherit" href=3D=
+"https://drive.google.com/file/d/1CmfjpRmWcaKz5CwjvGvaE6N8iz9y4Si-"><span s=
+tyle=3D"display:inline-block;width:211px;overflow:hidden;text-overflow:elli=
+psis;white-space:nowrap;vertical-align:middle;line-height:56px;text-align:l=
+eft">luiza 8.PNG</span></a></div><div><span class=3D"gmail_drive_chip_statu=
+s_text" style=3D"display:none;width:211px;overflow:hidden;text-overflow:ell=
+ipsis;white-space:nowrap;vertical-align:top;text-align:left"></span><span c=
+lass=3D"gmail_drive_chip_retry_text" style=3D"display:none;width:211px;over=
+flow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:top;te=
+xt-align:left"></span></div></div><div aria-label=3D"Remover anexo" role=3D=
+"button" tabindex=3D"0" class=3D"gmail_drive_chip_delete_button" style=3D"d=
+isplay:none"><div class=3D"gmail_drive_chip_delete_button_icon"></div></div=
+></div></div><div dir=3D"ltr"><div><br></div><div id=3D"E8CC0051-BFE4-4EC5-=
+A7AB-4F99552B5E63" role=3D"group" class=3D"gmail_inbodymedia gmail_chip gma=
+il_drive_chip" style=3D"display:block;min-height:56px;max-height:500px;marg=
+in:8px 0;width:303px;background-color:#dde3ea;border-radius:16px;font-weigh=
+t:500;font-size:0.875em"><div style=3D"display:inline-block;vertical-align:=
+middle;margin:auto 10px;padding:16px 0"><a href=3D"https://drive.google.com=
+/file/d/1Uy8zazXY15J4I8aOFUzyYod97q9IuUrS"><img alt=3D"Imagem" src=3D"https=
+://drive-thirdparty.googleusercontent.com/32/type/image/png" style=3D"displ=
+ay:block;height:18px;width:18px;padding:3px"></a></div><div style=3D"displa=
+y:inline-block;vertical-align:middle"><div title=3D"luiza 9.PNG" style=3D"c=
+olor:rgb(11,87,208)"><a style=3D"text-decoration:none;color:inherit" href=
+=3D"https://drive.google.com/file/d/1Uy8zazXY15J4I8aOFUzyYod97q9IuUrS"><spa=
+n style=3D"display:inline-block;width:211px;overflow:hidden;text-overflow:e=
+llipsis;white-space:nowrap;vertical-align:middle;line-height:56px;text-alig=
+n:left">luiza 9.PNG</span></a></div><div><span class=3D"gmail_drive_chip_st=
+atus_text" style=3D"display:none;width:211px;overflow:hidden;text-overflow:=
+ellipsis;white-space:nowrap;vertical-align:top;text-align:left"></span><spa=
+n class=3D"gmail_drive_chip_retry_text" style=3D"display:none;width:211px;o=
+verflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:top=
+;text-align:left"></span></div></div><div aria-label=3D"Remover anexo" role=
+=3D"button" tabindex=3D"0" class=3D"gmail_drive_chip_delete_button" style=
+=3D"display:none"><div class=3D"gmail_drive_chip_delete_button_icon"></div>=
+</div></div></div><div dir=3D"ltr"><div><br></div><div id=3D"62B0B685-17BA-=
+4709-9FDA-DB7C52D2D6DD" role=3D"group" class=3D"gmail_inbodymedia gmail_chi=
+p gmail_drive_chip" style=3D"display:block;min-height:56px;max-height:500px=
+;margin:8px 0;width:303px;background-color:#dde3ea;border-radius:16px;font-=
+weight:500;font-size:0.875em"><div style=3D"display:inline-block;vertical-a=
+lign:middle;margin:auto 10px;padding:16px 0"><a href=3D"https://drive.googl=
+e.com/file/d/1YKfSCQDRv5haSHqLNA-LlJj7uv2FINsk"><img alt=3D"Imagem" src=3D"=
+https://drive-thirdparty.googleusercontent.com/32/type/image/png" style=3D"=
+display:block;height:18px;width:18px;padding:3px"></a></div><div style=3D"d=
+isplay:inline-block;vertical-align:middle"><div title=3D"luiza 10.PNG" styl=
+e=3D"color:rgb(11,87,208)"><a style=3D"text-decoration:none;color:inherit" =
+href=3D"https://drive.google.com/file/d/1YKfSCQDRv5haSHqLNA-LlJj7uv2FINsk">=
+<span style=3D"display:inline-block;width:211px;overflow:hidden;text-overfl=
+ow:ellipsis;white-space:nowrap;vertical-align:middle;line-height:56px;text-=
+align:left">luiza 10.PNG</span></a></div><div><span class=3D"gmail_drive_ch=
+ip_status_text" style=3D"display:none;width:211px;overflow:hidden;text-over=
+flow:ellipsis;white-space:nowrap;vertical-align:top;text-align:left"></span=
+><span class=3D"gmail_drive_chip_retry_text" style=3D"display:none;width:21=
+1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-alig=
+n:top;text-align:left"></span></div></div><div aria-label=3D"Remover anexo"=
+ role=3D"button" tabindex=3D"0" class=3D"gmail_drive_chip_delete_button" st=
+yle=3D"display:none"><div class=3D"gmail_drive_chip_delete_button_icon"></d=
+iv></div></div></div><div dir=3D"ltr"><div><br></div><div id=3D"184B3638-0B=
+74-4DB5-9037-96C460B4A164" role=3D"group" class=3D"gmail_inbodymedia gmail_=
+chip gmail_drive_chip" style=3D"display:block;min-height:56px;max-height:50=
+0px;margin:8px 0;width:303px;background-color:#dde3ea;border-radius:16px;fo=
+nt-weight:500;font-size:0.875em"><div style=3D"display:inline-block;vertica=
+l-align:middle;margin:auto 10px;padding:16px 0"><a href=3D"https://drive.go=
+ogle.com/file/d/1m8hXK0SWFXxEzMM2bIhX8tAuFSuFBlhP"><img alt=3D"Imagem" src=
+=3D"https://drive-thirdparty.googleusercontent.com/32/type/image/png" style=
+=3D"display:block;height:18px;width:18px;padding:3px"></a></div><div style=
+=3D"display:inline-block;vertical-align:middle"><div title=3D"luiza 11.PNG"=
+ style=3D"color:rgb(11,87,208)"><a style=3D"text-decoration:none;color:inhe=
+rit" href=3D"https://drive.google.com/file/d/1m8hXK0SWFXxEzMM2bIhX8tAuFSuFB=
+lhP"><span style=3D"display:inline-block;width:211px;overflow:hidden;text-o=
+verflow:ellipsis;white-space:nowrap;vertical-align:middle;line-height:56px;=
+text-align:left">luiza 11.PNG</span></a></div><div><span class=3D"gmail_dri=
+ve_chip_status_text" style=3D"display:none;width:211px;overflow:hidden;text=
+-overflow:ellipsis;white-space:nowrap;vertical-align:top;text-align:left"><=
+/span><span class=3D"gmail_drive_chip_retry_text" style=3D"display:none;wid=
+th:211px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical=
+-align:top;text-align:left"></span></div></div><div aria-label=3D"Remover a=
+nexo" role=3D"button" tabindex=3D"0" class=3D"gmail_drive_chip_delete_butto=
+n" style=3D"display:none"><div class=3D"gmail_drive_chip_delete_button_icon=
+"></div></div></div></div><div dir=3D"ltr"><div><br></div><div id=3D"60C428=
+C4-C2F8-494C-8C4F-E4138561E119" role=3D"group" class=3D"gmail_inbodymedia g=
+mail_chip gmail_drive_chip" style=3D"display:block;min-height:56px;max-heig=
+ht:500px;margin:8px 0;width:303px;background-color:#dde3ea;border-radius:16=
+px;font-weight:500;font-size:0.875em"><div style=3D"display:inline-block;ve=
+rtical-align:middle;margin:auto 10px;padding:16px 0"><a href=3D"https://dri=
+ve.google.com/file/d/1rypVnNpTyXVWRz2MDyi1OZjPEvKWBwk8"><img alt=3D"Imagem"=
+ src=3D"https://drive-thirdparty.googleusercontent.com/32/type/image/png" s=
+tyle=3D"display:block;height:18px;width:18px;padding:3px"></a></div><div st=
+yle=3D"display:inline-block;vertical-align:middle"><div title=3D"luiza 12.P=
+NG" style=3D"color:rgb(11,87,208)"><a style=3D"text-decoration:none;color:i=
+nherit" href=3D"https://drive.google.com/file/d/1rypVnNpTyXVWRz2MDyi1OZjPEv=
+KWBwk8"><span style=3D"display:inline-block;width:211px;overflow:hidden;tex=
+t-overflow:ellipsis;white-space:nowrap;vertical-align:middle;line-height:56=
+px;text-align:left">luiza 12.PNG</span></a></div><div><span class=3D"gmail_=
+drive_chip_status_text" style=3D"display:none;width:211px;overflow:hidden;t=
+ext-overflow:ellipsis;white-space:nowrap;vertical-align:top;text-align:left=
+"></span><span class=3D"gmail_drive_chip_retry_text" style=3D"display:none;=
+width:211px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;verti=
+cal-align:top;text-align:left"></span></div></div><div aria-label=3D"Remove=
+r anexo" role=3D"button" tabindex=3D"0" class=3D"gmail_drive_chip_delete_bu=
+tton" style=3D"display:none"><div class=3D"gmail_drive_chip_delete_button_i=
+con"></div></div></div></div><div dir=3D"ltr"><div><br></div><div id=3D"BC9=
+96D8B-712D-42C7-8A49-E6D9DF53F9C2" role=3D"group" class=3D"gmail_inbodymedi=
+a gmail_chip gmail_drive_chip" style=3D"display:block;min-height:56px;max-h=
+eight:500px;margin:8px 0;width:303px;background-color:#dde3ea;border-radius=
+:16px;font-weight:500;font-size:0.875em"><div style=3D"display:inline-block=
+;vertical-align:middle;margin:auto 10px;padding:16px 0"><a href=3D"https://=
+drive.google.com/file/d/1aH-sFyLHvX7NK-LX1FjlzC8C3JKnvezX"><img alt=3D"Imag=
+em" src=3D"https://drive-thirdparty.googleusercontent.com/32/type/image/png=
+" style=3D"display:block;height:18px;width:18px;padding:3px"></a></div><div=
+ style=3D"display:inline-block;vertical-align:middle"><div title=3D"luiza 1=
+3.PNG" style=3D"color:rgb(11,87,208)"><a style=3D"text-decoration:none;colo=
+r:inherit" href=3D"https://drive.google.com/file/d/1aH-sFyLHvX7NK-LX1FjlzC8=
+C3JKnvezX"><span style=3D"display:inline-block;width:211px;overflow:hidden;=
+text-overflow:ellipsis;white-space:nowrap;vertical-align:middle;line-height=
+:56px;text-align:left">luiza 13.PNG</span></a></div><div><span class=3D"gma=
+il_drive_chip_status_text" style=3D"display:none;width:211px;overflow:hidde=
+n;text-overflow:ellipsis;white-space:nowrap;vertical-align:top;text-align:l=
+eft"></span><span class=3D"gmail_drive_chip_retry_text" style=3D"display:no=
+ne;width:211px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;ve=
+rtical-align:top;text-align:left"></span></div></div><div aria-label=3D"Rem=
+over anexo" role=3D"button" tabindex=3D"0" class=3D"gmail_drive_chip_delete=
+_button" style=3D"display:none"><div class=3D"gmail_drive_chip_delete_butto=
+n_icon"></div></div></div></div><div dir=3D"ltr"><div><br></div><div id=3D"=
+4F95F901-D598-4294-B339-6C094AB59C6C" role=3D"group" class=3D"gmail_inbodym=
+edia gmail_chip gmail_drive_chip" style=3D"display:block;min-height:56px;ma=
+x-height:500px;margin:8px 0;width:303px;background-color:#dde3ea;border-rad=
+ius:16px;font-weight:500;font-size:0.875em"><div style=3D"display:inline-bl=
+ock;vertical-align:middle;margin:auto 10px;padding:16px 0"><a href=3D"https=
+://drive.google.com/file/d/1Gl0gwfiktRDRTt5zBvq9-k44ICF3uFtF"><img alt=3D"I=
+magem" src=3D"https://drive-thirdparty.googleusercontent.com/32/type/image/=
+png" style=3D"display:block;height:18px;width:18px;padding:3px"></a></div><=
+div style=3D"display:inline-block;vertical-align:middle"><div title=3D"luiz=
+a 14.PNG" style=3D"color:rgb(11,87,208)"><a style=3D"text-decoration:none;c=
+olor:inherit" href=3D"https://drive.google.com/file/d/1Gl0gwfiktRDRTt5zBvq9=
+-k44ICF3uFtF"><span style=3D"display:inline-block;width:211px;overflow:hidd=
+en;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle;line-hei=
+ght:56px;text-align:left">luiza 14.PNG</span></a></div><div><span class=3D"=
+gmail_drive_chip_status_text" style=3D"display:none;width:211px;overflow:hi=
+dden;text-overflow:ellipsis;white-space:nowrap;vertical-align:top;text-alig=
+n:left"></span><span class=3D"gmail_drive_chip_retry_text" style=3D"display=
+:none;width:211px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap=
+;vertical-align:top;text-align:left"></span></div></div><div aria-label=3D"=
+Remover anexo" role=3D"button" tabindex=3D"0" class=3D"gmail_drive_chip_del=
+ete_button" style=3D"display:none"><div class=3D"gmail_drive_chip_delete_bu=
+tton_icon"></div></div></div></div><div dir=3D"ltr"><div><br></div><div id=
+=3D"9CB14C14-260A-49F3-9E30-216D46689A8B" role=3D"group" class=3D"gmail_inb=
+odymedia gmail_chip gmail_drive_chip" style=3D"display:block;min-height:56p=
+x;max-height:500px;margin:8px 0;width:303px;background-color:#dde3ea;border=
+-radius:16px;font-weight:500;font-size:0.875em"><div style=3D"display:inlin=
+e-block;vertical-align:middle;margin:auto 10px;padding:16px 0"><a href=3D"h=
+ttps://drive.google.com/file/d/1on6uFpjVHUJQRlZMbCnNaLMt3UxSX8-2"><img alt=
+=3D"Imagem" src=3D"https://drive-thirdparty.googleusercontent.com/32/type/i=
+mage/png" style=3D"display:block;height:18px;width:18px;padding:3px"></a></=
+div><div style=3D"display:inline-block;vertical-align:middle"><div title=3D=
+"luiza 15.PNG" style=3D"color:rgb(11,87,208)"><a style=3D"text-decoration:n=
+one;color:inherit" href=3D"https://drive.google.com/file/d/1on6uFpjVHUJQRlZ=
+MbCnNaLMt3UxSX8-2"><span style=3D"display:inline-block;width:211px;overflow=
+:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle;lin=
+e-height:56px;text-align:left">luiza 15.PNG</span></a></div><div><span clas=
+s=3D"gmail_drive_chip_status_text" style=3D"display:none;width:211px;overfl=
+ow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:top;text=
+-align:left"></span><span class=3D"gmail_drive_chip_retry_text" style=3D"di=
+splay:none;width:211px;overflow:hidden;text-overflow:ellipsis;white-space:n=
+owrap;vertical-align:top;text-align:left"></span></div></div><div aria-labe=
+l=3D"Remover anexo" role=3D"button" tabindex=3D"0" class=3D"gmail_drive_chi=
+p_delete_button" style=3D"display:none"><div class=3D"gmail_drive_chip_dele=
+te_button_icon"></div></div></div></div><div dir=3D"ltr"><div><br></div><di=
+v id=3D"15B538B5-FA52-4DBD-BD49-F1F9EFE8BCBD" role=3D"group" class=3D"gmail=
+_inbodymedia gmail_chip gmail_drive_chip" style=3D"display:block;min-height=
+:56px;max-height:500px;margin:8px 0;width:303px;background-color:#dde3ea;bo=
+rder-radius:16px;font-weight:500;font-size:0.875em"><div style=3D"display:i=
+nline-block;vertical-align:middle;margin:auto 10px;padding:16px 0"><a href=
+=3D"https://drive.google.com/file/d/1T6-VMnlBubBorRvU1RD4F3dOk8ZZfR2H"><img=
+ alt=3D"Imagem" src=3D"https://drive-thirdparty.googleusercontent.com/32/ty=
+pe/image/png" style=3D"display:block;height:18px;width:18px;padding:3px"></=
+a></div><div style=3D"display:inline-block;vertical-align:middle"><div titl=
+e=3D"luiza 16.PNG" style=3D"color:rgb(11,87,208)"><a style=3D"text-decorati=
+on:none;color:inherit" href=3D"https://drive.google.com/file/d/1T6-VMnlBubB=
+orRvU1RD4F3dOk8ZZfR2H"><span style=3D"display:inline-block;width:211px;over=
+flow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle=
+;line-height:56px;text-align:left">luiza 16.PNG</span></a></div><div><span =
+class=3D"gmail_drive_chip_status_text" style=3D"display:none;width:211px;ov=
+erflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:top;=
+text-align:left"></span><span class=3D"gmail_drive_chip_retry_text" style=
+=3D"display:none;width:211px;overflow:hidden;text-overflow:ellipsis;white-s=
+pace:nowrap;vertical-align:top;text-align:left"></span></div></div><div ari=
+a-label=3D"Remover anexo" role=3D"button" tabindex=3D"0" class=3D"gmail_dri=
+ve_chip_delete_button" style=3D"display:none"><div class=3D"gmail_drive_chi=
+p_delete_button_icon"></div></div></div></div><div dir=3D"ltr"><div><br></d=
+iv><div id=3D"8FB9BF66-D5E9-4FFB-8F0F-5461014B21CB" role=3D"group" class=3D=
+"gmail_inbodymedia gmail_chip gmail_drive_chip" style=3D"display:block;min-=
+height:56px;max-height:500px;margin:8px 0;width:303px;background-color:#dde=
+3ea;border-radius:16px;font-weight:500;font-size:0.875em"><div style=3D"dis=
+play:inline-block;vertical-align:middle;margin:auto 10px;padding:16px 0"><a=
+ href=3D"https://drive.google.com/file/d/1nqUJZIJfMqcwWrSOmudOdsf22qoyM_hO"=
+><img alt=3D"Imagem" src=3D"https://drive-thirdparty.googleusercontent.com/=
+32/type/image/png" style=3D"display:block;height:18px;width:18px;padding:3p=
+x"></a></div><div style=3D"display:inline-block;vertical-align:middle"><div=
+ title=3D"luiza 17.PNG" style=3D"color:rgb(11,87,208)"><a style=3D"text-dec=
+oration:none;color:inherit" href=3D"https://drive.google.com/file/d/1nqUJZI=
+JfMqcwWrSOmudOdsf22qoyM_hO"><span style=3D"display:inline-block;width:211px=
+;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:m=
+iddle;line-height:56px;text-align:left">luiza 17.PNG</span></a></div><div><=
+span class=3D"gmail_drive_chip_status_text" style=3D"display:none;width:211=
+px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align=
+:top;text-align:left"></span><span class=3D"gmail_drive_chip_retry_text" st=
+yle=3D"display:none;width:211px;overflow:hidden;text-overflow:ellipsis;whit=
+e-space:nowrap;vertical-align:top;text-align:left"></span></div></div><div =
+aria-label=3D"Remover anexo" role=3D"button" tabindex=3D"0" class=3D"gmail_=
+drive_chip_delete_button" style=3D"display:none"><div class=3D"gmail_drive_=
+chip_delete_button_icon"></div></div></div></div><div dir=3D"ltr"><div><br>=
+</div><div id=3D"B6D02461-38E4-46F5-94BC-16C70C7A54A9" role=3D"group" class=
+=3D"gmail_inbodymedia gmail_chip gmail_drive_chip" style=3D"display:block;m=
+in-height:56px;max-height:500px;margin:8px 0;width:303px;background-color:#=
+dde3ea;border-radius:16px;font-weight:500;font-size:0.875em"><div style=3D"=
+display:inline-block;vertical-align:middle;margin:auto 10px;padding:16px 0"=
+><a href=3D"https://drive.google.com/file/d/1FtLQMYUTA4cKllkJaat8TSBSM8jC-F=
+Nw"><img alt=3D"Imagem" src=3D"https://drive-thirdparty.googleusercontent.c=
+om/32/type/image/png" style=3D"display:block;height:18px;width:18px;padding=
+:3px"></a></div><div style=3D"display:inline-block;vertical-align:middle"><=
+div title=3D"luiza 21.PNG" style=3D"color:rgb(11,87,208)"><a style=3D"text-=
+decoration:none;color:inherit" href=3D"https://drive.google.com/file/d/1FtL=
+QMYUTA4cKllkJaat8TSBSM8jC-FNw"><span style=3D"display:inline-block;width:21=
+1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-alig=
+n:middle;line-height:56px;text-align:left">luiza 21.PNG</span></a></div><di=
+v><span class=3D"gmail_drive_chip_status_text" style=3D"display:none;width:=
+211px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-al=
+ign:top;text-align:left"></span><span class=3D"gmail_drive_chip_retry_text"=
+ style=3D"display:none;width:211px;overflow:hidden;text-overflow:ellipsis;w=
+hite-space:nowrap;vertical-align:top;text-align:left"></span></div></div><d=
+iv aria-label=3D"Remover anexo" role=3D"button" tabindex=3D"0" class=3D"gma=
+il_drive_chip_delete_button" style=3D"display:none"><div class=3D"gmail_dri=
+ve_chip_delete_button_icon"></div></div></div></div><div dir=3D"ltr"><div><=
+br></div><div id=3D"3E80923B-58CE-4A18-83E6-E4EE2B859E94" role=3D"group" cl=
+ass=3D"gmail_inbodymedia gmail_chip gmail_drive_chip" style=3D"display:bloc=
+k;min-height:56px;max-height:500px;margin:8px 0;width:303px;background-colo=
+r:#dde3ea;border-radius:16px;font-weight:500;font-size:0.875em"><div style=
+=3D"display:inline-block;vertical-align:middle;margin:auto 10px;padding:16p=
+x 0"><a href=3D"https://drive.google.com/file/d/1AotDj8vVCTKVkNcz3l_6YvdAy4=
+fJgedr"><img alt=3D"Imagem" src=3D"https://drive-thirdparty.googleuserconte=
+nt.com/32/type/image/jpeg" style=3D"display:block;height:18px;width:18px;pa=
+dding:3px"></a></div><div style=3D"display:inline-block;vertical-align:midd=
+le"><div title=3D"D66C2F83-34F0-4DA0-B96E-DC845654D29C-73913-000018CCDBEA4D=
+18.JPG" style=3D"color:rgb(11,87,208)"><a style=3D"text-decoration:none;col=
+or:inherit" href=3D"https://drive.google.com/file/d/1AotDj8vVCTKVkNcz3l_6Yv=
+dAy4fJgedr"><span style=3D"display:inline-block;width:211px;overflow:hidden=
+;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle;line-heigh=
+t:56px;text-align:left">D66C2F83-34F0-4DA0-B96E-DC845654D29C-73913-000018CC=
+DBEA4D18.JPG</span></a></div><div><span class=3D"gmail_drive_chip_status_te=
+xt" style=3D"display:none;width:211px;overflow:hidden;text-overflow:ellipsi=
+s;white-space:nowrap;vertical-align:top;text-align:left"></span><span class=
+=3D"gmail_drive_chip_retry_text" style=3D"display:none;width:211px;overflow=
+:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:top;text-a=
+lign:left"></span></div></div><div aria-label=3D"Remover anexo" role=3D"but=
+ton" tabindex=3D"0" class=3D"gmail_drive_chip_delete_button" style=3D"displ=
+ay:none"><div class=3D"gmail_drive_chip_delete_button_icon"></div></div></d=
+iv></div><div dir=3D"ltr"><div><br></div><div id=3D"D645B46C-7203-42C5-A828=
+-48B97D824F54" role=3D"group" class=3D"gmail_inbodymedia gmail_chip gmail_d=
+rive_chip" style=3D"display:block;min-height:56px;max-height:500px;margin:8=
+px 0;width:303px;background-color:#dde3ea;border-radius:16px;font-weight:50=
+0;font-size:0.875em"><div style=3D"display:inline-block;vertical-align:midd=
+le;margin:auto 10px;padding:16px 0"><a href=3D"https://drive.google.com/fil=
+e/d/1e2Isp9uTNZxhupS1Wc7dwkLBwaln81pu"><img alt=3D"Imagem" src=3D"https://d=
+rive-thirdparty.googleusercontent.com/32/type/image/png" style=3D"display:b=
+lock;height:18px;width:18px;padding:3px"></a></div><div style=3D"display:in=
+line-block;vertical-align:middle"><div title=3D"luiza 19.PNG" style=3D"colo=
+r:rgb(11,87,208)"><a style=3D"text-decoration:none;color:inherit" href=3D"h=
+ttps://drive.google.com/file/d/1e2Isp9uTNZxhupS1Wc7dwkLBwaln81pu"><span sty=
+le=3D"display:inline-block;width:211px;overflow:hidden;text-overflow:ellips=
+is;white-space:nowrap;vertical-align:middle;line-height:56px;text-align:lef=
+t">luiza 19.PNG</span></a></div><div><span class=3D"gmail_drive_chip_status=
+_text" style=3D"display:none;width:211px;overflow:hidden;text-overflow:elli=
+psis;white-space:nowrap;vertical-align:top;text-align:left"></span><span cl=
+ass=3D"gmail_drive_chip_retry_text" style=3D"display:none;width:211px;overf=
+low:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:top;tex=
+t-align:left"></span></div></div><div aria-label=3D"Remover anexo" role=3D"=
+button" tabindex=3D"0" class=3D"gmail_drive_chip_delete_button" style=3D"di=
+splay:none"><div class=3D"gmail_drive_chip_delete_button_icon"></div></div>=
+</div></div><div dir=3D"ltr"><div><br></div><div id=3D"3994A629-6B7A-4F9E-B=
+1A6-4DF048BE1F88" role=3D"group" class=3D"gmail_inbodymedia gmail_chip gmai=
+l_drive_chip" style=3D"display:block;min-height:56px;max-height:500px;margi=
+n:8px 0;width:303px;background-color:#dde3ea;border-radius:16px;font-weight=
+:500;font-size:0.875em"><div style=3D"display:inline-block;vertical-align:m=
+iddle;margin:auto 10px;padding:16px 0"><a href=3D"https://drive.google.com/=
+file/d/1Z5_-vS6R_o5VrWYbcKVlOb46CBG0oKrm"><img alt=3D"Imagem" src=3D"https:=
+//drive-thirdparty.googleusercontent.com/32/type/image/png" style=3D"displa=
+y:block;height:18px;width:18px;padding:3px"></a></div><div style=3D"display=
+:inline-block;vertical-align:middle"><div title=3D"luiza 20.PNG" style=3D"c=
+olor:rgb(11,87,208)"><a style=3D"text-decoration:none;color:inherit" href=
+=3D"https://drive.google.com/file/d/1Z5_-vS6R_o5VrWYbcKVlOb46CBG0oKrm"><spa=
+n style=3D"display:inline-block;width:211px;overflow:hidden;text-overflow:e=
+llipsis;white-space:nowrap;vertical-align:middle;line-height:56px;text-alig=
+n:left">luiza 20.PNG</span></a></div><div><span class=3D"gmail_drive_chip_s=
+tatus_text" style=3D"display:none;width:211px;overflow:hidden;text-overflow=
+:ellipsis;white-space:nowrap;vertical-align:top;text-align:left"></span><sp=
+an class=3D"gmail_drive_chip_retry_text" style=3D"display:none;width:211px;=
+overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:to=
+p;text-align:left"></span></div></div><div aria-label=3D"Remover anexo" rol=
+e=3D"button" tabindex=3D"0" class=3D"gmail_drive_chip_delete_button" style=
+=3D"display:none"><div class=3D"gmail_drive_chip_delete_button_icon"></div>=
+</div></div></div><div dir=3D"ltr"><div><br></div><div id=3D"F11EC027-5853-=
+4627-AD92-335F81C383B6" role=3D"group" class=3D"gmail_inbodymedia gmail_chi=
+p gmail_drive_chip" style=3D"display:block;min-height:56px;max-height:500px=
+;margin:8px 0;width:303px;background-color:#dde3ea;border-radius:16px;font-=
+weight:500;font-size:0.875em"><div style=3D"display:inline-block;vertical-a=
+lign:middle;margin:auto 10px;padding:16px 0"><a href=3D"https://drive.googl=
+e.com/file/d/1FCY4RyV0dz_zypYlqg7YYMGx5DfPOJ6s"><img alt=3D"Imagem" src=3D"=
+https://drive-thirdparty.googleusercontent.com/32/type/image/png" style=3D"=
+display:block;height:18px;width:18px;padding:3px"></a></div><div style=3D"d=
+isplay:inline-block;vertical-align:middle"><div title=3D"luiza 22.PNG" styl=
+e=3D"color:rgb(11,87,208)"><a style=3D"text-decoration:none;color:inherit" =
+href=3D"https://drive.google.com/file/d/1FCY4RyV0dz_zypYlqg7YYMGx5DfPOJ6s">=
+<span style=3D"display:inline-block;width:211px;overflow:hidden;text-overfl=
+ow:ellipsis;white-space:nowrap;vertical-align:middle;line-height:56px;text-=
+align:left">luiza 22.PNG</span></a></div><div><span class=3D"gmail_drive_ch=
+ip_status_text" style=3D"display:none;width:211px;overflow:hidden;text-over=
+flow:ellipsis;white-space:nowrap;vertical-align:top;text-align:left"></span=
+><span class=3D"gmail_drive_chip_retry_text" style=3D"display:none;width:21=
+1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-alig=
+n:top;text-align:left"></span></div></div><div aria-label=3D"Remover anexo"=
+ role=3D"button" tabindex=3D"0" class=3D"gmail_drive_chip_delete_button" st=
+yle=3D"display:none"><div class=3D"gmail_drive_chip_delete_button_icon"></d=
+iv></div></div></div><div dir=3D"ltr"><div><br></div><div id=3D"F1C11F73-1E=
+97-414A-A56F-53D2F4164D40" role=3D"group" class=3D"gmail_inbodymedia gmail_=
+chip gmail_drive_chip" style=3D"display:block;min-height:56px;max-height:50=
+0px;margin:8px 0;width:303px;background-color:#dde3ea;border-radius:16px;fo=
+nt-weight:500;font-size:0.875em"><div style=3D"display:inline-block;vertica=
+l-align:middle;margin:auto 10px;padding:16px 0"><a href=3D"https://drive.go=
+ogle.com/file/d/1fk8o2yeZ4sxPuZGOiS9vQBpIggnj9TL6"><img alt=3D"Imagem" src=
+=3D"https://drive-thirdparty.googleusercontent.com/32/type/image/jpeg" styl=
+e=3D"display:block;height:18px;width:18px;padding:3px"></a></div><div style=
+=3D"display:inline-block;vertical-align:middle"><div title=3D"C64ECABC-6965=
+-4184-A31E-5BE5909D4CAD-74868-0000190B6D9A9A98.JPG" style=3D"color:rgb(11,8=
+7,208)"><a style=3D"text-decoration:none;color:inherit" href=3D"https://dri=
+ve.google.com/file/d/1fk8o2yeZ4sxPuZGOiS9vQBpIggnj9TL6"><span style=3D"disp=
+lay:inline-block;width:211px;overflow:hidden;text-overflow:ellipsis;white-s=
+pace:nowrap;vertical-align:middle;line-height:56px;text-align:left">C64ECAB=
+C-6965-4184-A31E-5BE5909D4CAD-74868-0000190B6D9A9A98.JPG</span></a></div><d=
+iv><span class=3D"gmail_drive_chip_status_text" style=3D"display:none;width=
+:211px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-a=
+lign:top;text-align:left"></span><span class=3D"gmail_drive_chip_retry_text=
+" style=3D"display:none;width:211px;overflow:hidden;text-overflow:ellipsis;=
+white-space:nowrap;vertical-align:top;text-align:left"></span></div></div><=
+div aria-label=3D"Remover anexo" role=3D"button" tabindex=3D"0" class=3D"gm=
+ail_drive_chip_delete_button" style=3D"display:none"><div class=3D"gmail_dr=
+ive_chip_delete_button_icon"></div></div></div></div><div><br></div></div>
+
+--0000000000002c2963065f2b7146--

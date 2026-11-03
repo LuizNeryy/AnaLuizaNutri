@@ -1,17 +1,24 @@
-# Arquivos de sistema
-.DS_Store
-Thumbs.db
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Arquivos e pastas de editores de código
-.vscode/
-.idea/
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-
-# Arquivos de log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*

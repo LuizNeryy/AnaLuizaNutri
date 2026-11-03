@@ -1,0 +1,89 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Paleta de Cores Oficial da Marca:
+   - #48679D (Azul Clássico / Confiança / Ciência)
+   - #EEA4C2 (Rosa Suave / Acolhimento / Cuidado)
+   - #C4B818 (Amarelo Dourado / Vitalidade / Destaque)
+   - #E8701A (Terracota / Energia / Apetite / Botões de Ação)
+   - #5E6B1E (Verde Oliva / Nutrição Natural / Identidade Principal)
+   - #EFE9D2 (Creme Areia / Fundo Elegante / Base Editorial)
+*/
+
+:root {
+  --font-title: 'Poppins', sans-serif;
+  --font-body: 'Peridot Devanagari', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --color-brand-blue: #48679D;
+  --color-brand-rose: #EEA4C2;
+  --color-brand-gold: #C4B818;
+  --color-brand-terracotta: #E8701A;
+  --color-brand-olive: #5E6B1E;
+  --color-brand-sand: #EFE9D2;
+}
+
+@theme {
+  --font-title: 'Poppins', sans-serif;
+  --font-body: 'Peridot Devanagari', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --color-brand-blue: #48679D;
+  --color-brand-rose: #EEA4C2;
+  --color-brand-gold: #C4B818;
+  --color-brand-terracotta: #E8701A;
+  --color-brand-olive: #5E6B1E;
+  --color-brand-sand: #EFE9D2;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    background-color: #FAF8F2;
+    color: #2D3748;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-title {
+    font-family: var(--font-title);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Utilitários semânticos da paleta */
+.bg-sand-warm {
+  background-color: #EFE9D2;
+}
+
+.bg-sand-subtle {
+  background-color: #F8F5EC;
+}
+
+.text-olive-brand {
+  color: #5E6B1E;
+}
+
+.bg-olive-brand {
+  background-color: #5E6B1E;
+}
+
+.text-terracotta-brand {
+  color: #E8701A;
+}
+
+.bg-terracotta-brand {
+  background-color: #E8701A;
+}
+
+.text-blue-brand {
+  color: #48679D;
+}
+
+.bg-blue-brand {
+  background-color: #48679D;
+}
+
+.bg-rose-brand {
+  background-color: #EEA4C2;
+}
+
+.text-gold-brand {
+  color: #C4B818;
+}
