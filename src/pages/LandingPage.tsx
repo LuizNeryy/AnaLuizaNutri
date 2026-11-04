@@ -445,14 +445,14 @@ export function LandingPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
               
               {/* Pilar 1: Plano Alimentar Individualizado */}
-              <div className="bg-white rounded-3xl p-7 border border-[#EFE9D2] shadow-xs hover:shadow-xl hover:border-[#EEA4C2]/50 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+              <div className="bg-white rounded-3xl p-7 border border-[#EFE9D2] shadow-xs hover:shadow-xl hover:border-[#5E6B1E]/50 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                   <div className="mb-6">
                     <div className="w-12 h-12 rounded-2xl bg-[#5E6B1E]/10 text-[#5E6B1E] flex items-center justify-center transition-colors group-hover:bg-[#5E6B1E] group-hover:text-white">
                       <UtensilsCrossed size={22} />
                     </div>
                   </div>
-                  <h3 className="font-title font-bold text-gray-950 text-lg mb-2 group-hover:text-[#48679D] transition-colors">
+                  <h3 className="font-title font-bold text-gray-950 text-lg mb-2 group-hover:text-[#5E6B1E] transition-colors">
                     Plano Alimentar Individualizado
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -462,14 +462,14 @@ export function LandingPage() {
               </div>
 
               {/* Pilar 2: Estratégias Práticas para sua Rotina */}
-              <div className="bg-white rounded-3xl p-7 border border-[#EFE9D2] shadow-xs hover:shadow-xl hover:border-[#48679D]/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+              <div className="bg-white rounded-3xl p-7 border border-[#EFE9D2] shadow-xs hover:shadow-xl hover:border-[#48679D]/50 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                   <div className="mb-6">
                     <div className="w-12 h-12 rounded-2xl bg-[#48679D]/10 text-[#48679D] flex items-center justify-center transition-colors group-hover:bg-[#48679D] group-hover:text-white">
                       <Compass size={22} />
                     </div>
                   </div>
-                  <h3 className="font-title font-bold text-gray-950 text-lg mb-2 group-hover:text-[#EEA4C2] transition-colors">
+                  <h3 className="font-title font-bold text-gray-950 text-lg mb-2 group-hover:text-[#48679D] transition-colors">
                     Estratégias Práticas para sua Rotina
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -479,7 +479,7 @@ export function LandingPage() {
               </div>
 
               {/* Pilar 3: Substituições & Orientações Adaptadas */}
-              <div className="bg-white rounded-3xl p-7 border border-[#EFE9D2] shadow-xs hover:shadow-xl hover:border-[#E8701A]/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+              <div className="bg-white rounded-3xl p-7 border border-[#EFE9D2] shadow-xs hover:shadow-xl hover:border-[#E8701A]/50 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                   <div className="mb-6">
                     <div className="w-12 h-12 rounded-2xl bg-[#E8701A]/10 text-[#E8701A] flex items-center justify-center transition-colors group-hover:bg-[#E8701A] group-hover:text-white">
@@ -496,7 +496,7 @@ export function LandingPage() {
               </div>
 
               {/* Pilar 4: Acompanhamento & Ajustes Constantes */}
-              <div className="bg-white rounded-3xl p-7 border border-[#EFE9D2] shadow-xs hover:shadow-xl hover:border-[#5E6B1E]/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+              <div className="bg-white rounded-3xl p-7 border border-[#EFE9D2] shadow-xs hover:shadow-xl hover:border-[#EEA4C2]/60 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                   <div className="mb-6">
                     <div className="w-12 h-12 rounded-2xl bg-[#EEA4C2]/20 text-[#D86B94] flex items-center justify-center transition-colors group-hover:bg-[#EEA4C2] group-hover:text-white">
