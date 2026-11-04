@@ -445,13 +445,12 @@ export function LandingPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
               
               {/* Pilar 1: Plano Alimentar Individualizado */}
-              <div className="bg-white rounded-3xl p-7 border border-[#EFE9D2] shadow-xs hover:shadow-xl hover:border-[#5E6B1E]/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+              <div className="bg-white rounded-3xl p-7 border border-[#EFE9D2] shadow-xs hover:shadow-xl hover:border-[#EEA4C2]/50 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  <div className="flex items-center justify-between mb-6">
+                  <div className="mb-6">
                     <div className="w-12 h-12 rounded-2xl bg-[#5E6B1E]/10 text-[#5E6B1E] flex items-center justify-center transition-colors group-hover:bg-[#5E6B1E] group-hover:text-white">
                       <UtensilsCrossed size={22} />
                     </div>
-                    <span className="text-xs font-title font-bold tracking-widest text-[#5E6B1E]">01</span>
                   </div>
                   <h3 className="font-title font-bold text-gray-950 text-lg mb-2 group-hover:text-[#48679D] transition-colors">
                     Plano Alimentar Individualizado
@@ -465,11 +464,10 @@ export function LandingPage() {
               {/* Pilar 2: Estratégias Práticas para sua Rotina */}
               <div className="bg-white rounded-3xl p-7 border border-[#EFE9D2] shadow-xs hover:shadow-xl hover:border-[#48679D]/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  <div className="flex items-center justify-between mb-6">
+                  <div className="mb-6">
                     <div className="w-12 h-12 rounded-2xl bg-[#48679D]/10 text-[#48679D] flex items-center justify-center transition-colors group-hover:bg-[#48679D] group-hover:text-white">
                       <Compass size={22} />
                     </div>
-                    <span className="text-xs font-title font-bold tracking-widest text-[#48679D]">02</span>
                   </div>
                   <h3 className="font-title font-bold text-gray-950 text-lg mb-2 group-hover:text-[#EEA4C2] transition-colors">
                     Estratégias Práticas para sua Rotina
@@ -483,11 +481,10 @@ export function LandingPage() {
               {/* Pilar 3: Substituições & Orientações Adaptadas */}
               <div className="bg-white rounded-3xl p-7 border border-[#EFE9D2] shadow-xs hover:shadow-xl hover:border-[#E8701A]/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  <div className="flex items-center justify-between mb-6">
+                  <div className="mb-6">
                     <div className="w-12 h-12 rounded-2xl bg-[#E8701A]/10 text-[#E8701A] flex items-center justify-center transition-colors group-hover:bg-[#E8701A] group-hover:text-white">
                       <Shuffle size={22} />
                     </div>
-                    <span className="text-xs font-title font-bold tracking-widest text-[#E8701A]">03</span>
                   </div>
                   <h3 className="font-title font-bold text-gray-950 text-lg mb-2 group-hover:text-[#E8701A] transition-colors">
                     Substituições & Orientações Adaptadas
@@ -501,13 +498,12 @@ export function LandingPage() {
               {/* Pilar 4: Acompanhamento & Ajustes Constantes */}
               <div className="bg-white rounded-3xl p-7 border border-[#EFE9D2] shadow-xs hover:shadow-xl hover:border-[#5E6B1E]/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-[#5E6B1E]/10 text-[#5E6B1E] flex items-center justify-center transition-colors group-hover:bg-[#5E6B1E] group-hover:text-white">
+                  <div className="mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-[#EEA4C2]/20 text-[#D86B94] flex items-center justify-center transition-colors group-hover:bg-[#EEA4C2] group-hover:text-white">
                       <MessagesSquare size={22} />
                     </div>
-                    <span className="text-xs font-title font-bold tracking-widest text-[#5E6B1E]">04</span>
                   </div>
-                  <h3 className="font-title font-bold text-gray-950 text-lg mb-2 group-hover:text-[#5E6B1E] transition-colors">
+                  <h3 className="font-title font-bold text-gray-950 text-lg mb-2 group-hover:text-[#D86B94] transition-colors">
                     Acompanhamento & Ajustes Constantes
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -524,15 +520,7 @@ export function LandingPage() {
                 "Nada de fórmula pronta para uma vida que não é a sua."
               </p>
               
-              <div>
-                <button
-                  onClick={() => openWhatsApp('Olá, Ana Luiza! Li a seção de como você pode me ajudar e gostaria de agendar uma consulta.')}
-                  className="bg-[#E8701A] hover:bg-[#D46313] text-white font-title text-sm sm:text-base font-bold px-8 py-4 rounded-full shadow-lg shadow-[#E8701A]/20 transition-all hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2.5 cursor-pointer"
-                >
-                  <MessageCircle size={18} />
-                  <span>Quero um plano feito para a minha rotina</span>
-                </button>
-              </div>
+
             </div>
 
           </div>
