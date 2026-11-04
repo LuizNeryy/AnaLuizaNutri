@@ -592,13 +592,10 @@ export function LandingPage() {
                   </p>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <span className="text-sm font-semibold text-gray-900/80">
-                    Atendimento 100% individual
-                  </span>
+                <div className="mt-8 pt-6 border-t border-black/10 flex justify-end">
                   <button
                     onClick={() => openWhatsApp('Olá, Ana Luiza! Tenho interesse na Consulta Avulsa e gostaria de saber mais informações.')}
-                    className="w-full sm:w-auto bg-white hover:bg-gray-50 text-gray-950 font-title font-bold text-sm px-6 py-3 rounded-full shadow-sm transition active:scale-95 cursor-pointer text-center"
+                    className="w-full sm:w-auto bg-white hover:bg-gray-50 text-gray-950 font-title font-bold text-sm px-7 py-3 rounded-full shadow-sm transition active:scale-95 cursor-pointer text-center"
                   >
                     Quero esta opção
                   </button>
@@ -619,13 +616,10 @@ export function LandingPage() {
                   </p>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-white/20 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <span className="text-sm font-semibold text-white/90">
-                    Acompanhamento contínuo
-                  </span>
+                <div className="mt-8 pt-6 border-t border-white/20 flex justify-end">
                   <button
                     onClick={() => openWhatsApp('Olá, Ana Luiza! Tenho interesse no Combo Consulta + Retorno e gostaria de agendar.')}
-                    className="w-full sm:w-auto bg-white hover:bg-gray-50 text-[#E8701A] font-title font-bold text-sm px-6 py-3 rounded-full shadow-sm transition active:scale-95 cursor-pointer text-center"
+                    className="w-full sm:w-auto bg-white hover:bg-gray-50 text-[#E8701A] font-title font-bold text-sm px-7 py-3 rounded-full shadow-sm transition active:scale-95 cursor-pointer text-center"
                   >
                     Quero esta opção
                   </button>
@@ -646,13 +640,10 @@ export function LandingPage() {
                   </p>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <span className="text-sm font-semibold text-gray-900/80">
-                    Suporte próximo e prolongado
-                  </span>
+                <div className="mt-8 pt-6 border-t border-black/10 flex justify-end">
                   <button
                     onClick={() => openWhatsApp('Olá, Ana Luiza! Quero saber detalhes e valores do Plano Premium de acompanhamento.')}
-                    className="w-full sm:w-auto bg-white hover:bg-gray-50 text-gray-950 font-title font-bold text-sm px-6 py-3 rounded-full shadow-sm transition active:scale-95 cursor-pointer text-center"
+                    className="w-full sm:w-auto bg-white hover:bg-gray-50 text-gray-950 font-title font-bold text-sm px-7 py-3 rounded-full shadow-sm transition active:scale-95 cursor-pointer text-center"
                   >
                     Quero esta opção
                   </button>
@@ -674,13 +665,10 @@ export function LandingPage() {
                   </p>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-white/20 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <span className="text-sm font-semibold text-white/90">
-                    Orientação profissional acessível
-                  </span>
+                <div className="mt-8 pt-6 border-t border-white/20 flex justify-end">
                   <button
                     onClick={() => openWhatsApp('Olá, Ana Luiza! Gostaria de consultar a disponibilidade de vagas para o Projeto Social.')}
-                    className="w-full sm:w-auto bg-white hover:bg-gray-50 text-[#48679D] font-title font-bold text-sm px-6 py-3 rounded-full shadow-sm transition active:scale-95 cursor-pointer text-center"
+                    className="w-full sm:w-auto bg-white hover:bg-gray-50 text-[#48679D] font-title font-bold text-sm px-7 py-3 rounded-full shadow-sm transition active:scale-95 cursor-pointer text-center"
                   >
                     Consultar vagas
                   </button>
