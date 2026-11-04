@@ -3,11 +3,8 @@ import { Link } from 'react-router-dom'
 import {
   MessageCircle,
   BookOpen,
-  Heart,
   MapPin,
   CheckCircle2,
-  ShieldCheck,
-  Flame,
   Sparkles,
   Leaf,
   Check,
