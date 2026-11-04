@@ -82,7 +82,7 @@ export function LandingPage() {
           {/* Links de navegação desktop (incluindo Área do Paciente no mesmo estilo) */}
           <nav className="hidden xl:flex items-center gap-7 text-sm font-medium text-emerald-100 whitespace-nowrap">
             <a href="#metodo" className="hover:text-white transition">O Método</a>
-            <a href="#especialidades" className="hover:text-white transition">Áreas de Atuação</a>
+            <a href="#planos" className="hover:text-white transition">Planos</a>
             <a href="#sobre" className="hover:text-white transition">Sobre Mim</a>
             <Link to="/ebooks" className="hover:text-white transition">E-books</Link>
                         <a href="#faq" className="hover:text-white transition">Dúvidas</a>
@@ -159,83 +159,91 @@ export function LandingPage() {
       </header>
 
       <main>
-        {/* 3. HERO BANNER COM TEXTOS ORIGINAIS E FOTO COM RESPIRO E FADE SUAVE */}
-        <section className="relative min-h-[660px] lg:min-h-[720px] flex items-center bg-[#E6E6E9] border-b border-[#D8D8DC] overflow-hidden">
-          {/* Foto posicionada à direita com respiro vertical (não cola no topo) e fade suave na margem esquerda */}
-          <div className="absolute right-0 bottom-0 top-6 sm:top-10 lg:top-8 w-full lg:w-[48%] xl:w-[46%] pointer-events-none select-none z-0 flex items-end justify-end pr-0 lg:pr-6">
+        {/* 3. HERO SECTION (Responsivo: Vertical no Mobile na ordem exata solicitada / Lado a lado no Desktop) */}
+        <section className="relative bg-[#E6E6E9] border-b border-[#D8D8DC] overflow-hidden">
+          
+          {/* FOTO NO DESKTOP: posicionada à direita com respiro e fade suave (apenas telas lg pra cima) */}
+          <div className="hidden lg:flex absolute right-0 bottom-0 top-8 w-[48%] xl:w-[46%] pointer-events-none select-none z-0 items-end justify-end pr-6">
             <img
               src={fotoBanner}
               alt="Nutricionista Ana Luiza"
-              className="max-h-[580px] lg:max-h-[660px] w-auto object-contain object-bottom"
+              className="max-h-[660px] w-auto object-contain object-bottom"
             />
           </div>
 
-          {/* Conteúdo sobreposto com recuo elegante para a direita */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 relative z-10 w-full">
-            <div className="max-w-2xl lg:max-w-2xl xl:max-w-3xl space-y-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-20 relative z-10 w-full">
+            <div className="max-w-2xl lg:max-w-2xl xl:max-w-3xl flex flex-col space-y-4 lg:space-y-6">
 
-<div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFE9D2] border border-[#5E6B1E]/20 text-[#5E6B1E] text-xs font-semibold tracking-wider uppercase mb-2">
-                <Leaf size={14} className="text-[#5E6B1E]" />
-                <span>Nutrição Sem Neuras • Vida Real</span>
+              {/* 1. Tag de Posicionamento */}
+              <div className="flex justify-center lg:justify-start">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFE9D2] border border-[#5E6B1E]/20 text-[#5E6B1E] text-xs font-semibold tracking-wider uppercase">
+                  <Leaf size={14} className="text-[#5E6B1E]" />
+                  <span>Nutrição Sem Neuras • Vida Real</span>
+                </div>
               </div>
 
-              {/* Título Principal Original */}
-              <h1 className="font-title text-4xl sm:text-5xl lg:text-6xl text-gray-950 font-bold tracking-tight leading-[1.15]">
+              {/* 2. Título Principal */}
+              <h1 className="font-title text-3xl sm:text-5xl lg:text-6xl text-gray-950 font-bold tracking-tight leading-[1.18] text-center lg:text-left">
                 Coma com paz e veja seu corpo responder com{' '}
                 <span className="italic font-normal text-[#5E6B1E] underline decoration-[#EEA4C2] underline-offset-8">
                   vitalidade real.
                 </span>
               </h1>
 
-              {/* Parágrafo Original */}
-              <p className="text-base sm:text-lg text-gray-700 font-normal leading-relaxed">
+              {/* 3. Parágrafo Descritivo */}
+              <p className="text-sm sm:text-base lg:text-lg text-gray-700 font-normal leading-relaxed text-center lg:text-left">
                 A alimentação deve se adaptar à sua rotina, à sua realidade e aos seus objetivos, nunca o contrário.
                 Conquiste resultados consistentes com acolhimento, leveza e respaldo científico individualizado.
               </p>
 
-              {/* Botões Originais: Agendamento no WhatsApp + Conhecer E-books */}
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              {/* 4. FOTO NO MOBILE (Aproximada do texto, sem espaço vazio) */}
+              <div className="lg:hidden w-full flex justify-center pt-1 pb-0 -mb-8 sm:-mb-10 relative z-10">
+                <div className="relative max-w-sm sm:max-w-md w-full flex justify-center">
+                  <img
+                    src={fotoBanner}
+                    alt="Nutricionista Ana Luiza"
+                    className="max-h-[420px] sm:max-h-[480px] w-auto object-contain block"
+                  />
+                  {/* Leve fade no finalzinho da saia para transição aveludada */}
+                  <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#E6E6E9] via-[#E6E6E9]/60 to-transparent pointer-events-none" />
+                </div>
+              </div>
+
+              {/* 5. Botões de Ação (Sobrepõem propositalmente o final da foto no mobile, tampando o corte seco!) */}
+              <div className="pt-0 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 relative z-20 w-full">
                 <button
                   onClick={() => openWhatsApp('Olá, Ana Luiza! Acessei o seu site e gostaria de agendar uma consulta com você.')}
-                  className="bg-[#E8701A] hover:bg-[#D46313] text-white font-title text-sm sm:text-base font-bold px-8 py-4 rounded-full shadow-lg shadow-[#E8701A]/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-center flex items-center justify-center gap-3 cursor-pointer"
+                  className="w-full sm:w-auto bg-[#E8701A] hover:bg-[#D46313] text-white font-title text-sm sm:text-base font-bold px-7 py-3.5 rounded-full shadow-md shadow-[#E8701A]/20 transition-all hover:scale-[1.01] active:scale-[0.98] text-center flex items-center justify-center gap-2.5 cursor-pointer whitespace-nowrap"
                 >
-                  <MessageCircle size={20} className="text-white" />
+                  <MessageCircle size={18} className="text-white" />
                   <span>Agendar Consulta no WhatsApp</span>
                 </button>
 
                 <Link
                   to="/ebooks"
-                  className="bg-white/95 text-gray-800 hover:text-[#5E6B1E] border border-[#5E6B1E]/30 font-title text-sm sm:text-base font-bold px-7 py-4 rounded-full transition-all text-center hover:bg-white shadow-2xs flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full sm:w-auto bg-white text-gray-800 hover:text-[#5E6B1E] border border-gray-300 font-title text-sm sm:text-base font-bold px-6 py-3.5 rounded-full transition-all text-center hover:bg-gray-50 shadow-2xs flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap"
                 >
-                  <BookOpen size={18} className="text-[#5E6B1E]" />
+                  <BookOpen size={17} className="text-[#5E6B1E]" />
                   <span>Conhecer E-books</span>
                 </Link>
               </div>
 
-              {/* Barra de Pilares de Apoio Originais */}
-              <div className="pt-6 border-t border-[#D0D0D5] grid grid-cols-3 gap-3 sm:gap-6 max-w-lg">
-                <div className="flex flex-col">
-                  <p className="font-title text-base sm:text-lg lg:text-xl font-bold text-gray-950 whitespace-nowrap">
+              {/* 6. Barra de Pilares de Apoio (Abaixo dos botões) */}
+              <div className="pt-6 border-t border-[#D0D0D5] grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 max-w-md mx-auto lg:mx-0 w-full text-center sm:text-left">
+                <div className="flex flex-col items-center sm:items-start">
+                  <p className="font-title text-base sm:text-lg lg:text-xl font-bold text-gray-950">
                     100% Online
                   </p>
-                  <p className="text-xs sm:text-sm text-gray-600 font-medium mt-1 leading-snug">
+                  <p className="text-xs sm:text-sm text-gray-600 font-medium mt-0.5 leading-snug">
                     Todo o Brasil e exterior
                   </p>
                 </div>
-                <div className="flex flex-col">
-                  <p className="font-title text-base sm:text-lg lg:text-xl font-bold text-gray-950 whitespace-nowrap">
+                <div className="flex flex-col items-center sm:items-start">
+                  <p className="font-title text-base sm:text-lg lg:text-xl font-bold text-gray-950">
                     100% Individual
                   </p>
-                  <p className="text-xs sm:text-sm text-gray-600 font-medium mt-1 leading-snug">
+                  <p className="text-xs sm:text-sm text-gray-600 font-medium mt-0.5 leading-snug">
                     Respeito à sua rotina
-                  </p>
-                </div>
-                <div className="flex flex-col">
-                  <p className="font-title text-base sm:text-lg lg:text-xl font-bold text-gray-950 whitespace-nowrap">
-                    Portal Digital
-                  </p>
-                  <p className="text-xs sm:text-sm text-gray-600 font-medium mt-1 leading-snug">
-                    Plano no aplicativo
                   </p>
                 </div>
               </div>
@@ -299,7 +307,7 @@ export function LandingPage() {
 
                 <div className="pt-2">
                   <p className="text-sm font-title font-bold text-gray-900 uppercase tracking-wider mb-3">
-                    Meu olhar vai muito além da balança. Quero ajudar você a:
+                    Quero ajudar você a:
                   </p>
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -325,7 +333,7 @@ export function LandingPage() {
                   </div>
                 </div>
 
-                <div className="pt-4 flex flex-wrap items-center gap-4">
+                <div className="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                   <button
                     onClick={() => openWhatsApp('Olá, Ana Luiza! Li sua apresentação no site e me identifiquei muito. Gostaria de saber mais sobre a consulta.')}
                     className="inline-flex items-center gap-2 bg-[#5E6B1E] hover:bg-[#4E5919] text-white font-title text-sm font-bold px-6 py-3.5 rounded-full shadow-md transition cursor-pointer"
@@ -368,7 +376,7 @@ export function LandingPage() {
               </div>
               <div className="flex items-center gap-2 hover:text-[#5E6B1E] transition">
                 <CheckCircle2 size={18} className="text-[#5E6B1E]" />
-                <span>Plano Integrado no Portal do Paciente</span>
+                <span>Suporte e Acompanhamento de Perto</span>
               </div>
             </div>
           </div>
@@ -551,113 +559,153 @@ export function LandingPage() {
           </div>
         </section>
 
-        {/* 7. ÁREAS DE ATUAÇÃO (#especialidades) */}
-        <section id="especialidades" className="py-20 bg-[#FAF8F2] border-b border-gray-200">
+        {/* 7. PLANOS DE ACOMPANHAMENTO (#planos) */}
+        <section id="planos" className="py-20 sm:py-24 bg-[#FAF8F2] border-b border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-14">
-              <span className="text-[#5E6B1E] font-semibold uppercase tracking-wider text-xs sm:text-sm">
-                Áreas de Atuação
-              </span>
-              <h2 className="font-title text-3xl sm:text-4xl font-bold text-gray-950 mt-2">
-                Como Posso Ajudar Você Hoje?
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFE9D2] border border-[#5E6B1E]/20 text-[#5E6B1E] text-xs font-semibold tracking-wider uppercase mb-3">
+                <Sparkles size={14} className="text-[#5E6B1E]" />
+                <span>Modalidades de Atendimento</span>
+              </div>
+              <h2 className="font-title text-3xl sm:text-4xl font-bold text-gray-950">
+                Planos de Acompanhamento
               </h2>
-              <p className="text-gray-600 text-base sm:text-lg mt-3">
-                Acompanhamento individualizado focado nas suas metas de saúde, bem-estar e composição corporal.
+              <p className="text-gray-700 text-base sm:text-lg mt-3 font-normal max-w-2xl mx-auto">
+                Opções pensadas para se encaixar com perfeição no seu momento de vida, na sua rotina e nas suas metas de saúde.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Card 1 */}
-              <div className="bg-white rounded-3xl p-7 shadow-xs border border-gray-200 hover:shadow-md transition">
-                <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center mb-5">
-                  <Flame size={24} />
+            {/* Grid 2x2 dos 4 Planos com Cores Oficiais e Estilo do Material */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+              
+              {/* Card 1: Consulta Avulsa (#EEA4C2 - Rose Blush) */}
+              <div className="rounded-[32px] p-8 sm:p-9 bg-[#EEA4C2] text-gray-950 flex flex-col justify-between shadow-md transition-all hover:scale-[1.01] hover:shadow-xl">
+                <div>
+                  <div className="inline-block px-3 py-1 rounded-full bg-white/80 text-gray-900 text-xs font-title font-bold uppercase tracking-wider mb-4">
+                    Individual
+                  </div>
+                  <h3 className="font-title text-2xl sm:text-3xl font-bold text-gray-950 mb-3">
+                    Consulta Avulsa
+                  </h3>
+                  <p className="text-gray-900/90 text-base sm:text-lg leading-relaxed font-medium">
+                    Para quem deseja entender melhor sua alimentação e receber orientações personalizadas para sua rotina.
+                  </p>
                 </div>
-                <h3 className="font-title text-xl font-bold text-gray-950 mb-2">Emagrecimento Sustentável</h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  Perca gordura corporal sem fome excessiva, sem cortar grupos alimentares e restaurando a sua saciedade natural.
-                </p>
-                <span className="text-xs font-semibold text-[#5E6B1E] tracking-wide uppercase">
-                  Foco: Reeducação & Leveza
-                </span>
+
+                <div className="mt-8 pt-6 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <span className="text-sm font-semibold text-gray-900/80">
+                    Atendimento 100% individual
+                  </span>
+                  <button
+                    onClick={() => openWhatsApp('Olá, Ana Luiza! Tenho interesse na Consulta Avulsa e gostaria de saber mais informações.')}
+                    className="w-full sm:w-auto bg-white hover:bg-gray-50 text-gray-950 font-title font-bold text-sm px-6 py-3 rounded-full shadow-sm transition active:scale-95 cursor-pointer text-center"
+                  >
+                    Quero esta opção
+                  </button>
+                </div>
               </div>
 
-              {/* Card 2 */}
-              <div className="bg-white rounded-3xl p-7 shadow-xs border border-gray-200 hover:shadow-md transition">
-                <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-[#5E6B1E] flex items-center justify-center mb-5">
-                  <Heart size={24} />
+              {/* Card 2: Combo - Consulta + Retorno (#E8701A - Terracota) */}
+              <div className="rounded-[32px] p-8 sm:p-9 bg-[#E8701A] text-white flex flex-col justify-between shadow-md transition-all hover:scale-[1.01] hover:shadow-xl">
+                <div>
+                  <div className="inline-block px-3 py-1 rounded-full bg-white/20 text-white text-xs font-title font-bold uppercase tracking-wider mb-4 backdrop-blur-xs">
+                    Combo Especial
+                  </div>
+                  <h3 className="font-title text-2xl sm:text-3xl font-bold text-white mb-3">
+                    Consulta + Retorno
+                  </h3>
+                  <p className="text-white/95 text-base sm:text-lg leading-relaxed font-medium">
+                    Para quem deseja começar a cuidar da alimentação e ter uma nova oportunidade para avaliar a adaptação às orientações.
+                  </p>
                 </div>
-                <h3 className="font-title text-xl font-bold text-gray-950 mb-2">Reeducação Alimentar</h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  Aprenda a se alimentar com prazer e autonomia, desenvolvendo escolhas conscientes e duradouras para toda a vida.
-                </p>
-                <span className="text-xs font-semibold text-[#5E6B1E] tracking-wide uppercase">
-                  Foco: Longevidade & Equilíbrio
-                </span>
+
+                <div className="mt-8 pt-6 border-t border-white/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <span className="text-sm font-semibold text-white/90">
+                    Acompanhamento contínuo
+                  </span>
+                  <button
+                    onClick={() => openWhatsApp('Olá, Ana Luiza! Tenho interesse no Combo Consulta + Retorno e gostaria de agendar.')}
+                    className="w-full sm:w-auto bg-white hover:bg-gray-50 text-[#E8701A] font-title font-bold text-sm px-6 py-3 rounded-full shadow-sm transition active:scale-95 cursor-pointer text-center"
+                  >
+                    Quero esta opção
+                  </button>
+                </div>
               </div>
 
-              {/* Card 3 */}
-              <div className="bg-white rounded-3xl p-7 shadow-xs border border-gray-200 hover:shadow-md transition">
-                <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-[#5E6B1E] flex items-center justify-center mb-5">
-                  <ShieldCheck size={24} />
+              {/* Card 3: Plano Premium (#C4B818 - Dourado Oliva) */}
+              <div className="rounded-[32px] p-8 sm:p-9 bg-[#C4B818] text-gray-950 flex flex-col justify-between shadow-md transition-all hover:scale-[1.01] hover:shadow-xl">
+                <div>
+                  <div className="inline-block px-3 py-1 rounded-full bg-white/80 text-gray-900 text-xs font-title font-bold uppercase tracking-wider mb-4">
+                    Mais Completo
+                  </div>
+                  <h3 className="font-title text-2xl sm:text-3xl font-bold text-gray-950 mb-3">
+                    Plano Premium
+                  </h3>
+                  <p className="text-gray-950/90 text-base sm:text-lg leading-relaxed font-medium">
+                    Para quem busca um período maior de acompanhamento nutricional e suporte durante a aplicação das orientações.
+                  </p>
                 </div>
-                <h3 className="font-title text-xl font-bold text-gray-950 mb-2">Saúde Metabólica</h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  Estratégias para otimizar o funcionamento do seu metabolismo, disposição diária e longevidade de forma equilibrada.
-                </p>
-                <span className="text-xs font-semibold text-[#5E6B1E] tracking-wide uppercase">
-                  Foco: Vitalidade & Equilíbrio Metabólico
-                </span>
+
+                <div className="mt-8 pt-6 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <span className="text-sm font-semibold text-gray-900/80">
+                    Suporte próximo e prolongado
+                  </span>
+                  <button
+                    onClick={() => openWhatsApp('Olá, Ana Luiza! Quero saber detalhes e valores do Plano Premium de acompanhamento.')}
+                    className="w-full sm:w-auto bg-white hover:bg-gray-50 text-gray-950 font-title font-bold text-sm px-6 py-3 rounded-full shadow-sm transition active:scale-95 cursor-pointer text-center"
+                  >
+                    Quero esta opção
+                  </button>
+                </div>
               </div>
 
-              {/* Card 4 */}
-              <div className="bg-white rounded-3xl p-7 shadow-xs border border-gray-200 hover:shadow-md transition">
-                <div className="w-12 h-12 rounded-2xl bg-rose-100 text-rose-800 flex items-center justify-center mb-5">
-                  <Heart size={24} />
+              {/* Card 4: Projeto Social (#48679D - Azul Ardósia) */}
+              <div className="rounded-[32px] p-8 sm:p-9 bg-[#48679D] text-white flex flex-col justify-between shadow-md transition-all hover:scale-[1.01] hover:shadow-xl relative overflow-hidden">
+                <div>
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E8701A] text-white text-xs font-title font-bold uppercase tracking-wider mb-4 shadow-xs">
+                    <Sparkles size={12} />
+                    <span>Vagas Limitadas</span>
+                  </div>
+                  <h3 className="font-title text-2xl sm:text-3xl font-bold text-white mb-3">
+                    Projeto Social
+                  </h3>
+                  <p className="text-white/95 text-base sm:text-lg leading-relaxed font-medium">
+                    Uma oportunidade para quem deseja cuidar melhor da alimentação com orientação profissional e um valor mais acessível.
+                  </p>
                 </div>
-                <h3 className="font-title text-xl font-bold text-gray-950 mb-2">Saúde da Mulher</h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  Acompanhamento nutricional focado no equilíbrio hormonal e bem-estar feminino em todas as fases da vida.
-                </p>
-                <span className="text-xs font-semibold text-rose-700 tracking-wide uppercase">
-                  Foco: Equilíbrio Hormonal & Bem-Estar
-                </span>
+
+                <div className="mt-8 pt-6 border-t border-white/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <span className="text-sm font-semibold text-white/90">
+                    Orientação profissional acessível
+                  </span>
+                  <button
+                    onClick={() => openWhatsApp('Olá, Ana Luiza! Gostaria de consultar a disponibilidade de vagas para o Projeto Social.')}
+                    className="w-full sm:w-auto bg-white hover:bg-gray-50 text-[#48679D] font-title font-bold text-sm px-6 py-3 rounded-full shadow-sm transition active:scale-95 cursor-pointer text-center"
+                  >
+                    Consultar vagas
+                  </button>
+                </div>
               </div>
 
-              {/* Card 5 */}
-              <div className="bg-white rounded-3xl p-7 shadow-xs border border-gray-200 hover:shadow-md transition">
-                <div className="w-12 h-12 rounded-2xl bg-teal-100 text-teal-800 flex items-center justify-center mb-5">
-                  <Leaf size={24} />
-                </div>
-                <h3 className="font-title text-xl font-bold text-gray-950 mb-2">Vegetarianismo e Plant-Based</h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  Transição e manutenção com planejamento equilibrado para garantir variedade e aporte nutricional adequado.
-                </p>
-                <span className="text-xs font-semibold text-[#5E6B1E] tracking-wide uppercase">
-                  Foco: Segurança & Equilíbrio
-                </span>
-              </div>
+            </div>
 
-              {/* Card 6 */}
-              <div className="bg-white rounded-3xl p-7 shadow-xs border border-gray-200 hover:shadow-md transition">
-                <div className="w-12 h-12 rounded-2xl bg-purple-100 text-purple-800 flex items-center justify-center mb-5">
-                  <Sparkles size={24} />
-                </div>
-                <h3 className="font-title text-xl font-bold text-gray-950 mb-2">Relação Consciente com a Mesa</h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  Comer consciente para superar o ciclo de culpa e ansiedade, reaprendendo a escutar os sinais de fome e saciedade do corpo.
-                </p>
-                <span className="text-xs font-semibold text-[#5E6B1E] tracking-wide uppercase">
-                  Foco: Paz com a Comida
-                </span>
-              </div>
+            {/* Aviso acolhedor de fechamento */}
+            <div className="mt-12 text-center">
+              <p className="text-sm sm:text-base text-gray-600 font-medium">
+                Dúvidas sobre qual o melhor plano para o seu objetivo?{' '}
+                <button
+                  onClick={() => openWhatsApp('Olá, Ana Luiza! Estou em dúvida sobre qual plano escolher para o meu momento.')}
+                  className="text-[#5E6B1E] font-bold hover:underline cursor-pointer inline-flex items-center gap-1"
+                >
+                  Fale comigo no WhatsApp
+                </button>
+              </p>
             </div>
           </div>
         </section>
 
-
         
-
-        {/* 10. PERGUNTAS FREQUENTES (#faq) */}
+{/* 10. PERGUNTAS FREQUENTES (#faq) */}
         <section id="faq" className="py-20 bg-white border-b border-gray-200">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-14">
@@ -884,3 +932,6 @@ export function LandingPage() {
     </div>
   )
 }
+
+
+
