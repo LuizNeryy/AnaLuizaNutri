@@ -1,13 +1,16 @@
+import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import {
   MessageCircle,
   BookOpen,
   MapPin,
-  CheckCircle2,
+  ArrowRight,
+  UtensilsCrossed,
+  Compass,
+  Shuffle,
+  MessagesSquare,
   Sparkles,
-  Leaf,
-  Check,
   X,
   Menu,
   ExternalLink,
@@ -41,6 +44,44 @@ export function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeFaq, setActiveFaq] = useState<number | null>(null)
   const [showToast, setShowToast] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState<string>('sobre')
+
+  useEffect(() => {
+    const sections = ['sobre', 'como-ajudar', 'metodo', 'planos', 'faq']
+
+    let ticking = false
+    function handleScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 25)
+
+          // Encontrar a seção cujo topo está mais próximo do terço superior da janela
+          const midPoint = window.scrollY + window.innerHeight * 0.35
+          let currentSection = sections[0]
+
+          for (const sectionId of sections) {
+            const el = document.getElementById(sectionId)
+            if (el) {
+              const top = el.offsetTop
+              if (midPoint >= top - 80) {
+                currentSection = sectionId
+              }
+            }
+          }
+          setActiveSection(currentSection)
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -64,98 +105,139 @@ export function LandingPage() {
 
   return (
     <div className="min-h-screen bg-[#FAF8F2] text-gray-900 font-sans selection:bg-emerald-200 selection:text-emerald-950">
-      {/* 1. NAVBAR EM VERDE ESCURO COM ALTO CONTRASTE (z-50 SEMPRE ACIMA DE QUALQUER CONTEÚDO AO ROLAR) */}
-      <header className="sticky top-0 z-50 bg-[#5E6B1E] text-white shadow-md border-b border-[#4E5919]">
-        <div className="mx-auto flex max-w-[96rem] items-center justify-between px-4 sm:px-6 lg:px-10 py-4.5 sm:py-5">
-          {/* Logo Brand */}
-          <Link to="/" className="flex items-center gap-3 shrink-0">
-            <div className="w-10 h-10 rounded-full bg-[#4E5919] border border-[#EEA4C2]/40 flex items-center justify-center text-white font-title font-bold text-lg shadow-inner">AL</div>
-            <div className="hidden sm:block text-left border-l border-emerald-700/80 pl-3 leading-tight">
-              <span className="block font-title text-base font-bold text-white tracking-wide whitespace-nowrap">Ana Luiza</span>
-              <span className="block text-[11px] uppercase tracking-widest text-[#EFE9D2] font-semibold whitespace-nowrap">Nutricionista • CRN 38501</span>
+{/* 1. HEADER GLASSMORPHISM EDITORIAL PREMIUM */}
+      <header
+        className={`sticky top-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? 'bg-[#FAF8F2]/90 backdrop-blur-md shadow-xs border-b border-[#EFE9D2] py-3 sm:py-3.5'
+            : 'bg-[#FAF8F2]/75 backdrop-blur-sm border-b border-[#EFE9D2]/60 py-4 sm:py-5'
+        }`}
+      >
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          
+          {/* Logo Brand Tipográfica Autoral */}
+          <Link to="/" className="flex items-center gap-3.5 group">
+            <div className="w-10 h-10 rounded-full bg-[#EFE9D2] border border-[#5E6B1E]/25 flex items-center justify-center text-[#5E6B1E] font-title font-bold text-sm shadow-xs transition group-hover:scale-105 group-hover:border-[#5E6B1E]">
+              AL
+            </div>
+            <div className="text-left leading-tight">
+              <span className="block font-title text-base sm:text-lg font-bold text-gray-950 tracking-tight group-hover:text-[#EEA4C2] transition">
+                Ana Luiza Ribeiro
+              </span>
+              <span className="block text-[10px] sm:text-[11px] uppercase tracking-widest text-[#48679D] font-bold">
+                Nutrição Clínica • CRN-9 38501
+              </span>
             </div>
           </Link>
 
-          {/* Links de navegação desktop (incluindo Área do Paciente no mesmo estilo) */}
-          <nav className="hidden xl:flex items-center gap-7 text-sm font-medium text-emerald-100 whitespace-nowrap">
-            <a href="#metodo" className="hover:text-white transition">O Método</a>
-            <a href="#planos" className="hover:text-white transition">Planos</a>
-            <a href="#sobre" className="hover:text-white transition">Sobre Mim</a>
-            <Link to="/ebooks" className="hover:text-white transition">E-books</Link>
-                        <a href="#faq" className="hover:text-white transition">Dúvidas</a>
-            
+          {/* Links de navegação desktop com animação Jelly/Chiclete via Framer Motion */}
+          <nav className="hidden lg:flex items-center relative text-sm font-semibold">
+            {[
+              { id: 'sobre', label: 'Sobre Mim', href: '#sobre' },
+              { id: 'como-ajudar', label: 'Como Te Ajudar', href: '#como-ajudar' },
+              { id: 'metodo', label: 'O Método', href: '#metodo' },
+              { id: 'planos', label: 'Planos', href: '#planos' },
+              { id: 'faq', label: 'Dúvidas', href: '#faq' },
+            ].map((item) => {
+              const isActive = activeSection === item.id
+              return (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  onClick={() => setActiveSection(item.id)}
+                  className={`relative px-4 py-1.5 rounded-full transition-colors duration-300 select-none ${
+                    isActive ? 'text-white' : 'text-gray-700 hover:text-[#EEA4C2]'
+                  }`}
+                >
+                  {isActive && (
+                    <motion.span
+                      layoutId="navBubbleActive"
+                      className="absolute inset-0 rounded-full bg-[#48679D] shadow-md shadow-[#48679D]/30"
+                      transition={{
+                        type: 'spring',
+                        stiffness: 380,
+                        damping: 24,
+                        mass: 0.8,
+                      }}
+                    />
+                  )}
+                  <span className="relative z-10">{item.label}</span>
+                </a>
+              )
+            })}
+
+            <Link
+              to="/ebooks"
+              className="relative px-4 py-1.5 rounded-full text-gray-700 hover:text-[#EEA4C2] transition-colors duration-200"
+            >
+              <span className="relative z-10">E-books</span>
+            </Link>
           </nav>
 
-          {/* Ações à direita: Conversar com a Nutricionista e Agendar Consulta */}
+          {/* Ação à direita: Botão pílula elegante */}
           <div className="flex items-center gap-3 shrink-0">
             <button
-              onClick={() => openWhatsApp('Olá, Ana Luiza! Acessei o seu site e gostaria de agendar uma consulta.')}
-              className="inline-flex items-center gap-2 rounded-xl bg-[#E8701A] hover:bg-[#D46313] px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-sm transition active:scale-[0.98] whitespace-nowrap cursor-pointer"
+              onClick={() => openWhatsApp('Olá, Ana Luiza! Acessei o seu site e gostaria de agendar uma consulta com você.')}
+              className="inline-flex items-center gap-2 rounded-full bg-[#E8701A] hover:bg-[#D46313] px-5 py-2.5 text-xs sm:text-sm font-title font-bold text-white shadow-xs transition hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
             >
-              <MessageCircle size={16} className="text-white" />
-              <span>Agendar no WhatsApp</span>
+              <MessageCircle size={15} />
+              <span>Agendar Consulta</span>
             </button>
 
             {/* Mobile Hamburger */}
             <button
               onClick={() => setMobileMenuOpen((prev) => !prev)}
-              className="xl:hidden p-2 text-emerald-100 hover:text-white transition"
+              className="lg:hidden p-2 text-gray-800 hover:text-[#5E6B1E] transition rounded-lg"
               aria-label="Menu"
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
 
-        {/* Gaveta Mobile */}
+        {/* Gaveta Mobile Translúcida */}
         {mobileMenuOpen && (
-          <div className="xl:hidden bg-emerald-950 border-t border-emerald-800 px-6 py-5 space-y-3 shadow-xl text-sm">
+          <div className="lg:hidden bg-[#FAF8F2]/95 backdrop-blur-lg border-t border-[#EFE9D2] px-6 py-5 space-y-3.5 shadow-lg text-sm font-semibold text-gray-800">
             <a
-              href="#metodo"
+              href="#sobre"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-emerald-100 hover:text-white py-1"
+              className="block hover:text-[#5E6B1E] py-1 border-b border-gray-200/60"
+            >
+              Sobre Mim
+            </a>
+            <a
+              href="#filosofia"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block hover:text-[#5E6B1E] py-1 border-b border-gray-200/60"
             >
               O Método
             </a>
             <a
-              href="#especialidades"
+              href="#planos"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-emerald-100 hover:text-white py-1"
+              className="block hover:text-[#5E6B1E] py-1 border-b border-gray-200/60"
             >
-              Áreas de Atuação
+              Planos
             </a>
             <a
-              href="#sobre"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-emerald-100 hover:text-white py-1"
-            >
-              Sobre Mim
-            </a>
-                        <a
               href="#faq"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-emerald-100 hover:text-white py-1"
+              className="block hover:text-[#5E6B1E] py-1 border-b border-gray-200/60"
             >
               Dúvidas
             </a>
-                        <div className="pt-3 border-t border-emerald-800/80 flex flex-col gap-2">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false)
-                  openWhatsApp('Olá, Ana Luiza! Acessei o seu site e gostaria de tirar dúvidas.')
-                }}
-                className="w-full bg-[#5E6B1E] text-emerald-100 font-bold py-2.5 rounded-xl border border-emerald-700 text-center flex items-center justify-center gap-2"
-              >
-                <MessageCircle size={16} />
-                <span>Conversar com a Nutricionista</span>
-              </button>
-
-            </div>
+            <Link
+              to="/ebooks"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block hover:text-[#5E6B1E] py-1"
+            >
+              E-books
+            </Link>
           </div>
         )}
       </header>
 
-      <main>
+            <main>
         {/* 3. HERO SECTION (Responsivo: Vertical no Mobile na ordem exata solicitada / Lado a lado no Desktop) */}
         <section className="relative bg-[#E6E6E9] border-b border-[#D8D8DC] overflow-hidden">
           
@@ -171,13 +253,7 @@ export function LandingPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-20 relative z-10 w-full">
             <div className="max-w-2xl lg:max-w-2xl xl:max-w-3xl flex flex-col space-y-4 lg:space-y-6">
 
-              {/* 1. Tag de Posicionamento */}
-              <div className="flex justify-center lg:justify-start">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFE9D2] border border-[#5E6B1E]/20 text-[#5E6B1E] text-xs font-semibold tracking-wider uppercase">
-                  <Leaf size={14} className="text-[#5E6B1E]" />
-                  <span>Nutrição Sem Neuras • Vida Real</span>
-                </div>
-              </div>
+
 
               {/* 2. Título Principal */}
               <h1 className="font-title text-3xl sm:text-5xl lg:text-6xl text-gray-950 font-bold tracking-tight leading-[1.18] text-center lg:text-left">
@@ -201,8 +277,6 @@ export function LandingPage() {
                     alt="Nutricionista Ana Luiza"
                     className="max-h-[420px] sm:max-h-[480px] w-auto object-contain block"
                   />
-                  {/* Leve fade no finalzinho da saia para transição aveludada */}
-                  <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#E6E6E9] via-[#E6E6E9]/60 to-transparent pointer-events-none" />
                 </div>
               </div>
 
@@ -257,7 +331,7 @@ export function LandingPage() {
               <div className="lg:col-span-5 relative flex justify-center">
                 <div className="relative w-full max-w-md">
                   {/* Moldura decorativa verde oliva deslocada */}
-                  <div className="absolute -top-4 -left-4 w-full h-full border-2 border-[#5E6B1E]/40 rounded-3xl -z-10" />
+                  <div className="absolute -top-4 -left-4 w-full h-full border-2 border-[#48679D]/30 rounded-3xl -z-10" />
                   
                   {/* Card da Foto */}
                   <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-[#EFE9D2]">
@@ -282,9 +356,7 @@ export function LandingPage() {
 
               {/* Bio Content real da Ana Luiza (col 6 a 12) */}
               <div className="lg:col-span-7 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFE9D2] text-[#5E6B1E] text-xs font-semibold tracking-wider uppercase">
-                  <span>Nutrição Clínica & Terapia Nutricional</span>
-                </div>
+
 
                 <h2 className="font-title text-3xl sm:text-4xl font-bold text-gray-950">
                   Oi, eu sou a Ana Luiza!
@@ -299,34 +371,46 @@ export function LandingPage() {
                 </p>
 
                 <p className="text-gray-700 text-base leading-relaxed">
-                  Dieta não precisa ser sofrimento, e comida não é sua inimiga. Sou nutricionista, pós-graduada em <strong>Nutrição Clínica: Metabolismo, Prática e Terapia Nutricional</strong>. Meu propósito é mostrar que dá para cuidar da saúde com ciência, sem terrorismo nutricional e sem abrir mão do prazer de comer.
+                  Dieta não precisa ser sofrimento, e comida não é sua inimiga. Sou nutricionista, pós-graduada em <strong className="text-[#48679D] font-bold">Nutrição Clínica: Metabolismo, Prática e Terapia Nutricional</strong>. Meu propósito é mostrar que dá para cuidar da saúde com ciência, sem terrorismo nutricional e sem abrir mão do prazer de comer.
                 </p>
 
-                <div className="pt-2">
-                  <p className="text-sm font-title font-bold text-gray-900 uppercase tracking-wider mb-3">
+                <div className="pt-3">
+                  <p className="text-xs font-title font-bold text-[#5E6B1E] uppercase tracking-widest mb-3 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#EEA4C2]" />
                     Quero ajudar você a:
                   </p>
                   
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div className="flex items-start gap-2.5 text-sm text-gray-800 bg-[#FAF8F2] p-3 rounded-xl border border-[#EFE9D2]">
-                      <CheckCircle2 size={17} className="text-[#5E6B1E] shrink-0 mt-0.5" />
-                      <span>Emagrecer de forma sustentável, sem efeito sanfona</span>
-                    </div>
-
-                    <div className="flex items-start gap-2.5 text-sm text-gray-800 bg-[#FAF8F2] p-3 rounded-xl border border-[#EFE9D2]">
-                      <CheckCircle2 size={17} className="text-[#5E6B1E] shrink-0 mt-0.5" />
-                      <span>Controlar exames alterados, como glicemia e pressão</span>
-                    </div>
-
-                    <div className="flex items-start gap-2.5 text-sm text-gray-800 bg-[#FAF8F2] p-3 rounded-xl border border-[#EFE9D2]">
-                      <CheckCircle2 size={17} className="text-[#5E6B1E] shrink-0 mt-0.5" />
-                      <span>Melhorar intolerâncias e o conforto intestinal</span>
-                    </div>
-
-                    <div className="flex items-start gap-2.5 text-sm text-gray-800 bg-[#FAF8F2] p-3 rounded-xl border border-[#EFE9D2]">
-                      <CheckCircle2 size={17} className="text-[#5E6B1E] shrink-0 mt-0.5" />
-                      <span>Ter uma alimentação possível na rotina real</span>
-                    </div>
+                  <div className="space-y-2">
+                    {[
+                      {
+                        title: "Emagrecer de forma sustentável",
+                        desc: "sem o sofrimento e a culpa do efeito sanfona.",
+                      },
+                      {
+                        title: "Controlar seus exames de sangue",
+                        desc: "como glicemia, colesterol e pressão arterial.",
+                      },
+                      {
+                        title: "Recuperar o conforto intestinal",
+                        desc: "e aliviar sensibilidades ou intolerâncias digestivas.",
+                      },
+                      {
+                        title: "Ter uma alimentação possível",
+                        desc: "com soluções práticas e viáveis para a sua rotina real.",
+                      },
+                    ].map((item, idx) => (
+                      <div 
+                        key={idx}
+                        className="flex items-baseline gap-3 py-1.5 border-b border-[#EFE9D2]/70 last:border-0"
+                      >
+                        <span className="w-5 h-5 rounded-full bg-[#EEA4C2]/25 text-[#48679D] flex items-center justify-center shrink-0 self-center">
+                          <ArrowRight size={12} strokeWidth={2.5} />
+                        </span>
+                        <p className="text-sm sm:text-[15px] text-gray-700 leading-relaxed">
+                          <strong className="text-gray-950 font-semibold">{item.title}</strong>, {item.desc}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
@@ -355,134 +439,122 @@ export function LandingPage() {
           </div>
         </section>
 
-        {/* 4. SELOS / PILARES DE CONFIANÇA */}
-        <section className="py-6 bg-white border-b border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-14 text-gray-600 font-semibold text-xs sm:text-sm">
-              <div className="flex items-center gap-2 hover:text-[#5E6B1E] transition">
-                <CheckCircle2 size={18} className="text-[#5E6B1E]" />
-                <span>Atendimento 100% Online para todo o Brasil</span>
-              </div>
-              <div className="flex items-center gap-2 hover:text-[#5E6B1E] transition">
-                <CheckCircle2 size={18} className="text-[#5E6B1E]" />
-                <span>Consultas por Videoconferência com Máxima Atenção</span>
-              </div>
-              <div className="flex items-center gap-2 hover:text-[#5E6B1E] transition">
-                <CheckCircle2 size={18} className="text-[#5E6B1E]" />
-                <span>Nutrição Sem Terrorismo Alimentar</span>
-              </div>
-              <div className="flex items-center gap-2 hover:text-[#5E6B1E] transition">
-                <CheckCircle2 size={18} className="text-[#5E6B1E]" />
-                <span>Suporte e Acompanhamento de Perto</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 5. COMO POSSO TE AJUDAR? (Página 6 do material autoral da Ana Luiza) */}
-        <section id="como-ajudar" className="py-24 bg-[#FAF8F2] border-b border-[#EFE9D2]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+{/* 4. COMO POSSO TE AJUDAR? (Layout Editorial Aberto de Página Inteira) */}
+        <section id="como-ajudar" className="py-20 sm:py-28 bg-[#FAF8F2] border-b border-[#EFE9D2] relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
-            <div className="max-w-4xl mx-auto bg-white rounded-3xl p-8 sm:p-14 border border-[#EFE9D2] shadow-sm">
-              <div className="text-center max-w-2xl mx-auto mb-12">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFE9D2] text-[#5E6B1E] text-xs font-semibold tracking-wider uppercase mb-3">
-                  <Leaf size={14} className="text-[#5E6B1E]" />
-                  <span>Como Posso Te Ajudar?</span>
-                </div>
-                <h2 className="font-title text-3xl sm:text-4xl font-bold text-gray-950 leading-tight">
-                  Sua rotina também entra no plano!
-                </h2>
-                <p className="text-gray-700 text-base sm:text-lg mt-3 font-medium">
-                  Meu objetivo é ajudar você a construir uma alimentação que faça sentido para sua vida, com:
-                </p>
-              </div>
+            {/* Cabeçalho Aberto e Imersivo */}
+            <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+              <h2 className="font-title text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-950 leading-tight">
+                Sua rotina também entra no plano!
+              </h2>
+              <p className="text-gray-600 text-base sm:text-lg mt-4 max-w-2xl mx-auto font-medium leading-relaxed">
+                Meu objetivo é ajudar você a construir uma alimentação que faça sentido para sua vida, com:
+              </p>
+            </div>
 
-              {/* Grid dos 4 itens práticos da página 6 */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-10">
-                <div className="flex items-start gap-3.5 p-5 rounded-2xl bg-[#FAF8F2] border border-[#EFE9D2] hover:border-[#5E6B1E]/30 transition">
-                  <div className="w-8 h-8 rounded-full bg-[#5E6B1E] text-white flex items-center justify-center shrink-0 shadow-2xs">
-                    <Check size={16} strokeWidth={2.5} />
+            {/* Grid dos 4 Pilares - Layout Aberto de Galeria Editorial (Sem cardzão prendendo tudo!) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+              
+              {/* Pilar 1: Plano Alimentar Individualizado */}
+              <div className="bg-white rounded-3xl p-7 border border-[#EFE9D2] shadow-xs hover:shadow-xl hover:border-[#5E6B1E]/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-[#5E6B1E]/10 text-[#5E6B1E] flex items-center justify-center transition-colors group-hover:bg-[#5E6B1E] group-hover:text-white">
+                      <UtensilsCrossed size={22} />
+                    </div>
+                    <span className="text-xs font-title font-bold tracking-widest text-[#5E6B1E]">01</span>
                   </div>
-                  <div>
-                    <h3 className="font-title font-bold text-gray-900 text-base mb-1">
-                      Plano Alimentar Individualizado
-                    </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      Construído sob medida e quando indicado, respeitando seu organismo e necessidades.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3.5 p-5 rounded-2xl bg-[#FAF8F2] border border-[#EFE9D2] hover:border-[#5E6B1E]/30 transition">
-                  <div className="w-8 h-8 rounded-full bg-[#5E6B1E] text-white flex items-center justify-center shrink-0 shadow-2xs">
-                    <Check size={16} strokeWidth={2.5} />
-                  </div>
-                  <div>
-                    <h3 className="font-title font-bold text-gray-900 text-base mb-1">
-                      Estratégias Práticas para sua Rotina
-                    </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      Soluções viáveis para quem tem dia a dia corrido, trabalha fora ou cozinha pouco.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3.5 p-5 rounded-2xl bg-[#FAF8F2] border border-[#EFE9D2] hover:border-[#5E6B1E]/30 transition">
-                  <div className="w-8 h-8 rounded-full bg-[#5E6B1E] text-white flex items-center justify-center shrink-0 shadow-2xs">
-                    <Check size={16} strokeWidth={2.5} />
-                  </div>
-                  <div>
-                    <h3 className="font-title font-bold text-gray-900 text-base mb-1">
-                      Substituições & Orientações Adaptadas
-                    </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      Adaptadas às suas preferências, sem proibições radicais ou alimentos que você não gosta.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3.5 p-5 rounded-2xl bg-[#FAF8F2] border border-[#EFE9D2] hover:border-[#5E6B1E]/30 transition">
-                  <div className="w-8 h-8 rounded-full bg-[#5E6B1E] text-white flex items-center justify-center shrink-0 shadow-2xs">
-                    <Check size={16} strokeWidth={2.5} />
-                  </div>
-                  <div>
-                    <h3 className="font-title font-bold text-gray-900 text-base mb-1">
-                      Acompanhamento & Ajustes Constantes
-                    </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      Suporte de perto e ajustes conforme o serviço contratado, para você nunca se sentir só.
-                    </p>
-                  </div>
+                  <h3 className="font-title font-bold text-gray-950 text-lg mb-2 group-hover:text-[#48679D] transition-colors">
+                    Plano Alimentar Individualizado
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Construído sob medida e quando indicado, respeitando seu organismo e necessidades.
+                  </p>
                 </div>
               </div>
 
-              {/* Frase de Fechamento de Alto Impacto da Página 6 */}
-              <div className="text-center pt-6 border-t border-[#EFE9D2]">
-                <p className="font-title font-bold text-lg sm:text-xl text-[#5E6B1E] mb-6">
-                  "Nada de fórmula pronta para uma vida que não é a sua."
-                </p>
+              {/* Pilar 2: Estratégias Práticas para sua Rotina */}
+              <div className="bg-white rounded-3xl p-7 border border-[#EFE9D2] shadow-xs hover:shadow-xl hover:border-[#48679D]/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-[#48679D]/10 text-[#48679D] flex items-center justify-center transition-colors group-hover:bg-[#48679D] group-hover:text-white">
+                      <Compass size={22} />
+                    </div>
+                    <span className="text-xs font-title font-bold tracking-widest text-[#48679D]">02</span>
+                  </div>
+                  <h3 className="font-title font-bold text-gray-950 text-lg mb-2 group-hover:text-[#EEA4C2] transition-colors">
+                    Estratégias Práticas para sua Rotina
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Soluções viáveis para quem tem dia a dia corrido, trabalha fora ou cozinha pouco.
+                  </p>
+                </div>
+              </div>
+
+              {/* Pilar 3: Substituições & Orientações Adaptadas */}
+              <div className="bg-white rounded-3xl p-7 border border-[#EFE9D2] shadow-xs hover:shadow-xl hover:border-[#E8701A]/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-[#E8701A]/10 text-[#E8701A] flex items-center justify-center transition-colors group-hover:bg-[#E8701A] group-hover:text-white">
+                      <Shuffle size={22} />
+                    </div>
+                    <span className="text-xs font-title font-bold tracking-widest text-[#E8701A]">03</span>
+                  </div>
+                  <h3 className="font-title font-bold text-gray-950 text-lg mb-2 group-hover:text-[#E8701A] transition-colors">
+                    Substituições & Orientações Adaptadas
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Adaptadas às suas preferências, sem proibições radicais ou alimentos que você não gosta.
+                  </p>
+                </div>
+              </div>
+
+              {/* Pilar 4: Acompanhamento & Ajustes Constantes */}
+              <div className="bg-white rounded-3xl p-7 border border-[#EFE9D2] shadow-xs hover:shadow-xl hover:border-[#5E6B1E]/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-[#5E6B1E]/10 text-[#5E6B1E] flex items-center justify-center transition-colors group-hover:bg-[#5E6B1E] group-hover:text-white">
+                      <MessagesSquare size={22} />
+                    </div>
+                    <span className="text-xs font-title font-bold tracking-widest text-[#5E6B1E]">04</span>
+                  </div>
+                  <h3 className="font-title font-bold text-gray-950 text-lg mb-2 group-hover:text-[#5E6B1E] transition-colors">
+                    Acompanhamento & Ajustes Constantes
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Suporte de perto e ajustes conforme o serviço contratado, para você nunca se sentir só.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Fechamento com Frase de Impacto da Ana Luiza e Botão de Ação */}
+            <div className="max-w-2xl mx-auto text-center space-y-6">
+              <p className="font-title font-bold text-xl sm:text-2xl text-[#5E6B1E] italic">
+                "Nada de fórmula pronta para uma vida que não é a sua."
+              </p>
+              
+              <div>
                 <button
                   onClick={() => openWhatsApp('Olá, Ana Luiza! Li a seção de como você pode me ajudar e gostaria de agendar uma consulta.')}
-                  className="bg-[#E8701A] hover:bg-[#D46313] text-white font-title text-sm sm:text-base font-bold px-8 py-3.5 rounded-full shadow-md transition-all hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2.5 cursor-pointer"
+                  className="bg-[#E8701A] hover:bg-[#D46313] text-white font-title text-sm sm:text-base font-bold px-8 py-4 rounded-full shadow-lg shadow-[#E8701A]/20 transition-all hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2.5 cursor-pointer"
                 >
                   <MessageCircle size={18} />
                   <span>Quero um plano feito para a minha rotina</span>
                 </button>
               </div>
-
             </div>
 
           </div>
         </section>
 
-        {/* 6. MEU OLHAR CLÍNICO (Inspirado no material autoral da Ana Luiza) */}
-        <section id="metodo" className="py-24 bg-white border-b border-[#EFE9D2]">
+                {/* 6. MEU OLHAR CLÍNICO (Inspirado no material autoral da Ana Luiza) */}
+        <section id="metodo" className="py-20 sm:py-24 bg-white border-b border-[#EFE9D2]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFE9D2] text-[#5E6B1E] text-xs font-semibold tracking-wider uppercase mb-3">
-                <Sparkles size={14} className="text-[#5E6B1E]" />
-                <span>Meu Olhar Clínico</span>
-              </div>
+
               <h2 className="font-title text-3xl sm:text-4xl font-bold text-gray-950">
                 Nutrição é muito mais do que emagrecimento!
               </h2>
@@ -493,9 +565,9 @@ export function LandingPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {/* Pilar 1 */}
-              <div className="bg-[#FAF8F2] p-8 sm:p-9 rounded-3xl border border-[#EFE9D2] hover:border-[#5E6B1E]/40 transition-all hover:shadow-lg flex flex-col justify-between group">
+              <div className="bg-[#FAF8F2] p-8 sm:p-9 rounded-3xl border border-[#EFE9D2] hover:border-[#48679D]/40 transition-all hover:shadow-lg flex flex-col justify-between group">
                 <div>
-                  <span className="text-3xl font-title font-bold text-[#48679D] group-hover:text-[#5E6B1E] transition">
+                  <span className="text-3xl font-title font-bold text-[#48679D] group-hover:scale-105 inline-block transition">
                     01
                   </span>
                   <h3 className="font-title text-xl font-bold text-gray-950 mt-4 mb-3">
@@ -505,15 +577,13 @@ export function LandingPage() {
                     Promover saúde integral e contribuir de forma ativa para a prevenção de complicações, protegendo seu bem-estar no longo prazo.
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[#EFE9D2] text-xs font-semibold text-[#48679D]">
-                  Cuidado Preventivo Baseado em Ciência
-                </div>
+
               </div>
 
               {/* Pilar 2 */}
-              <div className="bg-[#FAF8F2] p-8 sm:p-9 rounded-3xl border border-[#EFE9D2] hover:border-[#5E6B1E]/40 transition-all hover:shadow-lg flex flex-col justify-between group">
+              <div className="bg-[#FAF8F2] p-8 sm:p-9 rounded-3xl border border-[#EFE9D2] hover:border-[#E8701A]/40 transition-all hover:shadow-lg flex flex-col justify-between group">
                 <div>
-                  <span className="text-3xl font-title font-bold text-[#E8701A] group-hover:text-[#5E6B1E] transition">
+                  <span className="text-3xl font-title font-bold text-[#E8701A] group-hover:scale-105 inline-block transition">
                     02
                   </span>
                   <h3 className="font-title text-xl font-bold text-gray-950 mt-4 mb-3">
@@ -523,15 +593,13 @@ export function LandingPage() {
                     Cuidado nutricional clínico altamente individualizado para controle de glicemia, pressão, alterações lipídicas e queixas digestivas.
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[#EFE9D2] text-xs font-semibold text-[#E8701A]">
-                  Pós-Graduação em Nutrição Clínica
-                </div>
+
               </div>
 
               {/* Pilar 3 */}
               <div className="bg-[#FAF8F2] p-8 sm:p-9 rounded-3xl border border-[#EFE9D2] hover:border-[#5E6B1E]/40 transition-all hover:shadow-lg flex flex-col justify-between group">
                 <div>
-                  <span className="text-3xl font-title font-bold text-[#5E6B1E] transition">
+                  <span className="text-3xl font-title font-bold text-[#5E6B1E] group-hover:scale-105 inline-block transition">
                     03
                   </span>
                   <h3 className="font-title text-xl font-bold text-gray-950 mt-4 mb-3">
@@ -541,9 +609,7 @@ export function LandingPage() {
                     Conquiste autonomia, equilíbrio duradouro e uma alimentação que seja realmente viável, saborosa e possível na sua vida real.
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[#EFE9D2] text-xs font-semibold text-[#5E6B1E]">
-                  Sem Terrorismo Nutricional
-                </div>
+
               </div>
             </div>
 
@@ -560,10 +626,7 @@ export function LandingPage() {
         <section id="planos" className="py-20 sm:py-24 bg-[#FAF8F2] border-b border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-14">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFE9D2] border border-[#5E6B1E]/20 text-[#5E6B1E] text-xs font-semibold tracking-wider uppercase mb-3">
-                <Sparkles size={14} className="text-[#5E6B1E]" />
-                <span>Modalidades de Atendimento</span>
-              </div>
+
               <h2 className="font-title text-3xl sm:text-4xl font-bold text-gray-950">
                 Planos de Acompanhamento
               </h2>
@@ -576,7 +639,7 @@ export function LandingPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
               
               {/* Card 1: Consulta Avulsa (#EEA4C2 - Rose Blush) */}
-              <div className="rounded-[32px] p-8 sm:p-9 bg-[#EEA4C2] text-gray-950 flex flex-col justify-between shadow-md transition-all hover:scale-[1.01] hover:shadow-xl">
+              <div className="rounded-[32px] p-8 sm:p-9 bg-[#EEA4C2] text-gray-950 flex flex-col justify-between shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl">
                 <div>
                   <div className="inline-block px-3 py-1 rounded-full bg-white/80 text-gray-900 text-xs font-title font-bold uppercase tracking-wider mb-4">
                     Individual
@@ -600,7 +663,7 @@ export function LandingPage() {
               </div>
 
               {/* Card 2: Combo - Consulta + Retorno (#E8701A - Terracota) */}
-              <div className="rounded-[32px] p-8 sm:p-9 bg-[#E8701A] text-white flex flex-col justify-between shadow-md transition-all hover:scale-[1.01] hover:shadow-xl">
+              <div className="rounded-[32px] p-8 sm:p-9 bg-[#E8701A] text-white flex flex-col justify-between shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl">
                 <div>
                   <div className="inline-block px-3 py-1 rounded-full bg-white/20 text-white text-xs font-title font-bold uppercase tracking-wider mb-4 backdrop-blur-xs">
                     Combo Especial
@@ -624,7 +687,7 @@ export function LandingPage() {
               </div>
 
               {/* Card 3: Plano Premium (#C4B818 - Dourado Oliva) */}
-              <div className="rounded-[32px] p-8 sm:p-9 bg-[#C4B818] text-gray-950 flex flex-col justify-between shadow-md transition-all hover:scale-[1.01] hover:shadow-xl">
+              <div className="rounded-[32px] p-8 sm:p-9 bg-[#C4B818] text-gray-950 flex flex-col justify-between shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl">
                 <div>
                   <div className="inline-block px-3 py-1 rounded-full bg-white/80 text-gray-900 text-xs font-title font-bold uppercase tracking-wider mb-4">
                     Mais Completo
@@ -648,7 +711,7 @@ export function LandingPage() {
               </div>
 
               {/* Card 4: Projeto Social (#48679D - Azul Ardósia) */}
-              <div className="rounded-[32px] p-8 sm:p-9 bg-[#48679D] text-white flex flex-col justify-between shadow-md transition-all hover:scale-[1.01] hover:shadow-xl relative overflow-hidden">
+              <div className="rounded-[32px] p-8 sm:p-9 bg-[#48679D] text-white flex flex-col justify-between shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl relative overflow-hidden">
                 <div>
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E8701A] text-white text-xs font-title font-bold uppercase tracking-wider mb-4 shadow-xs">
                     <Sparkles size={12} />
@@ -917,6 +980,9 @@ export function LandingPage() {
     </div>
   )
 }
+
+
+
 
 
 
