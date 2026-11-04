@@ -382,32 +382,20 @@ export function LandingPage() {
                   
                   <div className="space-y-2">
                     {[
-                      {
-                        title: "Emagrecer de forma sustentável",
-                        desc: "sem o sofrimento e a culpa do efeito sanfona.",
-                      },
-                      {
-                        title: "Controlar seus exames de sangue",
-                        desc: "como glicemia, colesterol e pressão arterial.",
-                      },
-                      {
-                        title: "Recuperar o conforto intestinal",
-                        desc: "e aliviar sensibilidades ou intolerâncias digestivas.",
-                      },
-                      {
-                        title: "Ter uma alimentação possível",
-                        desc: "com soluções práticas e viáveis para a sua rotina real.",
-                      },
-                    ].map((item, idx) => (
+                      "Emagrecer de forma sustentável, sem efeito sanfona",
+                      "Controlar exames alterados, como glicemia e pressão",
+                      "Melhorar intolerâncias e o conforto intestinal",
+                      "Ter uma alimentação possível na rotina real",
+                    ].map((text, idx) => (
                       <div 
                         key={idx}
-                        className="flex items-baseline gap-3 py-1.5 border-b border-[#EFE9D2]/70 last:border-0"
+                        className="flex items-center gap-3 py-1.5 border-b border-[#EFE9D2]/70 last:border-0"
                       >
-                        <span className="w-5 h-5 rounded-full bg-[#EEA4C2]/25 text-[#48679D] flex items-center justify-center shrink-0 self-center">
+                        <span className="w-5 h-5 rounded-full bg-[#EEA4C2]/30 text-[#48679D] flex items-center justify-center shrink-0">
                           <ArrowRight size={12} strokeWidth={2.5} />
                         </span>
-                        <p className="text-sm sm:text-[15px] text-gray-700 leading-relaxed">
-                          <strong className="text-gray-950 font-semibold">{item.title}</strong>, {item.desc}
+                        <p className="text-sm sm:text-[15px] text-gray-800 font-medium leading-relaxed">
+                          {text}
                         </p>
                       </div>
                     ))}
