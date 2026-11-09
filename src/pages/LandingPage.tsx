@@ -492,73 +492,61 @@ export function LandingPage() {
             </p>
           </motion.div>
 
-          {/* Grid dos 3 Pilares com Ícones Oficiais */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 max-w-5xl mx-auto">
-            {/* Pilar 1 */}
+          {/* Grid dos 3 Pilares com Cards em Aveia e Tipografia Colorida */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 max-w-5xl mx-auto">
+            {/* Pilar 1 - Card Aveia com acento Oliva */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="flex flex-col items-center text-center p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-[#c4b818]/40 transition-all group"
+              className="flex flex-col items-center text-center p-8 rounded-3xl bg-[#efe9d2] text-[#284d2c] shadow-lg hover:-translate-y-1.5 transition-all duration-300 border border-white/40 group"
             >
-              <div className="w-20 h-20 mb-6 flex items-center justify-center p-3 rounded-2xl bg-[#efe9d2]/10 group-hover:bg-[#efe9d2]/20 transition-colors">
-                <img
-                  src="/assets/v2/icons/icone_3.svg"
-                  alt="Mais Energia"
-                  className="w-full h-full object-contain filter brightness-110"
-                />
+              <div className="w-12 h-12 rounded-2xl bg-[#5e6b1e]/15 text-[#5e6b1e] flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-[#5e6b1e] group-hover:text-white transition-all duration-300">
+                <Sparkles className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-editorial-serif text-[#efe9d2] mb-3">
+              <h3 className="text-2xl font-editorial-serif text-[#5e6b1e] mb-3">
                 Mais Disposição
               </h3>
-              <p className="text-sm text-[#efe9d2]/75 leading-relaxed font-light">
+              <p className="text-sm text-[#284d2c]/80 leading-relaxed font-normal">
                 Ajuste fino de micronutrientes e combinação glicêmica para você acordar com vitalidade e render durante todo o dia.
               </p>
             </motion.div>
 
-            {/* Pilar 2 */}
+            {/* Pilar 2 - Card Aveia com acento Mexerica / Laranja */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-col items-center text-center p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-[#eea4c2]/40 transition-all group"
+              className="flex flex-col items-center text-center p-8 rounded-3xl bg-[#efe9d2] text-[#284d2c] shadow-lg hover:-translate-y-1.5 transition-all duration-300 border border-white/40 group"
             >
-              <div className="w-20 h-20 mb-6 flex items-center justify-center p-3 rounded-2xl bg-[#efe9d2]/10 group-hover:bg-[#efe9d2]/20 transition-colors">
-                <img
-                  src="/assets/v2/icons/icone_5.svg"
-                  alt="Menos Fadiga"
-                  className="w-full h-full object-contain filter brightness-110"
-                />
+              <div className="w-12 h-12 rounded-2xl bg-[#e85900]/15 text-[#e85900] flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-[#e85900] group-hover:text-white transition-all duration-300">
+                <Heart className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-editorial-serif text-[#efe9d2] mb-3">
+              <h3 className="text-2xl font-editorial-serif text-[#e85900] mb-3">
                 Zero Restrição Severa
               </h3>
-              <p className="text-sm text-[#efe9d2]/75 leading-relaxed font-light">
+              <p className="text-sm text-[#284d2c]/80 leading-relaxed font-normal">
                 Coma o que você gosta através de substituições inteligentes. Sem culpa em jantares de família ou reuniões com amigos.
               </p>
             </motion.div>
 
-            {/* Pilar 3 */}
+            {/* Pilar 3 - Card Aveia com acento Rosa Goiaba */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col items-center text-center p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-[#e85900]/40 transition-all group"
+              className="flex flex-col items-center text-center p-8 rounded-3xl bg-[#efe9d2] text-[#284d2c] shadow-lg hover:-translate-y-1.5 transition-all duration-300 border border-white/40 group"
             >
-              <div className="w-20 h-20 mb-6 flex items-center justify-center p-3 rounded-2xl bg-[#efe9d2]/10 group-hover:bg-[#efe9d2]/20 transition-colors">
-                <img
-                  src="/assets/v2/icons/icone_6.svg"
-                  alt="Equilíbrio Clínico"
-                  className="w-full h-full object-contain filter brightness-110"
-                />
+              <div className="w-12 h-12 rounded-2xl bg-[#eea4c2]/35 text-[#284d2c] flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-[#eea4c2] transition-all duration-300">
+                <Activity className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-editorial-serif text-[#efe9d2] mb-3">
+              <h3 className="text-2xl font-editorial-serif text-[#48679d] mb-3">
                 Conforto & Saúde
               </h3>
-              <p className="text-sm text-[#efe9d2]/75 leading-relaxed font-light">
+              <p className="text-sm text-[#284d2c]/80 leading-relaxed font-normal">
                 Cuidado dedicado à saúde intestinal, digestão silenciosa e melhora direta dos marcadores laboratoriais em cada retorno.
               </p>
             </motion.div>
