@@ -230,9 +230,9 @@ export function LandingPage() {
           ==================================================================== */}
       <section
         id="home"
-        className="relative pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 lg:pb-12 bg-gradient-to-b from-[#EFE9D2]/45 via-[#FAF8F2] to-[#FAF8F2] border-b border-[#EFE9D2]/80 overflow-hidden"
+        className="relative pt-24 sm:pt-28 md:pt-32 pb-24 sm:pb-28 md:pb-32 lg:pb-28 bg-gradient-to-b from-[#E6E6E9] via-[#EAEAEB] to-[#efe9d2] overflow-hidden"
       >
-        {/* FOTO DESKTOP: presença de banner aberto em pé à direita, com fade orgânico natural */}
+        {/* FOTO DESKTOP: presença de banner aberto em pé à direita, com fusão suave ao fundo */}
         <div className="hidden lg:flex absolute right-0 bottom-0 top-16 xl:top-12 w-[46%] xl:w-[48%] pointer-events-none select-none z-0 items-end justify-end pr-4 xl:pr-10">
           <motion.div
             initial={{ opacity: 0, x: 40 }}
@@ -243,56 +243,14 @@ export function LandingPage() {
             <img
               src="/assets/v2/photos/ana_hero_feathered.png"
               alt="Nutricionista Ana Luiza Ribeiro"
-              className="max-h-[660px] xl:max-h-[720px] w-auto object-contain object-bottom drop-shadow-[0_12px_36px_rgba(40,77,44,0.08)]"
+              className="max-h-[660px] xl:max-h-[720px] w-auto object-contain object-bottom drop-shadow-[0_12px_36px_rgba(40,77,44,0.06)]"
             />
-
-            {/* Adesivo / Selo Oficial Flutuante Editorial */}
-            <motion.div
-              animate={{ y: [0, -8, 0], rotate: [0, 2, 0] }}
-              transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
-              className="absolute top-12 -left-8 xl:-left-12 z-20 w-24 h-24 xl:w-28 xl:h-28 drop-shadow-xl pointer-events-auto"
-            >
-              <img
-                src="/assets/v2/stickers/adesivo_1.png"
-                alt="Selo oficial Ana Luiza Ribeiro"
-                className="w-full h-full object-contain"
-              />
-            </motion.div>
-
-            {/* Cartão de Depoimento / Citação Flutuante */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="absolute bottom-12 left-0 xl:-left-10 z-20 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-[#efe9d2] max-w-xs text-left pointer-events-auto"
-            >
-              <div className="flex items-center gap-2 mb-1">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#5e6b1e]" />
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#5e6b1e]">
-                  Abordagem Realista
-                </span>
-              </div>
-              <p className="text-xs text-[#284d2c] italic leading-relaxed">
-                "Alimentação boa é aquela que cabe na sua rotina, no seu bolso e no seu coração."
-              </p>
-            </motion.div>
           </motion.div>
         </div>
 
         {/* CONTEÚDO EDITORIAL (LADO ESQUERDO) */}
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
           <div className="max-w-2xl lg:max-w-xl xl:max-w-2xl flex flex-col items-center lg:items-start text-center lg:text-left">
-            {/* Eyebrow com Selo Oficial */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#efe9d2] text-[#5e6b1e] text-xs font-semibold tracking-widest uppercase mb-6 border border-[#5e6b1e]/15 shadow-2xs"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-[#e85900]" />
-              Nutrição Clínica • CRN-9 38501
-            </motion.div>
-
             {/* Título Principal Amplo & Editorial */}
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
@@ -324,14 +282,6 @@ export function LandingPage() {
                   alt="Nutricionista Ana Luiza Ribeiro"
                   className="max-h-[440px] sm:max-h-[500px] w-auto object-contain block drop-shadow-lg"
                 />
-                {/* Adesivo flutuante mobile */}
-                <div className="absolute top-2 right-4 w-20 h-20 drop-shadow-md">
-                  <img
-                    src="/assets/v2/stickers/adesivo_1.png"
-                    alt="Selo oficial"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
               </div>
             </div>
 
