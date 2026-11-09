@@ -332,7 +332,7 @@ export function LandingPage() {
         {/* Onda Orgânica de Transição para a próxima seção */}
         <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
           <svg
-            className="relative block w-full h-8 sm:h-12 md:h-16 text-[#efe9d2]"
+            className="relative block w-full h-8 sm:h-12 md:h-16 text-[#284d2c]"
             viewBox="0 0 1200 120"
             preserveAspectRatio="none"
           >
@@ -345,9 +345,9 @@ export function LandingPage() {
       </section>
 
       {/* ====================================================================
-          3. SEÇÃO APRESENTAÇÃO EDITORIAL (FUNDO AVEIA #EFE9D2)
+          3. SEÇÃO APRESENTAÇÃO EDITORIAL (FUNDO VERDE COUVE #284D2C)
           ==================================================================== */}
-      <section id="sobre" className="py-20 md:py-32 bg-[#efe9d2] relative">
+      <section id="sobre" className="py-20 md:py-32 bg-[#284d2c] text-[#efe9d2] relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Foto Vertical com cantos arredondados */}
@@ -359,7 +359,7 @@ export function LandingPage() {
               className="lg:col-span-5 relative"
             >
               <div className="relative mx-auto max-w-md">
-                <div className="relative overflow-hidden rounded-[2.5rem] shadow-xl border-4 border-white/60">
+                <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl border-4 border-[#efe9d2]/20">
                   <img
                     src="/assets/v2/photos/ana_2.png"
                     alt="Ana Luiza Ribeiro em consulta"
@@ -386,53 +386,53 @@ export function LandingPage() {
               transition={{ duration: 0.8 }}
               className="lg:col-span-7"
             >
-              <div className="inline-block text-xs font-bold uppercase tracking-widest text-[#5e6b1e] mb-3">
+              <div className="inline-block text-xs font-bold uppercase tracking-widest text-[#c4b818] mb-3">
                 Nutrição Clínica & Vida Real
               </div>
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#284d2c] font-editorial-serif mb-6 leading-[1.15]">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#efe9d2] font-editorial-serif mb-6 leading-[1.15]">
                 Nutrição personalizada para quem quer{' '}
-                <span className="font-editorial-italic text-[#e85900]">
+                <span className="font-editorial-italic text-[#eea4c2]">
                   fazer as pazes com a comida
                 </span>
               </h2>
 
-              <p className="text-base sm:text-lg text-[#284d2c]/85 leading-relaxed mb-5 font-normal">
+              <p className="text-base sm:text-lg text-[#efe9d2]/90 leading-relaxed mb-5 font-light">
                 Se você já se sentiu perdida com prescrições genéricas de gaveta, terrorismo com carboidratos
                 e dietas impossíveis de sustentar por mais de duas semanas, saiba que o problema nunca foi sua força de vontade.
               </p>
 
-              <p className="text-base sm:text-lg text-[#284d2c]/85 leading-relaxed mb-8 font-normal">
-                Sou <strong>Ana Luiza Ribeiro</strong>, nutricionista pós-graduada em <strong>Nutrição Clínica: Metabolismo, Prática e Terapia Nutricional</strong>. Minha missão é traduzir a ciência médica em refeições práticas e saborosas que respeitam o seu trabalho, sua família e seus momentos de prazer.
+              <p className="text-base sm:text-lg text-[#efe9d2]/90 leading-relaxed mb-8 font-light">
+                Sou <strong className="font-semibold text-white">Ana Luiza Ribeiro</strong>, nutricionista pós-graduada em <strong className="font-semibold text-white">Nutrição Clínica: Metabolismo, Prática e Terapia Nutricional</strong>. Minha missão é traduzir a ciência médica em refeições práticas e saborosas que respeitam o seu trabalho, sua família e seus momentos de prazer.
               </p>
 
               {/* Lista dos 4 Pilares da Ajuda (Com cores equilibradas) */}
               <div className="mb-8">
-                <p className="text-xs font-bold uppercase tracking-widest text-[#284d2c] mb-4">
+                <p className="text-xs font-bold uppercase tracking-widest text-[#c4b818] mb-4">
                   Quero ajudar você a:
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/70 border border-[#284d2c]/10 hover:border-[#5e6b1e] transition-colors">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#5e6b1e] shrink-0" />
-                    <span className="text-sm font-medium text-[#284d2c]">
+                  <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/10 border border-white/15 hover:border-[#c4b818] transition-colors">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#c4b818] shrink-0" />
+                    <span className="text-sm font-medium text-white">
                       Emagrecer de forma sustentável, sem efeito sanfona
                     </span>
                   </div>
-                  <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/70 border border-[#284d2c]/10 hover:border-[#48679d] transition-colors">
+                  <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/10 border border-white/15 hover:border-[#48679d] transition-colors">
                     <div className="w-2.5 h-2.5 rounded-full bg-[#48679d] shrink-0" />
-                    <span className="text-sm font-medium text-[#284d2c]">
+                    <span className="text-sm font-medium text-white">
                       Controlar exames alterados (glicemia, colesterol, pressão)
                     </span>
                   </div>
-                  <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/70 border border-[#284d2c]/10 hover:border-[#eea4c2] transition-colors">
+                  <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/10 border border-white/15 hover:border-[#eea4c2] transition-colors">
                     <div className="w-2.5 h-2.5 rounded-full bg-[#eea4c2] shrink-0" />
-                    <span className="text-sm font-medium text-[#284d2c]">
+                    <span className="text-sm font-medium text-white">
                       Melhorar intolerâncias e o conforto intestinal
                     </span>
                   </div>
-                  <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/70 border border-[#284d2c]/10 hover:border-[#e85900] transition-colors">
+                  <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/10 border border-white/15 hover:border-[#e85900] transition-colors">
                     <div className="w-2.5 h-2.5 rounded-full bg-[#e85900] shrink-0" />
-                    <span className="text-sm font-medium text-[#284d2c]">
+                    <span className="text-sm font-medium text-white">
                       Ter uma alimentação possível na rotina real
                     </span>
                   </div>
@@ -444,7 +444,7 @@ export function LandingPage() {
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-pill-primary text-sm"
+                  className="btn-pill-primary text-sm shadow-lg hover:shadow-xl"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Conversar com a Ana Luiza
@@ -454,7 +454,7 @@ export function LandingPage() {
                   href="https://instagram.com/aluizanutri"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/60 hover:bg-white text-[#284d2c] text-sm font-semibold transition-all border border-[#284d2c]/10"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm font-semibold transition-all border border-white/20"
                 >
                   <InstagramIcon size={18} className="text-[#eea4c2]" />
                   @aluizanutri
@@ -466,10 +466,9 @@ export function LandingPage() {
       </section>
 
       {/* ====================================================================
-          4. SEÇÃO "A ABORDAGEM" / PILARES (FUNDO ESCURO COUVE #284D2C)
-             Inspirada em "the green goddess approach"
+          4. SEÇÃO "A ABORDAGEM" / PILARES (FUNDO AZUL MIRTILO #48679D)
           ==================================================================== */}
-      <section id="abordagem" className="py-24 md:py-32 bg-[#284d2c] text-[#efe9d2] relative">
+      <section id="abordagem" className="py-24 md:py-32 bg-[#48679d] text-white relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
           {/* Título de Alto Contraste Editorial */}
           <motion.div
@@ -482,13 +481,13 @@ export function LandingPage() {
             <p className="text-xs font-semibold tracking-widest uppercase text-[#c4b818] mb-3">
               O Método na Prática
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-editorial-serif text-[#efe9d2]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-editorial-serif text-white">
               a abordagem{' '}
-              <span className="font-editorial-italic text-[#c4b818]">
+              <span className="font-editorial-italic text-[#eea4c2]">
                 ana luiza ribeiro
               </span>
             </h2>
-            <p className="mt-4 text-sm sm:text-base text-[#efe9d2]/80 leading-relaxed font-light">
+            <p className="mt-4 text-sm sm:text-base text-white/80 leading-relaxed font-light">
               Três fundamentos que garantem resultados consistentes para sua saúde sem abrir mão da sua identidade.
             </p>
           </motion.div>
