@@ -113,9 +113,9 @@ export function LandingPage() {
             : 'bg-transparent py-4'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-          {/* Logo Principal Oficial (Variação 7.1) */}
-          <a href="#home" className="flex items-center gap-3 group">
+        <div className="w-full px-6 md:px-12 flex items-center justify-between relative">
+          {/* Logo Principal Oficial (Variação 7.1) - posicionada na esquerda com respiro */}
+          <a href="#home" className="flex items-center gap-3 group z-10">
             <img
               src="/assets/v2/logos/logotipo_7.1.png"
               alt="Ana Luiza Ribeiro - Nutricionista"
@@ -123,8 +123,8 @@ export function LandingPage() {
             />
           </a>
 
-          {/* Navegação Desktop */}
-          <nav className="hidden lg:flex items-center gap-3">
+          {/* Navegação Desktop Centralizada */}
+          <nav className="hidden lg:flex items-center gap-3 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id
               return (
@@ -155,7 +155,7 @@ export function LandingPage() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Abrir menu"
-            className="lg:hidden p-2 text-[#284d2c] hover:text-[#e85900] transition-colors"
+            className="lg:hidden p-2 text-[#284d2c] hover:text-[#e85900] transition-colors ml-auto"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
