@@ -124,27 +124,32 @@ export function LandingPage() {
           </a>
 
           {/* Navegação Desktop Centralizada */}
-          <nav className="hidden lg:flex items-center gap-3 absolute left-1/2 -translate-x-1/2">
+          <nav className="hidden lg:flex items-center gap-2 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id
               return (
                 <a
                   key={link.id}
                   href={link.href}
-                  className={`text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-full transition-all duration-200 ${
-                    isActive
-                      ? 'bg-[#48679D] text-white shadow-sm'
-                      : 'text-[#284d2c] hover:text-[#EEA4C2]'
+                  className={`text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-full transition-colors duration-200 relative ${
+                    isActive ? 'text-white' : 'text-[#284d2c] hover:text-[#EEA4C2]'
                   }`}
                 >
-                  {link.label}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeNavIndicator"
+                      className="absolute inset-0 bg-[#48679D] rounded-full shadow-sm z-0"
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{link.label}</span>
                 </a>
               )
             })}
 
             <Link
               to="/ebooks"
-              className="text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-full text-[#5e6b1e] hover:text-[#EEA4C2] transition-all flex items-center gap-1.5"
+              className="text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-full text-[#5e6b1e] hover:text-[#EEA4C2] transition-colors flex items-center gap-1.5"
             >
               <BookOpen className="w-3.5 h-3.5" />
               E-books
