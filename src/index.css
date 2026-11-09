@@ -147,25 +147,25 @@
   font-family: 'Plus Jakarta Sans', 'Maxima Nouva', system-ui, sans-serif;
 }
 
-/* Botão Pílula Padrão Boutique */
+/* Botão Pílula Padrão Boutique (Mirtilo Oficial #48679d) */
 .btn-pill-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   border-radius: 9999px;
-  background-color: #e85900;
+  background-color: #48679d;
   color: #ffffff;
   font-weight: 600;
   padding: 0.75rem 1.75rem;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 14px rgba(232, 89, 0, 0.25);
+  box-shadow: 0 4px 14px rgba(72, 103, 157, 0.28);
 }
 
 .btn-pill-primary:hover {
-  background-color: #c94d00;
+  background-color: #3b5582;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(232, 89, 0, 0.35);
+  box-shadow: 0 6px 20px rgba(72, 103, 157, 0.38);
 }
 
 .btn-pill-secondary {
