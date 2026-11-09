@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import {
   MessageCircle,
   BookOpen,
-  ArrowRight,
   Menu,
   X,
   CheckCircle2,
@@ -227,128 +226,179 @@ export function LandingPage() {
       </header>
 
       {/* ====================================================================
-          2. HERO IMERSIVO (ESTILO THE GREEN GODDESS)
+          2. HERO IMERSIVO EDITORIAL AMPLO COM FOTO INTEGRADA
           ==================================================================== */}
       <section
         id="home"
-        className="relative pt-28 md:pt-36 pb-24 md:pb-36 bg-gradient-to-b from-[#efe9d2]/40 via-[#FAF8F2] to-[#FAF8F2] overflow-hidden"
+        className="relative pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 lg:pb-12 bg-gradient-to-b from-[#EFE9D2]/45 via-[#FAF8F2] to-[#FAF8F2] border-b border-[#EFE9D2]/80 overflow-hidden"
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-            {/* Coluna Texto / Editorial */}
+        {/* FOTO DESKTOP: presença de banner aberto em pé à direita, com fade orgânico natural */}
+        <div className="hidden lg:flex absolute right-0 bottom-0 top-16 xl:top-12 w-[46%] xl:w-[48%] pointer-events-none select-none z-0 items-end justify-end pr-4 xl:pr-10">
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="relative flex items-end justify-end max-h-[720px] h-full"
+          >
+            <img
+              src="/assets/v2/photos/ana_hero_feathered.png"
+              alt="Nutricionista Ana Luiza Ribeiro"
+              className="max-h-[660px] xl:max-h-[720px] w-auto object-contain object-bottom drop-shadow-[0_12px_36px_rgba(40,77,44,0.08)]"
+            />
+
+            {/* Adesivo / Selo Oficial Flutuante Editorial */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-7 text-center lg:text-left"
+              animate={{ y: [0, -8, 0], rotate: [0, 2, 0] }}
+              transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
+              className="absolute top-12 -left-8 xl:-left-12 z-20 w-24 h-24 xl:w-28 xl:h-28 drop-shadow-xl pointer-events-auto"
             >
-              {/* Eyebrow com Selo */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#efe9d2] text-[#5e6b1e] text-xs font-semibold tracking-widest uppercase mb-6 border border-[#5e6b1e]/15">
-                <Sparkles className="w-3.5 h-3.5 text-[#e85900]" />
-                Nutrição Clínica • CRN-9 38501
-              </div>
-
-              {/* Título Misto Editorial ("eat well. feel alive.") */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[1.08] text-[#284d2c] font-editorial-serif mb-6">
-                coma bem.{' '}
-                <span className="font-editorial-italic font-normal text-[#5e6b1e]">
-                  sinta-se viva.
-                </span>
-              </h1>
-
-              <p className="text-lg md:text-xl text-[#284d2c]/80 max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed mb-8">
-                Cuidar da saúde não precisa ser sinônimo de sacrifício ou corte radical. Uma
-                nutrição individualizada, científica e acolhedora para transformar sua rotina com leveza.
-              </p>
-
-              {/* Ações Hero */}
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                <a
-                  href={WHATSAPP_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-pill-primary w-full sm:w-auto text-base group"
-                >
-                  <MessageCircle className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                  Agendar Primeira Consulta
-                </a>
-                <a
-                  href="#sobre"
-                  className="btn-pill-outline w-full sm:w-auto text-base"
-                >
-                  Conhecer Minha Abordagem
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
-
-              {/* Micro-credenciais / Badges */}
-              <div className="mt-10 pt-8 border-t border-[#284d2c]/10 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-[#284d2c]/75 font-medium">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#5e6b1e]" />
-                  <span>Atendimento Online & Presencial (BH)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#5e6b1e]" />
-                  <span>Pós-graduada em Nutrição Clínica</span>
-                </div>
-              </div>
+              <img
+                src="/assets/v2/stickers/adesivo_1.png"
+                alt="Selo oficial Ana Luiza Ribeiro"
+                className="w-full h-full object-contain"
+              />
             </motion.div>
 
-            {/* Coluna Imagem Hero com Selos Flutuantes */}
+            {/* Cartão de Depoimento / Citação Flutuante */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-5 relative flex justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="absolute bottom-12 left-0 xl:-left-10 z-20 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-[#efe9d2] max-w-xs text-left pointer-events-auto"
             >
-              <div className="relative w-full max-w-md">
-                {/* Moldura de Fundo Orgânica */}
-                <div className="absolute inset-0 bg-[#efe9d2] rounded-[2.5rem] transform rotate-2 scale-98 transition-transform" />
-                
-                {/* Imagem Principal da Nutricionista */}
-                <div className="relative z-10 overflow-hidden rounded-[2.5rem] shadow-xl border border-[#efe9d2]">
-                  <img
-                    src="/assets/v2/photos/ana_14.png"
-                    alt="Nutricionista Ana Luiza Ribeiro"
-                    className="w-full h-auto object-cover object-top aspect-[4/5] hover:scale-102 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#284d2c]/40 via-transparent to-transparent pointer-events-none" />
-                </div>
+              <div className="flex items-center gap-2 mb-1">
+                <div className="w-2.5 h-2.5 rounded-full bg-[#5e6b1e]" />
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#5e6b1e]">
+                  Abordagem Realista
+                </span>
+              </div>
+              <p className="text-xs text-[#284d2c] italic leading-relaxed">
+                "Alimentação boa é aquela que cabe na sua rotina, no seu bolso e no seu coração."
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
 
-                {/* Selo/Adesivo Oficial Flutuante 1 */}
-                <motion.div
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut' }}
-                  className="absolute -top-6 -left-6 z-20 w-24 h-24 md:w-28 md:h-28 drop-shadow-lg"
-                >
+        {/* CONTEÚDO EDITORIAL (LADO ESQUERDO) */}
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
+          <div className="max-w-2xl lg:max-w-xl xl:max-w-2xl flex flex-col items-center lg:items-start text-center lg:text-left">
+            {/* Eyebrow com Selo Oficial */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#efe9d2] text-[#5e6b1e] text-xs font-semibold tracking-widest uppercase mb-6 border border-[#5e6b1e]/15 shadow-2xs"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-[#e85900]" />
+              Nutrição Clínica • CRN-9 38501
+            </motion.div>
+
+            {/* Título Principal Amplo & Editorial */}
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[1.08] text-[#284d2c] font-editorial-serif mb-6"
+            >
+              Coma com paz e veja seu corpo responder com{' '}
+              <span className="font-editorial-italic font-normal text-[#5e6b1e] underline decoration-[#eea4c2] underline-offset-8">
+                vitalidade real.
+              </span>
+            </motion.h1>
+
+            {/* Parágrafo Descritivo */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="text-base sm:text-lg md:text-xl text-[#284d2c]/85 font-normal leading-relaxed mb-6 sm:mb-8"
+            >
+              A alimentação deve se adaptar à sua rotina, à sua realidade e aos seus objetivos, nunca o contrário. Conquiste resultados consistentes com acolhimento, leveza e respaldo científico individualizado.
+            </motion.p>
+
+            {/* FOTO NO MOBILE: banner aberto integrado (sem card duro cortado) */}
+            <div className="lg:hidden w-full flex justify-center pt-2 pb-0 -mb-6 sm:-mb-8 relative z-10">
+              <div className="relative max-w-sm sm:max-w-md w-full flex justify-center">
+                <img
+                  src="/assets/v2/photos/ana_hero_feathered.png"
+                  alt="Nutricionista Ana Luiza Ribeiro"
+                  className="max-h-[440px] sm:max-h-[500px] w-auto object-contain block drop-shadow-lg"
+                />
+                {/* Adesivo flutuante mobile */}
+                <div className="absolute top-2 right-4 w-20 h-20 drop-shadow-md">
                   <img
                     src="/assets/v2/stickers/adesivo_1.png"
                     alt="Selo oficial"
                     className="w-full h-full object-contain"
                   />
-                </motion.div>
-
-                {/* Cartão de Depoimento Rápido Flutuante */}
-                <div className="absolute -bottom-6 -right-4 z-20 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-[#efe9d2] max-w-xs text-left">
-                  <div className="flex items-center gap-2 mb-1">
-                    <div className="w-2 h-2 rounded-full bg-[#5e6b1e]" />
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#5e6b1e]">
-                      Abordagem Realista
-                    </span>
-                  </div>
-                  <p className="text-xs text-[#284d2c] italic">
-                    "Alimentação boa é aquela que cabe na sua rotina, no seu bolso e no seu coração."
-                  </p>
                 </div>
+              </div>
+            </div>
+
+            {/* Botões de Ação Hero */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="pt-2 sm:pt-0 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full sm:w-auto relative z-20"
+            >
+              <a
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-pill-primary w-full sm:w-auto text-base group justify-center shadow-lg hover:shadow-xl"
+              >
+                <MessageCircle className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                Agendar Consulta no WhatsApp
+              </a>
+              <Link
+                to="/ebooks"
+                className="btn-pill-outline w-full sm:w-auto text-base justify-center bg-white/80 hover:bg-white"
+              >
+                <BookOpen className="w-4 h-4 text-[#5e6b1e]" />
+                Conhecer E-books
+              </Link>
+            </motion.div>
+
+            {/* Micro-credenciais / Badges dos Pilares */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-[#284d2c]/10 grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 w-full text-center sm:text-left"
+            >
+              <div>
+                <p className="font-title text-base sm:text-lg font-bold text-[#284d2c]">
+                  100% Online
+                </p>
+                <p className="text-xs sm:text-sm text-[#284d2c]/70 font-medium mt-0.5">
+                  Todo o Brasil & exterior
+                </p>
+              </div>
+              <div>
+                <p className="font-title text-base sm:text-lg font-bold text-[#284d2c]">
+                  100% Individual
+                </p>
+                <p className="text-xs sm:text-sm text-[#284d2c]/70 font-medium mt-0.5">
+                  Respeito à sua rotina real
+                </p>
+              </div>
+              <div className="col-span-2 sm:col-span-1 flex flex-col items-center sm:items-start justify-center">
+                <p className="font-title text-base sm:text-lg font-bold text-[#5e6b1e]">
+                  Pós-Graduada
+                </p>
+                <p className="text-xs sm:text-sm text-[#284d2c]/70 font-medium mt-0.5">
+                  Nutrição Clínica Avançada
+                </p>
               </div>
             </motion.div>
           </div>
         </div>
 
         {/* Onda Orgânica de Transição para a próxima seção */}
-        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-10">
+        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
           <svg
-            className="relative block w-full h-12 md:h-20 text-[#efe9d2]"
+            className="relative block w-full h-8 sm:h-12 md:h-16 text-[#efe9d2]"
             viewBox="0 0 1200 120"
             preserveAspectRatio="none"
           >
