@@ -109,68 +109,47 @@ export function LandingPage() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#efe9d2]/95 backdrop-blur-md shadow-sm py-3'
-            : 'bg-transparent py-5'
+            ? 'bg-[#E6E6E9]/95 backdrop-blur-md shadow-sm py-3'
+            : 'bg-transparent py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-          {/* Logo Principal Oficial */}
+          {/* Logo Principal Oficial (Variação 7.1) */}
           <a href="#home" className="flex items-center gap-3 group">
             <img
-              src="/assets/v2/logos/logotipo_v1_1.1.svg"
+              src="/assets/v2/logos/logotipo_7.1.png"
               alt="Ana Luiza Ribeiro - Nutricionista"
-              className="h-9 md:h-11 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+              className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-[1.02]"
             />
           </a>
 
           {/* Navegação Desktop */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-3">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id
               return (
                 <a
                   key={link.id}
                   href={link.href}
-                  className={`text-sm tracking-wide transition-all font-medium relative ${
+                  className={`text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-full transition-all duration-200 ${
                     isActive
-                      ? 'text-[#e85900] font-semibold'
-                      : isScrolled
-                      ? 'text-[#284d2c] hover:text-[#e85900]'
-                      : 'text-[#284d2c] hover:text-[#e85900]'
+                      ? 'bg-[#48679D] text-white shadow-sm'
+                      : 'text-[#284d2c] hover:bg-[#48679D]/10 hover:text-[#48679D]'
                   }`}
                 >
                   {link.label}
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-underline"
-                      className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#e85900] rounded-full"
-                    />
-                  )}
                 </a>
               )
             })}
 
             <Link
               to="/ebooks"
-              className="text-sm font-medium text-[#5e6b1e] hover:text-[#e85900] transition-colors flex items-center gap-1.5"
+              className="text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-full text-[#5e6b1e] hover:bg-[#48679D]/10 hover:text-[#48679D] transition-all flex items-center gap-1.5"
             >
-              <BookOpen className="w-4 h-4" />
+              <BookOpen className="w-3.5 h-3.5" />
               E-books
             </Link>
           </nav>
-
-          {/* CTA Pílula Topo */}
-          <div className="hidden sm:flex items-center gap-4">
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-pill-primary text-sm shadow-md hover:shadow-lg"
-            >
-              <MessageCircle className="w-4 h-4" />
-              Agendar Consulta
-            </a>
-          </div>
 
           {/* Botão Mobile */}
           <button
