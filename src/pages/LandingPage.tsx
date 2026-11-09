@@ -134,7 +134,7 @@ export function LandingPage() {
                   className={`text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-full transition-all duration-200 ${
                     isActive
                       ? 'bg-[#48679D] text-white shadow-sm'
-                      : 'text-[#284d2c] hover:bg-[#48679D]/10 hover:text-[#48679D]'
+                      : 'text-[#284d2c] hover:text-[#EEA4C2]'
                   }`}
                 >
                   {link.label}
@@ -144,7 +144,7 @@ export function LandingPage() {
 
             <Link
               to="/ebooks"
-              className="text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-full text-[#5e6b1e] hover:bg-[#48679D]/10 hover:text-[#48679D] transition-all flex items-center gap-1.5"
+              className="text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-full text-[#5e6b1e] hover:text-[#EEA4C2] transition-all flex items-center gap-1.5"
             >
               <BookOpen className="w-3.5 h-3.5" />
               E-books
