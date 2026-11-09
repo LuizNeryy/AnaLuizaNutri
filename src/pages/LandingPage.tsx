@@ -214,7 +214,7 @@ export function LandingPage() {
           ==================================================================== */}
       <section
         id="home"
-        className="relative pt-24 sm:pt-28 md:pt-32 pb-24 sm:pb-28 md:pb-32 lg:pb-32 bg-[#e6e6e8] overflow-hidden"
+        className="relative pt-24 sm:pt-28 md:pt-32 pb-36 sm:pb-40 md:pb-44 lg:pb-44 bg-[#e6e6e8] overflow-hidden"
       >
         {/* FOTO DESKTOP: presença de banner aberto em pé à direita, com fusão suave ao fundo */}
         <div className="hidden lg:flex absolute right-0 bottom-0 top-16 xl:top-12 w-[46%] xl:w-[48%] pointer-events-none select-none z-0 items-end justify-end pr-4 xl:pr-10">
@@ -332,12 +332,12 @@ export function LandingPage() {
         {/* Onda Orgânica de Transição para a próxima seção */}
         <div className="absolute -bottom-[1px] left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
           <svg
-            className="relative block w-full h-16 sm:h-24 md:h-32 lg:h-36 text-[#284d2c]"
-            viewBox="0 0 1440 180"
+            className="relative block w-full h-12 sm:h-16 md:h-20 lg:h-24 text-[#284d2c]"
+            viewBox="0 0 1440 120"
             preserveAspectRatio="none"
           >
             <path
-              d="M0,60 C320,170 540,-20 860,65 C1140,140 1320,10 1440,75 L1440,180 L0,180 Z"
+              d="M0,45 C320,115 540,-5 860,50 C1140,105 1320,15 1440,55 L1440,120 L0,120 Z"
               fill="currentColor"
             />
           </svg>
@@ -347,7 +347,7 @@ export function LandingPage() {
       {/* ====================================================================
           3. SEÇÃO APRESENTAÇÃO EDITORIAL (FUNDO VERDE COUVE #284D2C)
           ==================================================================== */}
-      <section id="sobre" className="py-20 md:py-32 bg-[#284d2c] text-[#efe9d2] relative">
+      <section id="sobre" className="pt-10 md:pt-14 pb-20 md:pb-28 bg-[#284d2c] text-[#efe9d2] relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Foto Vertical com cantos arredondados */}
