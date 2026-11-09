@@ -330,14 +330,14 @@ export function LandingPage() {
         </div>
 
         {/* Onda Orgânica de Transição para a próxima seção */}
-        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
+        <div className="absolute -bottom-[1px] left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
           <svg
-            className="relative block w-full h-8 sm:h-12 md:h-16 text-[#284d2c]"
-            viewBox="0 0 1200 120"
+            className="relative block w-full h-10 sm:h-14 md:h-20 text-[#284d2c]"
+            viewBox="0 0 1440 120"
             preserveAspectRatio="none"
           >
             <path
-              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,121.31,201.21,110.1,241.67,103.66,281.87,85.25,321.39,56.44Z"
+              d="M0,45 C320,110 520,10 820,55 C1120,95 1320,30 1440,50 L1440,120 L0,120 Z"
               fill="currentColor"
             />
           </svg>
