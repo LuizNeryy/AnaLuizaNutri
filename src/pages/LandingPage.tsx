@@ -596,10 +596,19 @@ export function LandingPage() {
       </section>
 
       {/* ====================================================================
-          5. SEÇÃO "COMO FUNCIONA / ROTINA NO PLANO" (FUNDO CREME CLARO)
+          5. SEÇÃO "COMO FUNCIONA / ROTINA NO PLANO" (FUNDO CREME CLARO BOUTIQUE)
           ==================================================================== */}
-      <section id="servicos" className="py-24 md:py-32 bg-[#FAF8F2] relative">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section id="servicos" className="py-24 md:py-32 bg-[#FAF8F2] relative overflow-hidden">
+        {/* Adesivo Decorativo Sutil de Fundo */}
+        <div className="absolute -top-12 -right-12 w-48 h-48 opacity-10 pointer-events-none select-none rotate-12">
+          <img
+            src="/assets/v2/stickers/adesivo_1.png"
+            alt=""
+            className="w-full h-full object-contain"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-[#5e6b1e] mb-2 block">
               Passo a Passo
@@ -610,73 +619,134 @@ export function LandingPage() {
                 entra no plano
               </span>
             </h2>
-            <p className="text-sm sm:text-base text-[#284d2c]/75 mt-4">
+            <p className="text-sm sm:text-base text-[#284d2c]/75 mt-4 leading-relaxed font-normal">
               Cada etapa do acompanhamento é desenhada para tornar o processo leve, aplicável e livre de complicação.
             </p>
           </div>
 
-          {/* Cards de Etapas com cantos arredondados boutique */}
+          {/* Cards de Etapas com cantos arredondados boutique & badges */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Etapa 1 */}
-            <div className="bg-white p-7 rounded-3xl border border-[#efe9d2] shadow-sm hover:shadow-md transition-all group">
-              <div className="w-12 h-12 rounded-2xl bg-[#5e6b1e]/10 text-[#5e6b1e] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Scale className="w-6 h-6" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-white p-7 sm:p-8 rounded-3xl border border-[#284d2c]/10 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-13 h-13 rounded-2xl bg-[#5e6b1e]/10 text-[#5e6b1e] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#5e6b1e] group-hover:text-[#efe9d2] transition-all duration-300 p-3">
+                    <Scale className="w-6 h-6" />
+                  </div>
+                  <span className="text-xs font-bold tracking-widest uppercase text-[#5e6b1e] bg-[#efe9d2]/80 px-3 py-1 rounded-full">
+                    Passo 01
+                  </span>
+                </div>
+                <h4 className="text-xl font-editorial-serif text-[#284d2c] mb-3 group-hover:text-[#5e6b1e] transition-colors">
+                  Anamnese Completa
+                </h4>
+                <p className="text-sm text-[#284d2c]/75 leading-relaxed font-light">
+                  Investigação clínica minuciosa: histórico de saúde, sinais e sintomas, exames recentes e sua relação emocional com os alimentos.
+                </p>
               </div>
-              <h4 className="text-lg font-bold text-[#284d2c] mb-2">
-                1. Anamnese Completa
-              </h4>
-              <p className="text-sm text-[#284d2c]/75 leading-relaxed">
-                Investigação clínica minuciosa: histórico de saúde, sinais e sintomas, exames recentes e sua relação emocional com os alimentos.
-              </p>
-            </div>
+            </motion.div>
 
             {/* Etapa 2 */}
-            <div className="bg-white p-7 rounded-3xl border border-[#efe9d2] shadow-sm hover:shadow-md transition-all group">
-              <div className="w-12 h-12 rounded-2xl bg-[#48679d]/10 text-[#48679d] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Activity className="w-6 h-6" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white p-7 sm:p-8 rounded-3xl border border-[#284d2c]/10 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-13 h-13 rounded-2xl bg-[#48679d]/10 text-[#48679d] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#48679d] group-hover:text-white transition-all duration-300 p-3">
+                    <Activity className="w-6 h-6" />
+                  </div>
+                  <span className="text-xs font-bold tracking-widest uppercase text-[#48679d] bg-[#48679d]/10 px-3 py-1 rounded-full">
+                    Passo 02
+                  </span>
+                </div>
+                <h4 className="text-xl font-editorial-serif text-[#284d2c] mb-3 group-hover:text-[#48679d] transition-colors">
+                  Plano Sob Medida
+                </h4>
+                <p className="text-sm text-[#284d2c]/75 leading-relaxed font-light">
+                  Cardápio construído de acordo com sua rotina, preferências, disponibilidade de cozinhar e orçamento familiar.
+                </p>
               </div>
-              <h4 className="text-lg font-bold text-[#284d2c] mb-2">
-                2. Plano Sob Medida
-              </h4>
-              <p className="text-sm text-[#284d2c]/75 leading-relaxed">
-                Cardápio construído de acordo com sua rotina, preferências, disponibilidade de cozinhar e orçamento familiar.
-              </p>
-            </div>
+            </motion.div>
 
             {/* Etapa 3 */}
-            <div className="bg-white p-7 rounded-3xl border border-[#efe9d2] shadow-sm hover:shadow-md transition-all group">
-              <div className="w-12 h-12 rounded-2xl bg-[#e85900]/10 text-[#e85900] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Sparkles className="w-6 h-6" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="bg-white p-7 sm:p-8 rounded-3xl border border-[#284d2c]/10 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-13 h-13 rounded-2xl bg-[#e85900]/10 text-[#e85900] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#e85900] group-hover:text-white transition-all duration-300 p-3">
+                    <Sparkles className="w-6 h-6" />
+                  </div>
+                  <span className="text-xs font-bold tracking-widest uppercase text-[#e85900] bg-[#e85900]/10 px-3 py-1 rounded-full">
+                    Passo 03
+                  </span>
+                </div>
+                <h4 className="text-xl font-editorial-serif text-[#284d2c] mb-3 group-hover:text-[#e85900] transition-colors">
+                  Guia de Substituições
+                </h4>
+                <p className="text-sm text-[#284d2c]/75 leading-relaxed font-light">
+                  Tabela prática para variar opções em restaurantes, viagens e imprevistos do dia a dia sem sair do foco.
+                </p>
               </div>
-              <h4 className="text-lg font-bold text-[#284d2c] mb-2">
-                3. Guia de Substituições
-              </h4>
-              <p className="text-sm text-[#284d2c]/75 leading-relaxed">
-                Tabela prática para variar opções em restaurantes, viagens e imprevistos do dia a dia sem sair do foco.
-              </p>
-            </div>
+            </motion.div>
 
             {/* Etapa 4 */}
-            <div className="bg-white p-7 rounded-3xl border border-[#efe9d2] shadow-sm hover:shadow-md transition-all group">
-              <div className="w-12 h-12 rounded-2xl bg-[#eea4c2]/20 text-[#284d2c] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Heart className="w-6 h-6 text-[#284d2c]" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="bg-white p-7 sm:p-8 rounded-3xl border border-[#284d2c]/10 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-13 h-13 rounded-2xl bg-[#eea4c2]/20 text-[#284d2c] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#eea4c2] transition-all duration-300 p-3">
+                    <Heart className="w-6 h-6 text-[#284d2c]" />
+                  </div>
+                  <span className="text-xs font-bold tracking-widest uppercase text-[#284d2c] bg-[#eea4c2]/25 px-3 py-1 rounded-full">
+                    Passo 04
+                  </span>
+                </div>
+                <h4 className="text-xl font-editorial-serif text-[#284d2c] mb-3 group-hover:text-[#e85900] transition-colors">
+                  Suporte Contínuo
+                </h4>
+                <p className="text-sm text-[#284d2c]/75 leading-relaxed font-light">
+                  Canal aberto via WhatsApp para esclarecer dúvidas de rótulos no supermercado e adaptar detalhes semana a semana.
+                </p>
               </div>
-              <h4 className="text-lg font-bold text-[#284d2c] mb-2">
-                4. Suporte Contínuo
-              </h4>
-              <p className="text-sm text-[#284d2c]/75 leading-relaxed">
-                Canal aberto via WhatsApp para esclarecer dúvidas de rótulos no supermercado e adaptar detalhes semana a semana.
-              </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* ====================================================================
-          6. SEÇÃO "PLANOS & MODALIDADES" (CARDS BOUTIQUE)
+          6. SEÇÃO "PLANOS & MODALIDADES" (CARDS BOUTIQUE COM ADESIVOS OFICIAIS)
           ==================================================================== */}
-      <section id="planos" className="py-24 md:py-32 bg-[#efe9d2] relative">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section id="planos" className="py-24 md:py-32 bg-[#efe9d2] relative overflow-hidden">
+        {/* Adesivo Decorativo Sutil de Fundo */}
+        <div className="absolute -bottom-10 -left-10 w-52 h-52 opacity-15 pointer-events-none select-none -rotate-12">
+          <img
+            src="/assets/v2/stickers/adesivo_2.png"
+            alt=""
+            className="w-full h-full object-contain"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-[#5e6b1e] mb-2 block">
               Investimento no seu Bem-Estar
@@ -687,36 +757,48 @@ export function LandingPage() {
                 ideal para você
               </span>
             </h2>
-            <p className="text-sm sm:text-base text-[#284d2c]/75 mt-3">
-              Planos pensados para diferentes momentos e necessidades da sua jornada.
+            <p className="text-sm sm:text-base text-[#284d2c]/75 mt-3 font-normal">
+              Planos pensados para diferentes momentos e necessidades da sua jornada nutricional.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
             {/* Card 1: Consulta Avulsa */}
-            <div className="bg-white rounded-3xl p-8 border border-[#284d2c]/10 shadow-sm flex flex-col justify-between hover:shadow-xl transition-all">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-white rounded-3xl p-8 border border-[#284d2c]/10 shadow-sm flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative"
+            >
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#5e6b1e] bg-[#efe9d2] px-3 py-1 rounded-full">
-                  Pontual
-                </span>
-                <h3 className="text-2xl font-editorial-serif text-[#284d2c] mt-4 mb-2">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#5e6b1e] bg-[#efe9d2] px-3.5 py-1 rounded-full">
+                    Pontual
+                  </span>
+                </div>
+                <h3 className="text-2xl font-editorial-serif text-[#284d2c] mb-2">
                   Consulta Individual
                 </h3>
-                <p className="text-xs text-[#284d2c]/70 mb-6">
+                <p className="text-xs text-[#284d2c]/70 mb-6 leading-relaxed">
                   Ideal para avaliação inicial, alinhamento de conduta ou ajustes em rotinas pré-existentes.
                 </p>
-                <div className="space-y-3 text-xs text-[#284d2c]/85">
-                  <div className="flex items-start gap-2">
+                <div className="space-y-3.5 text-xs text-[#284d2c]/85">
+                  <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-[#5e6b1e] shrink-0 mt-0.5" />
                     <span>Consulta completa de 1h30</span>
                   </div>
-                  <div className="flex items-start gap-2">
+                  <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-[#5e6b1e] shrink-0 mt-0.5" />
                     <span>Plano alimentar em até 48h</span>
                   </div>
-                  <div className="flex items-start gap-2">
+                  <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-[#5e6b1e] shrink-0 mt-0.5" />
-                    <span>30 dias de suporte WhatsApp</span>
+                    <span>30 dias de suporte via WhatsApp</span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#5e6b1e] shrink-0 mt-0.5" />
+                    <span>Presencial ou Online</span>
                   </div>
                 </div>
               </div>
@@ -725,42 +807,54 @@ export function LandingPage() {
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-pill-outline w-full text-center text-xs"
+                  className="btn-pill-outline w-full text-center text-xs block py-3.5"
                 >
                   Saber Valores
                 </a>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Card 2: Combo Acompanhamento (Destaque) */}
-            <div className="bg-white rounded-3xl p-8 border-2 border-[#5e6b1e] shadow-xl relative flex flex-col justify-between hover:scale-102 transition-transform">
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#5e6b1e] text-[#efe9d2] text-[11px] font-bold uppercase tracking-wider px-4 py-1 rounded-full shadow-md">
-                Mais Escolhido
+            {/* Card 2: Combo Acompanhamento (Destaque com Adesivo Oficial) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white rounded-3xl p-8 border-2 border-[#5e6b1e] shadow-2xl relative flex flex-col justify-between hover:scale-[1.02] transition-all duration-300 lg:-translate-y-2"
+            >
+              {/* Adesivo Oficial 3 como Selo Estilizado no Topo Direito */}
+              <div className="absolute -top-6 -right-4 w-20 h-20 md:w-24 md:h-24 pointer-events-none drop-shadow-md z-20 rotate-6">
+                <img
+                  src="/assets/v2/stickers/adesivo_3.png"
+                  alt="Selo Destaque Oficial"
+                  className="w-full h-full object-contain"
+                />
               </div>
+
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#e85900] bg-[#efe9d2] px-3 py-1 rounded-full">
-                  Resultados Sólidos
-                </span>
-                <h3 className="text-2xl font-editorial-serif text-[#284d2c] mt-4 mb-2">
+                <div className="inline-block bg-[#5e6b1e] text-[#efe9d2] text-[11px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-sm mb-4">
+                  ★ Mais Escolhido
+                </div>
+                <h3 className="text-2xl font-editorial-serif text-[#284d2c] mb-2">
                   Plano Bimestral
                 </h3>
-                <p className="text-xs text-[#284d2c]/70 mb-6">
-                  Para quem deseja construir novos hábitos com acompanhamento próximo e reavaliação.
+                <p className="text-xs text-[#284d2c]/70 mb-6 leading-relaxed">
+                  Para quem deseja construir novos hábitos com acompanhamento próximo, reavaliação e ajustes contínuos.
                 </p>
-                <div className="space-y-3 text-xs text-[#284d2c]/85">
-                  <div className="flex items-start gap-2">
+                <div className="space-y-3.5 text-xs text-[#284d2c]/85">
+                  <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-[#5e6b1e] shrink-0 mt-0.5" />
-                    <span>2 consultas completas</span>
+                    <span><strong>2 consultas completas</strong></span>
                   </div>
-                  <div className="flex items-start gap-2">
+                  <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-[#5e6b1e] shrink-0 mt-0.5" />
                     <span>Ajustes periódicos de conduta</span>
                   </div>
-                  <div className="flex items-start gap-2">
+                  <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-[#5e6b1e] shrink-0 mt-0.5" />
-                    <span>60 dias de suporte direto</span>
+                    <span><strong>60 dias de suporte contínuo</strong></span>
                   </div>
-                  <div className="flex items-start gap-2">
+                  <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-[#5e6b1e] shrink-0 mt-0.5" />
                     <span>E-book exclusivo de receitas</span>
                   </div>
@@ -771,37 +865,49 @@ export function LandingPage() {
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-pill-primary w-full text-center text-xs"
+                  className="btn-pill-primary w-full text-center text-xs block py-3.5 shadow-md hover:shadow-lg"
                 >
                   Garantir Vaga
                 </a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 3: Programa Premium Semestral */}
-            <div className="bg-white rounded-3xl p-8 border border-[#284d2c]/10 shadow-sm flex flex-col justify-between hover:shadow-xl transition-all">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="bg-white rounded-3xl p-8 border border-[#284d2c]/10 shadow-sm flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative"
+            >
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#48679d] bg-[#efe9d2] px-3 py-1 rounded-full">
-                  Transformação Completa
-                </span>
-                <h3 className="text-2xl font-editorial-serif text-[#284d2c] mt-4 mb-2">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#48679d] bg-[#48679d]/10 px-3.5 py-1 rounded-full">
+                    Transformação
+                  </span>
+                </div>
+                <h3 className="text-2xl font-editorial-serif text-[#284d2c] mb-2">
                   Plano Semestral
                 </h3>
-                <p className="text-xs text-[#284d2c]/70 mb-6">
+                <p className="text-xs text-[#284d2c]/70 mb-6 leading-relaxed">
                   Acompanhamento aprofundado para patologias, resistência insulínica e emagrecimento definitivo.
                 </p>
-                <div className="space-y-3 text-xs text-[#284d2c]/85">
-                  <div className="flex items-start gap-2">
+                <div className="space-y-3.5 text-xs text-[#284d2c]/85">
+                  <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-[#5e6b1e] shrink-0 mt-0.5" />
-                    <span>6 consultas (1 por mês)</span>
+                    <span><strong>6 consultas</strong> (1 por mês)</span>
                   </div>
-                  <div className="flex items-start gap-2">
+                  <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-[#5e6b1e] shrink-0 mt-0.5" />
-                    <span>Análise contínua de exames</span>
+                    <span>Análise contínua de exames de sangue</span>
                   </div>
-                  <div className="flex items-start gap-2">
+                  <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-[#5e6b1e] shrink-0 mt-0.5" />
-                    <span>Acesso total WhatsApp prioritário</span>
+                    <span>Acesso WhatsApp com canal prioritário</span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#5e6b1e] shrink-0 mt-0.5" />
+                    <span>Planejamentos atualizados por etapa</span>
                   </div>
                 </div>
               </div>
@@ -810,35 +916,54 @@ export function LandingPage() {
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-pill-outline w-full text-center text-xs"
+                  className="btn-pill-outline w-full text-center text-xs block py-3.5"
                 >
                   Saber Valores
                 </a>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Card 4: Projeto Social */}
-            <div className="bg-white rounded-3xl p-8 border border-[#284d2c]/10 shadow-sm flex flex-col justify-between hover:shadow-xl transition-all">
+            {/* Card 4: Projeto Social (Com Adesivo Oficial 4) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="bg-white rounded-3xl p-8 border border-[#284d2c]/10 shadow-sm flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative"
+            >
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#eea4c2] bg-[#eea4c2]/15 px-3 py-1 rounded-full">
-                  Acesso & Cuidado
-                </span>
-                <h3 className="text-2xl font-editorial-serif text-[#284d2c] mt-4 mb-2">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#284d2c] bg-[#eea4c2]/30 px-3.5 py-1 rounded-full font-semibold">
+                    Acesso & Cuidado
+                  </span>
+                  <div className="w-8 h-8 opacity-80">
+                    <img
+                      src="/assets/v2/stickers/adesivo_4.png"
+                      alt="Cuidado"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-editorial-serif text-[#284d2c] mb-2">
                   Atendimento Social
                 </h3>
-                <p className="text-xs text-[#284d2c]/70 mb-6">
+                <p className="text-xs text-[#284d2c]/70 mb-6 leading-relaxed">
                   Vagas sociais mensais dedicadas a pessoas que necessitam de suporte clínico especializado.
                 </p>
-                <div className="space-y-3 text-xs text-[#284d2c]/85">
-                  <div className="flex items-start gap-2">
+                <div className="space-y-3.5 text-xs text-[#284d2c]/85">
+                  <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-[#5e6b1e] shrink-0 mt-0.5" />
-                    <span>Mesmo rigor técnico integral</span>
+                    <span>Mesmo rigor técnico e acolhimento</span>
                   </div>
-                  <div className="flex items-start gap-2">
+                  <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-[#5e6b1e] shrink-0 mt-0.5" />
                     <span>Valor social acessível</span>
                   </div>
-                  <div className="flex items-start gap-2">
+                  <div className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#5e6b1e] shrink-0 mt-0.5" />
+                    <span>Presencial ou Online</span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-[#5e6b1e] shrink-0 mt-0.5" />
                     <span>Vagas limitadas por mês</span>
                   </div>
@@ -849,13 +974,60 @@ export function LandingPage() {
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-pill-outline w-full text-center text-xs"
+                  className="btn-pill-outline w-full text-center text-xs block py-3.5"
                 >
                   Consultar Vagas
                 </a>
               </div>
-            </div>
+            </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* ====================================================================
+          6.5. SEÇÃO EDITORIAL / FRASE CONCEITUAL & PROVA SOCIAL
+          "Alimentação boa é aquela que cabe na sua rotina, no seu bolso e no seu coração"
+          ==================================================================== */}
+      <section className="py-20 md:py-28 bg-[#284d2c] text-[#efe9d2] relative overflow-hidden">
+        {/* Elemento de Fundo Texturizado Suave */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
+          <img
+            src="/assets/v2/patterns/pattern_1.svg"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="space-y-8"
+          >
+            {/* Ícone de Aspas Editorial */}
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#c4b818]/15 border border-[#c4b818]/30 text-[#c4b818]">
+              <span className="font-editorial-serif text-3xl leading-none">“</span>
+            </div>
+
+            <blockquote className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-editorial-serif leading-[1.25] text-[#efe9d2] max-w-4xl mx-auto">
+              Alimentação boa é aquela que cabe na sua{' '}
+              <span className="font-editorial-italic text-[#c4b818]">rotina</span>, no seu{' '}
+              <span className="font-editorial-italic text-[#eea4c2]">bolso</span> e no seu{' '}
+              <span className="font-editorial-italic text-[#e85900]">coração</span>.
+            </blockquote>
+
+            <div className="pt-4 flex flex-col items-center">
+              <div className="w-12 h-0.5 bg-[#c4b818]/50 mb-4" />
+              <p className="text-sm md:text-base font-semibold tracking-wider uppercase text-[#efe9d2]">
+                Ana Luiza Ribeiro
+              </p>
+              <p className="text-xs text-[#efe9d2]/70 font-light mt-1">
+                Nutricionista Clínica • CRN-9 38501
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -871,38 +1043,54 @@ export function LandingPage() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-editorial-serif text-[#284d2c]">
               Perguntas Frequentes
             </h2>
+            <p className="text-sm text-[#284d2c]/75 mt-3 max-w-lg mx-auto font-light">
+              Tudo o que você precisa saber sobre o formato das consultas, entrega do planejamento e suporte contínuo.
+            </p>
           </div>
 
           <div className="space-y-4">
             {faqs.map((faq, idx) => {
               const isOpen = activeFaq === idx
               return (
-                <div
+                <motion.div
                   key={idx}
-                  className="bg-white rounded-2xl border border-[#efe9d2] overflow-hidden transition-all shadow-sm"
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.08 }}
+                  className={`bg-white rounded-3xl border transition-all duration-300 overflow-hidden ${
+                    isOpen
+                      ? 'border-[#5e6b1e]/40 shadow-lg ring-1 ring-[#5e6b1e]/20'
+                      : 'border-[#284d2c]/10 shadow-sm hover:border-[#5e6b1e]/30 hover:shadow-md'
+                  }`}
                 >
                   <button
                     onClick={() => setActiveFaq(isOpen ? null : idx)}
-                    className="w-full py-5 px-6 text-left flex items-center justify-between gap-4 font-semibold text-[#284d2c] hover:text-[#5e6b1e] transition-colors"
+                    className="w-full py-5 px-6 sm:px-8 text-left flex items-center justify-between gap-4 transition-colors"
                   >
-                    <span className="text-base sm:text-lg">{faq.q}</span>
-                    <ChevronDown
-                      className={`w-5 h-5 text-[#5e6b1e] transition-transform duration-300 shrink-0 ${
-                        isOpen ? 'rotate-180' : ''
-                      }`}
-                    />
+                    <span className={`text-base sm:text-lg font-semibold transition-colors ${
+                      isOpen ? 'text-[#5e6b1e]' : 'text-[#284d2c]'
+                    }`}>
+                      {faq.q}
+                    </span>
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                      isOpen ? 'bg-[#5e6b1e] text-[#efe9d2] rotate-180' : 'bg-[#efe9d2]/60 text-[#284d2c]'
+                    }`}>
+                      <ChevronDown className="w-4 h-4" />
+                    </div>
                   </button>
                   {isOpen && (
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
-                      className="px-6 pb-6 text-sm text-[#284d2c]/80 leading-relaxed border-t border-[#efe9d2]/60 pt-4"
+                      transition={{ duration: 0.3 }}
+                      className="px-6 sm:px-8 pb-6 text-sm text-[#284d2c]/80 leading-relaxed border-t border-[#efe9d2]/60 pt-4 font-light"
                     >
                       {faq.a}
                     </motion.div>
                   )}
-                </div>
+                </motion.div>
               )
             })}
           </div>
@@ -912,20 +1100,30 @@ export function LandingPage() {
       {/* ====================================================================
           8. RODAPÉ DE ALTO PADRÃO BOUTIQUE (COUVE PROFUNDO #284D2C)
           ==================================================================== */}
-      <footer className="bg-[#284d2c] text-[#efe9d2] pt-20 pb-12 border-t border-[#284d2c]">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <footer className="bg-[#284d2c] text-[#efe9d2] pt-20 pb-12 border-t border-[#284d2c] relative overflow-hidden">
+        {/* Marca d'água decorativa sutil */}
+        <div className="absolute -bottom-16 -right-16 w-80 h-80 opacity-5 pointer-events-none select-none">
+          <img
+            src="/assets/v2/stickers/adesivo_3.png"
+            alt=""
+            className="w-full h-full object-contain filter invert"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/10">
             {/* Coluna 1: Marca e Registro */}
-            <div className="md:col-span-5 space-y-4">
+            <div className="md:col-span-5 space-y-5">
               <img
                 src="/assets/v2/logos/logotipo_v1_1.2.svg"
                 alt="Ana Luiza Ribeiro"
-                className="h-10 w-auto object-contain"
+                className="h-10 md:h-12 w-auto object-contain"
               />
               <p className="text-sm text-[#efe9d2]/75 leading-relaxed max-w-sm font-light">
                 Nutrição clínica individualizada e baseada em evidências científicas. Cuidado humanizado para transformar sua relação com a comida.
               </p>
-              <div className="pt-2 text-xs text-[#c4b818] font-semibold tracking-wider uppercase">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-[#c4b818] font-semibold tracking-wider uppercase">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#c4b818]" />
                 Ana Luiza Ribeiro • CRN-9 38501
               </div>
             </div>
@@ -935,7 +1133,7 @@ export function LandingPage() {
               <h4 className="text-xs font-bold uppercase tracking-widest text-[#efe9d2] mb-4">
                 Navegação
               </h4>
-              <ul className="space-y-2 text-sm text-[#efe9d2]/75">
+              <ul className="space-y-2.5 text-sm text-[#efe9d2]/75 font-light">
                 <li>
                   <a href="#sobre" className="hover:text-[#c4b818] transition-colors">
                     Sobre a Nutricionista
@@ -947,13 +1145,24 @@ export function LandingPage() {
                   </a>
                 </li>
                 <li>
+                  <a href="#servicos" className="hover:text-[#c4b818] transition-colors">
+                    Como Funciona
+                  </a>
+                </li>
+                <li>
                   <a href="#planos" className="hover:text-[#c4b818] transition-colors">
                     Planos e Valores
                   </a>
                 </li>
                 <li>
-                  <Link to="/ebooks" className="hover:text-[#c4b818] transition-colors">
-                    E-books & Receitas
+                  <a href="#faq" className="hover:text-[#c4b818] transition-colors">
+                    Dúvidas Frequentes
+                  </a>
+                </li>
+                <li>
+                  <Link to="/ebooks" className="hover:text-[#c4b818] transition-colors inline-flex items-center gap-1.5">
+                    <span>E-books & Receitas</span>
+                    <span className="text-[10px] uppercase font-bold px-1.5 py-0.5 rounded bg-[#c4b818]/20 text-[#c4b818]">Novo</span>
                   </Link>
                 </li>
               </ul>
@@ -964,27 +1173,29 @@ export function LandingPage() {
               <h4 className="text-xs font-bold uppercase tracking-widest text-[#efe9d2] mb-4">
                 Atendimento
               </h4>
-              <p className="text-sm text-[#efe9d2]/75 font-light">
-                Presencial em Belo Horizonte/MG e Online para todo o Brasil e Exterior.
+              <p className="text-sm text-[#efe9d2]/75 font-light leading-relaxed">
+                Presencial em Belo Horizonte/MG e Online para todo o Brasil e Exterior por videochamada.
               </p>
-              <div className="pt-4 flex items-center gap-4">
+              <div className="pt-4 flex items-center gap-3">
                 <a
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-white/10 hover:bg-[#c4b818] hover:text-[#284d2c] text-[#efe9d2] transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/10 hover:bg-[#c4b818] hover:text-[#284d2c] text-[#efe9d2] text-xs font-semibold transition-all duration-300"
                   aria-label="WhatsApp"
                 >
-                  <MessageCircle className="w-5 h-5" />
+                  <MessageCircle className="w-4 h-4" />
+                  <span>WhatsApp</span>
                 </a>
                 <a
                   href="https://instagram.com/aluizanutri"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-white/10 hover:bg-[#eea4c2] hover:text-[#284d2c] text-[#efe9d2] transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/10 hover:bg-[#eea4c2] hover:text-[#284d2c] text-[#efe9d2] text-xs font-semibold transition-all duration-300"
                   aria-label="Instagram"
                 >
-                  <InstagramIcon size={20} />
+                  <InstagramIcon size={16} />
+                  <span>@aluizanutri</span>
                 </a>
               </div>
             </div>
@@ -993,7 +1204,7 @@ export function LandingPage() {
           {/* Linha Inferior Copyright */}
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#efe9d2]/60 gap-4">
             <p>© {new Date().getFullYear()} Ana Luiza Ribeiro. Todos os direitos reservados.</p>
-            <p className="font-light">Design Editorial Boutique v2</p>
+            <p className="font-light tracking-wide text-[#efe9d2]/50">Design Editorial Boutique v2</p>
           </div>
         </div>
       </footer>
