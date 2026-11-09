@@ -214,7 +214,7 @@ export function LandingPage() {
           ==================================================================== */}
       <section
         id="home"
-        className="relative pt-24 sm:pt-28 md:pt-32 pb-24 sm:pb-28 md:pb-32 lg:pb-32 bg-[#E6E6E9] overflow-hidden"
+        className="relative pt-24 sm:pt-28 md:pt-32 pb-24 sm:pb-28 md:pb-32 lg:pb-32 bg-[#e6e6e8] overflow-hidden"
       >
         {/* FOTO DESKTOP: presença de banner aberto em pé à direita, com fusão suave ao fundo */}
         <div className="hidden lg:flex absolute right-0 bottom-0 top-16 xl:top-12 w-[46%] xl:w-[48%] pointer-events-none select-none z-0 items-end justify-end pr-4 xl:pr-10">
