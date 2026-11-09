@@ -1,89 +1,210 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Paleta de Cores Oficial da Marca:
-   - #48679D (Azul Clássico / Confiança / Ciência)
-   - #EEA4C2 (Rosa Suave / Acolhimento / Cuidado)
-   - #C4B818 (Amarelo Dourado / Vitalidade / Destaque)
-   - #E8701A (Terracota / Energia / Apetite / Botões de Ação)
-   - #5E6B1E (Verde Oliva / Nutrição Natural / Identidade Principal)
-   - #EFE9D2 (Creme Areia / Fundo Elegante / Base Editorial)
-*/
+/* ==========================================================================
+   TIPOGRAFIA OFICIAL & EDITORIAL
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Charles Rosie';
+  src: url('/fonts/Charles_Rosie.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Maxima Nouva';
+  src: url('/fonts/MaximaNouva-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Maxima Nouva';
+  src: url('/fonts/MaximaNouva-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Maxima Nouva';
+  src: url('/fonts/MaximaNouva-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Maxima Nouva';
+  src: url('/fonts/MaximaNouva-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mairo';
+  src: url('/fonts/Mairo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   PALETA OFICIAL DA MARCA (HEX CONFORME MANUAL):
+   - Couve (Verde Escuro / Profundo): #284D2C (RGB: 40, 77, 44)
+   - Oliva (Verde Principal):        #5E6B1E (RGB: 94, 107, 30)
+   - Aveia (Sand / Creme Base):      #EFE9D2 (RGB: 239, 233, 210)
+   - Mexerica (Laranja Solar / CTA): #E85900 (RGB: 232, 89, 0)
+   - Carambola (Amarelo Ouro):       #C4B818 (RGB: 196, 184, 24)
+   - Goiaba Rosa (Rosa Blush):       #EEA4C2 (RGB: 238, 164, 194)
+   - Mirtilo (Azul Clínico):         #48679D (RGB: 72, 103, 157)
+   ========================================================================== */
 
 :root {
-  --font-title: 'Poppins', sans-serif;
-  --font-body: 'Peridot Devanagari', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-
-  --color-brand-blue: #48679D;
-  --color-brand-rose: #EEA4C2;
-  --color-brand-gold: #C4B818;
-  --color-brand-terracotta: #E8701A;
-  --color-brand-olive: #5E6B1E;
-  --color-brand-sand: #EFE9D2;
+  --color-brand-couve: #284d2c;
+  --color-brand-oliva: #5e6b1e;
+  --color-brand-aveia: #efe9d2;
+  --color-brand-mexerica: #e85900;
+  --color-brand-carambola: #c4b818;
+  --color-brand-goiaba: #eea4c2;
+  --color-brand-mirtilo: #48679d;
 }
 
 @theme {
-  --font-title: 'Poppins', sans-serif;
-  --font-body: 'Peridot Devanagari', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  
-  --color-brand-blue: #48679D;
-  --color-brand-rose: #EEA4C2;
-  --color-brand-gold: #C4B818;
-  --color-brand-terracotta: #E8701A;
-  --color-brand-olive: #5E6B1E;
-  --color-brand-sand: #EFE9D2;
+  --color-brand-couve: #284d2c;
+  --color-brand-oliva: #5e6b1e;
+  --color-brand-aveia: #efe9d2;
+  --color-brand-mexerica: #e85900;
+  --color-brand-carambola: #c4b818;
+  --color-brand-goiaba: #eea4c2;
+  --color-brand-mirtilo: #48679d;
+
+  --font-serif-editorial: 'Newsreader', 'Playfair Display', 'Charles Rosie', Georgia, serif;
+  --font-sans-clean: 'Plus Jakarta Sans', 'Maxima Nouva', system-ui, sans-serif;
+  --font-display-charles: 'Charles Rosie', 'Newsreader', Georgia, serif;
 }
 
 @layer base {
   body {
-    font-family: var(--font-body);
+    font-family: var(--font-sans-clean);
     background-color: #FAF8F2;
-    color: #2D3748;
+    color: #284D2C;
+    overflow-x: hidden;
   }
 
-  h1, h2, h3, h4, h5, h6, .font-title {
-    font-family: var(--font-title);
+  h1, h2, h3, h4, .font-serif-title {
+    font-family: var(--font-serif-editorial);
     letter-spacing: -0.02em;
   }
 }
 
-/* Utilitários semânticos da paleta */
-.bg-sand-warm {
-  background-color: #EFE9D2;
+/* ==========================================================================
+   UTILITÁRIOS E CLASSES VISUAIS EDITORIAIS
+   ========================================================================== */
+
+.bg-brand-couve { background-color: #284d2c; }
+.bg-brand-oliva { background-color: #5e6b1e; }
+.bg-brand-aveia { background-color: #efe9d2; }
+.bg-brand-mexerica { background-color: #e85900; }
+.bg-brand-carambola { background-color: #c4b818; }
+.bg-brand-goiaba { background-color: #eea4c2; }
+.bg-brand-mirtilo { background-color: #48679d; }
+
+.text-brand-couve { color: #284d2c; }
+.text-brand-oliva { color: #5e6b1e; }
+.text-brand-aveia { color: #efe9d2; }
+.text-brand-mexerica { color: #e85900; }
+.text-brand-carambola { color: #c4b818; }
+.text-brand-goiaba { color: #eea4c2; }
+.text-brand-mirtilo { color: #48679d; }
+
+.border-brand-couve { border-color: #284d2c; }
+.border-brand-oliva { border-color: #5e6b1e; }
+.border-brand-aveia { border-color: #efe9d2; }
+.border-brand-mexerica { border-color: #e85900; }
+.border-brand-goiaba { border-color: #eea4c2; }
+
+/* Tipografia Editorial Específica */
+.font-editorial-serif {
+  font-family: 'Newsreader', 'Playfair Display', Georgia, serif;
 }
 
-.bg-sand-subtle {
-  background-color: #F8F5EC;
+.font-editorial-italic {
+  font-family: 'Newsreader', 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
 }
 
-.text-olive-brand {
-  color: #5E6B1E;
+.font-charles {
+  font-family: 'Charles Rosie', 'Newsreader', Georgia, serif;
 }
 
-.bg-olive-brand {
-  background-color: #5E6B1E;
+.font-body-clean {
+  font-family: 'Plus Jakarta Sans', 'Maxima Nouva', system-ui, sans-serif;
 }
 
-.text-terracotta-brand {
-  color: #E8701A;
+/* Botão Pílula Padrão Boutique */
+.btn-pill-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background-color: #e85900;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(232, 89, 0, 0.25);
 }
 
-.bg-terracotta-brand {
-  background-color: #E8701A;
+.btn-pill-primary:hover {
+  background-color: #c94d00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232, 89, 0, 0.35);
 }
 
-.text-blue-brand {
-  color: #48679D;
+.btn-pill-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background-color: #5e6b1e;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.bg-blue-brand {
-  background-color: #48679D;
+.btn-pill-secondary:hover {
+  background-color: #495416;
+  transform: translateY(-2px);
 }
 
-.bg-rose-brand {
-  background-color: #EEA4C2;
+.btn-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1.5px solid #284d2c;
+  color: #284d2c;
+  font-weight: 600;
+  padding: 0.7rem 1.5rem;
+  transition: all 0.25s ease;
 }
 
-.text-gold-brand {
-  color: #C4B818;
+.btn-pill-outline:hover {
+  background-color: #284d2c;
+  color: #efe9d2;
+}
+
+/* Transições suaves */
+html {
+  scroll-behavior: smooth;
 }
