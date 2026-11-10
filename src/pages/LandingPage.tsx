@@ -390,12 +390,37 @@ export function LandingPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.8 }}
-              className="lg:col-span-7"
+              className="lg:col-span-7 relative"
             >
+              {/* Destaque 5 (Etiqueta/Selo redondo saindo da onda para baixo, em cima de 'Oi, eu sou a Ana Luiza') */}
+              <div className="hidden lg:block absolute -top-16 xl:-top-20 right-8 xl:right-16 z-20 pointer-events-none select-none">
+                <motion.div
+                  initial={{ rotate: -8, scale: 0.9 }}
+                  animate={{ rotate: [-8, -4, -8] }}
+                  transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
+                  className="w-20 h-20 xl:w-24 xl:h-24 drop-shadow-[0_12px_24px_rgba(0,0,0,0.3)] filter brightness-105"
+                >
+                  <img
+                    src="/assets/v2/stickers/destaque_5.png"
+                    alt="Selo oficial Ana Luiza"
+                    className="w-full h-full object-contain"
+                  />
+                </motion.div>
+              </div>
+
               {/* Saudação Inicial Autoral */}
-              <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#efe9d2] font-editorial-serif mb-4 leading-tight">
-                Oi, eu sou a Ana Luiza!
-              </h2>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="lg:hidden w-14 h-14 shrink-0 drop-shadow-md">
+                  <img
+                    src="/assets/v2/stickers/destaque_5.png"
+                    alt="Selo oficial Ana Luiza"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#efe9d2] font-editorial-serif leading-tight">
+                  Oi, eu sou a Ana Luiza!
+                </h2>
+              </div>
 
               <p className="text-base sm:text-lg text-[#efe9d2]/90 leading-relaxed mb-4 font-light">
                 Se você chegou até aqui, provavelmente já ouviu muito <span className="text-[#eea4c2] font-normal">"corta isso"</span>, <span className="text-[#eea4c2] font-normal">"proibido aquilo"</span> e <span className="text-[#eea4c2] font-normal">"só volta a comer quando emagrecer"</span>.
