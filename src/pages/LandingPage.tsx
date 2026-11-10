@@ -343,10 +343,20 @@ export function LandingPage() {
       {/* ====================================================================
           3. SEÇÃO APRESENTAÇÃO EDITORIAL (FUNDO VERDE COUVE #284D2C)
           ==================================================================== */}
-      <section id="sobre" className="pt-10 md:pt-14 pb-20 md:pb-28 bg-[#284d2c] text-[#efe9d2] relative">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section id="sobre" className="pt-10 md:pt-14 pb-20 md:pb-28 bg-[#284d2c] text-[#efe9d2] relative overflow-hidden">
+        {/* Adesivo 17 (Folha Couve Gigante) inclinada em pé na diagonal, nascendo no canto inferior e cruzando atrás da foto */}
+        <div className="absolute -left-16 sm:-left-24 md:-left-28 -bottom-24 sm:-bottom-32 w-[340px] sm:w-[480px] md:w-[620px] lg:w-[680px] h-[550px] sm:h-[700px] md:h-[880px] lg:h-[960px] pointer-events-none select-none z-0 opacity-85 sm:opacity-90 rotate-[18deg] transform-gpu">
+          <img
+            src="/assets/v2/stickers/adesivo_17.svg"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-contain object-left-bottom filter brightness-125 drop-shadow-[0_10px_25px_rgba(0,0,0,0.2)]"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Foto Vertical com cantos arredondados + Folha Decorativa (Adesivo 17) de Fundo */}
+            {/* Foto Vertical com cantos arredondados */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -354,16 +364,6 @@ export function LandingPage() {
               transition={{ duration: 0.8 }}
               className="lg:col-span-5 relative"
             >
-              {/* Adesivo 17 (Folha Verde Couve/Oliva) saindo grande de baixo e passando atrás da foto na esquerda */}
-              <div className="absolute -left-12 sm:-left-20 -bottom-16 sm:-bottom-24 -top-16 sm:-top-24 w-[115%] sm:w-[130%] pointer-events-none select-none z-0 opacity-80 sm:opacity-90 -rotate-12">
-                <img
-                  src="/assets/v2/stickers/adesivo_17.svg"
-                  alt=""
-                  aria-hidden="true"
-                  className="w-full h-full object-contain object-left-bottom filter brightness-125"
-                />
-              </div>
-
               <div className="relative mx-auto max-w-md z-10">
                 <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl border-4 border-[#efe9d2]/20 bg-[#284d2c]">
                   <img
