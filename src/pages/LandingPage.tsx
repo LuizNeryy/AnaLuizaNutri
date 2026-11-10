@@ -343,9 +343,9 @@ export function LandingPage() {
       {/* ====================================================================
           3. SEÇÃO APRESENTAÇÃO EDITORIAL (FUNDO VERDE COUVE #284D2C)
           ==================================================================== */}
-      <section id="sobre" className="pt-10 md:pt-14 pb-20 md:pb-28 bg-[#284d2c] text-[#efe9d2] relative overflow-hidden">
+      <section id="sobre" className="pt-10 md:pt-14 pb-20 md:pb-28 bg-[#284d2c] text-[#efe9d2] relative">
         {/* Adesivo 17: Em pé, gigante na parte inferior esquerda da tela verde, saindo da tela e encostando apenas na quina inferior esquerda da foto */}
-        <div className="absolute -left-16 sm:-left-20 md:-left-24 -bottom-24 sm:-bottom-32 md:-bottom-36 w-[420px] sm:w-[520px] md:w-[620px] h-[650px] sm:h-[800px] md:h-[950px] pointer-events-none select-none z-0 opacity-80 rotate-[6deg]">
+        <div className="absolute -left-16 sm:-left-20 md:-left-24 -bottom-24 sm:-bottom-32 md:-bottom-36 w-[420px] sm:w-[520px] md:w-[620px] h-[650px] sm:h-[800px] md:h-[950px] pointer-events-none select-none z-0 opacity-80 rotate-[6deg] overflow-hidden">
           <img
             src="/assets/v2/stickers/adesivo_17.svg"
             alt=""
@@ -393,7 +393,7 @@ export function LandingPage() {
               className="lg:col-span-7 relative"
             >
               {/* Destaque 5: Posicionado exatamente em cima da crista da linha que divide o fundo claro do verde */}
-              <div className="absolute -top-16 sm:-top-20 md:-top-24 lg:-top-28 left-0 z-20 pointer-events-none select-none">
+              <div className="absolute -top-12 sm:-top-16 md:-top-18 lg:-top-20 left-0 z-30 pointer-events-none select-none">
                 <motion.div
                   initial={{ rotate: -6, scale: 0.95 }}
                   animate={{ rotate: [-6, -2, -6] }}
