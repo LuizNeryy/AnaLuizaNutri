@@ -405,23 +405,9 @@ export function LandingPage() {
                 Eu acredito exatamente no contrário.
               </p>
 
-              <p className="text-sm sm:text-base text-[#efe9d2]/85 leading-relaxed mb-8 font-light">
+              <p className="text-sm sm:text-base text-[#efe9d2]/85 leading-relaxed mb-6 font-light">
                 Dieta não precisa ser sofrimento, e comida não é sua inimiga. Sou nutricionista, pós-graduada em <strong className="font-semibold text-white">Nutrição Clínica: Metabolismo, Prática e Terapia Nutricional</strong>. Meu propósito é mostrar que dá para cuidar da saúde com ciência, sem terrorismo nutricional e sem abrir mão do prazer de comer.
               </p>
-
-              {/* Bloco de Posicionamento Lindo Preservado */}
-              <div className="pt-6 border-t border-white/10 mb-8">
-                <div className="inline-block text-xs font-bold uppercase tracking-widest text-[#c4b818] mb-2">
-                  Nutrição Clínica & Vida Real
-                </div>
-
-                <h3 className="text-2xl sm:text-3xl md:text-4xl text-[#efe9d2] font-editorial-serif leading-[1.15]">
-                  Nutrição personalizada para quem quer{' '}
-                  <span className="font-editorial-italic text-[#eea4c2]">
-                    fazer as pazes com a comida
-                  </span>
-                </h3>
-              </div>
 
               {/* Lista dos 4 Pilares da Ajuda (Com cores equilibradas) */}
               <div className="mb-8">
@@ -454,6 +440,20 @@ export function LandingPage() {
                     </span>
                   </div>
                 </div>
+              </div>
+
+              {/* Bloco de Posicionamento Lindo Preservado */}
+              <div className="pt-6 border-t border-white/10 mb-8">
+                <div className="inline-block text-xs font-bold uppercase tracking-widest text-[#c4b818] mb-2">
+                  Nutrição Clínica & Vida Real
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl md:text-4xl text-[#efe9d2] font-editorial-serif leading-[1.15]">
+                  Nutrição personalizada para quem quer{' '}
+                  <span className="font-editorial-italic text-[#eea4c2]">
+                    fazer as pazes com a comida
+                  </span>
+                </h3>
               </div>
 
               <div className="flex flex-wrap items-center gap-4">
