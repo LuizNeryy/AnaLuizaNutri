@@ -346,7 +346,7 @@ export function LandingPage() {
       <section id="sobre" className="pt-10 md:pt-14 pb-20 md:pb-28 bg-[#284d2c] text-[#efe9d2] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Foto Vertical com cantos arredondados + Folha gigante ancorada nela */}
+            {/* Foto Vertical com cantos arredondados + Folha gigante invertida saindo de baixo */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -354,8 +354,8 @@ export function LandingPage() {
               transition={{ duration: 0.8 }}
               className="lg:col-span-5 relative z-10"
             >
-              {/* Adesivo 17 (Folha Couve) ancorada DIRETAMENTE atrás da foto, saindo grande na esquerda e em cima */}
-              <div className="absolute -left-28 sm:-left-36 md:-left-44 -bottom-12 sm:-bottom-16 -top-24 sm:-top-32 w-[160%] sm:w-[170%] pointer-events-none select-none z-0 -rotate-[22deg]">
+              {/* Folha: Caule saindo lá de baixo na borda inferior, corpo largo subindo inclinado e ponta da folha despontando em cima na esquerda */}
+              <div className="absolute -left-32 sm:-left-44 md:-left-56 -bottom-16 sm:-bottom-24 w-[160%] sm:w-[175%] h-[155%] sm:h-[170%] pointer-events-none select-none z-0 rotate-[155deg] origin-center">
                 <img
                   src="/assets/v2/stickers/adesivo_17.svg"
                   alt=""
