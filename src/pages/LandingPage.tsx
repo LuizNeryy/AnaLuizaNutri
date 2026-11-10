@@ -344,9 +344,19 @@ export function LandingPage() {
           3. SEÇÃO APRESENTAÇÃO EDITORIAL (FUNDO VERDE COUVE #284D2C)
           ==================================================================== */}
       <section id="sobre" className="pt-10 md:pt-14 pb-20 md:pb-28 bg-[#284d2c] text-[#efe9d2] relative overflow-hidden">
+        {/* Adesivo 17: Em pé, gigante na parte inferior esquerda da tela verde, saindo da tela e encostando apenas na quina inferior esquerda da foto */}
+        <div className="absolute -left-16 sm:-left-20 md:-left-24 -bottom-24 sm:-bottom-32 md:-bottom-36 w-[420px] sm:w-[520px] md:w-[620px] h-[650px] sm:h-[800px] md:h-[950px] pointer-events-none select-none z-0 opacity-80 rotate-[6deg]">
+          <img
+            src="/assets/v2/stickers/adesivo_17.svg"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-contain object-left-bottom filter brightness-125"
+          />
+        </div>
+
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Foto Vertical com cantos arredondados + Folha gigante invertida saindo de baixo */}
+            {/* Foto Vertical com cantos arredondados */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -354,17 +364,7 @@ export function LandingPage() {
               transition={{ duration: 0.8 }}
               className="lg:col-span-5 relative z-10"
             >
-              {/* Folha: Caule saindo lá de baixo na borda inferior, corpo largo subindo inclinado e ponta da folha despontando em cima na esquerda */}
-              <div className="absolute -left-32 sm:-left-44 md:-left-56 -bottom-16 sm:-bottom-24 w-[160%] sm:w-[175%] h-[155%] sm:h-[170%] pointer-events-none select-none z-0 rotate-[155deg] origin-center">
-                <img
-                  src="/assets/v2/stickers/adesivo_17.svg"
-                  alt=""
-                  aria-hidden="true"
-                  className="w-full h-full object-contain filter brightness-150 drop-shadow-[0_0_15px_rgba(94,107,30,0.4)]"
-                />
-              </div>
-
-              <div className="relative mx-auto max-w-md z-10">
+              <div className="relative mx-auto max-w-md">
                 <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl border-4 border-[#efe9d2]/20 bg-[#284d2c]">
                   <img
                     src="/assets/v2/photos/ana_2.png"
