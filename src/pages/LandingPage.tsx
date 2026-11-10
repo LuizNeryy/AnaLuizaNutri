@@ -367,8 +367,8 @@ export function LandingPage() {
               <div className="relative mx-auto max-w-md">
                 <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl border-4 border-[#efe9d2]/20 bg-[#284d2c]">
                   <img
-                    src="/assets/v2/photos/ana_2.png"
-                    alt="Ana Luiza Ribeiro em consulta"
+                    src="/assets/v2/photos/ana_21.png"
+                    alt="Nutricionista Ana Luiza Ribeiro"
                     className="w-full h-auto object-cover aspect-[3/4]"
                   />
                 </div>
