@@ -343,10 +343,19 @@ export function LandingPage() {
       {/* ====================================================================
           3. SEÇÃO APRESENTAÇÃO EDITORIAL (FUNDO VERDE COUVE #284D2C)
           ==================================================================== */}
-      <section id="sobre" className="pt-10 md:pt-14 pb-20 md:pb-28 bg-[#284d2c] text-[#efe9d2] relative">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section id="sobre" className="pt-10 md:pt-14 pb-20 md:pb-28 bg-[#284d2c] text-[#efe9d2] relative overflow-hidden">
+        {/* Grafismo/Pattern Orgânico Autoral saindo do canto inferior esquerdo */}
+        <div className="absolute -bottom-16 -left-16 w-64 md:w-80 lg:w-96 pointer-events-none select-none z-0 opacity-40 mix-blend-screen transform -rotate-12">
+          <img
+            src="/assets/v2/patterns/pattern_1.png"
+            alt="Grafismo oficial da marca"
+            className="w-full h-auto object-contain"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Foto Vertical com cantos arredondados */}
+            {/* Foto Vertical com cantos arredondados e grafismo passando sutilmente por trás */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -354,7 +363,16 @@ export function LandingPage() {
               transition={{ duration: 0.8 }}
               className="lg:col-span-5 relative"
             >
-              <div className="relative mx-auto max-w-md">
+              {/* Elemento de Folhagem / Símbolo da marca vazando por trás da foto */}
+              <div className="absolute -top-10 -left-10 w-36 h-36 md:w-44 md:h-44 z-0 pointer-events-none select-none opacity-25">
+                <img
+                  src="/assets/v2/icons/icone_1.svg"
+                  alt="Grafismo botânico"
+                  className="w-full h-full object-contain filter invert"
+                />
+              </div>
+
+              <div className="relative mx-auto max-w-md z-10">
                 <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl border-4 border-[#efe9d2]/20">
                   <img
                     src="/assets/v2/photos/ana_2.png"
