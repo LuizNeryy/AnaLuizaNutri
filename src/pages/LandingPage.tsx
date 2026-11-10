@@ -392,25 +392,36 @@ export function LandingPage() {
               transition={{ duration: 0.8 }}
               className="lg:col-span-7"
             >
-              <div className="inline-block text-xs font-bold uppercase tracking-widest text-[#c4b818] mb-3">
-                Nutrição Clínica & Vida Real
-              </div>
-
-              <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#efe9d2] font-editorial-serif mb-6 leading-[1.15]">
-                Nutrição personalizada para quem quer{' '}
-                <span className="font-editorial-italic text-[#eea4c2]">
-                  fazer as pazes com a comida
-                </span>
+              {/* Saudação Inicial Autoral */}
+              <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#efe9d2] font-editorial-serif mb-4 leading-tight">
+                Oi, eu sou a Ana Luiza!
               </h2>
 
-              <p className="text-base sm:text-lg text-[#efe9d2]/90 leading-relaxed mb-5 font-light">
-                Se você já se sentiu perdida com prescrições genéricas de gaveta, terrorismo com carboidratos
-                e dietas impossíveis de sustentar por mais de duas semanas, saiba que o problema nunca foi sua força de vontade.
+              <p className="text-base sm:text-lg text-[#efe9d2]/90 leading-relaxed mb-4 font-light">
+                Se você chegou até aqui, provavelmente já ouviu muito <span className="text-[#eea4c2] font-normal">"corta isso"</span>, <span className="text-[#eea4c2] font-normal">"proibido aquilo"</span> e <span className="text-[#eea4c2] font-normal">"só volta a comer quando emagrecer"</span>.
               </p>
 
-              <p className="text-base sm:text-lg text-[#efe9d2]/90 leading-relaxed mb-8 font-light">
-                Sou <strong className="font-semibold text-white">Ana Luiza Ribeiro</strong>, nutricionista pós-graduada em <strong className="font-semibold text-white">Nutrição Clínica: Metabolismo, Prática e Terapia Nutricional</strong>. Minha missão é traduzir a ciência médica em refeições práticas e saborosas que respeitam o seu trabalho, sua família e seus momentos de prazer.
+              <p className="text-base sm:text-lg text-[#c4b818] italic font-editorial-italic font-normal mb-4">
+                Eu acredito exatamente no contrário.
               </p>
+
+              <p className="text-sm sm:text-base text-[#efe9d2]/85 leading-relaxed mb-8 font-light">
+                Dieta não precisa ser sofrimento, e comida não é sua inimiga. Sou nutricionista, pós-graduada em <strong className="font-semibold text-white">Nutrição Clínica: Metabolismo, Prática e Terapia Nutricional</strong>. Meu propósito é mostrar que dá para cuidar da saúde com ciência, sem terrorismo nutricional e sem abrir mão do prazer de comer.
+              </p>
+
+              {/* Bloco de Posicionamento Lindo Preservado */}
+              <div className="pt-6 border-t border-white/10 mb-8">
+                <div className="inline-block text-xs font-bold uppercase tracking-widest text-[#c4b818] mb-2">
+                  Nutrição Clínica & Vida Real
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl md:text-4xl text-[#efe9d2] font-editorial-serif leading-[1.15]">
+                  Nutrição personalizada para quem quer{' '}
+                  <span className="font-editorial-italic text-[#eea4c2]">
+                    fazer as pazes com a comida
+                  </span>
+                </h3>
+              </div>
 
               {/* Lista dos 4 Pilares da Ajuda (Com cores equilibradas) */}
               <div className="mb-8">
