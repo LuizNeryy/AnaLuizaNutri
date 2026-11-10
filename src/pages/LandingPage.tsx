@@ -318,8 +318,8 @@ export function LandingPage() {
               {/* Badge 3: Goiaba Rosa sólido */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#eea4c2] text-[#284d2c] shadow-xs font-semibold">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#284d2c]" />
-                <span className="text-xs tracking-wide">Pós-Graduada</span>
-                <span className="text-[10px] text-[#284d2c]/80 font-medium hidden sm:inline">• Nutrição Clínica</span>
+                <span className="text-xs tracking-wide">Sem Terrorismo</span>
+                <span className="text-[10px] text-[#284d2c]/85 font-medium hidden sm:inline">• Alimentação com Paz</span>
               </div>
             </motion.div>
           </div>
