@@ -354,12 +354,12 @@ export function LandingPage() {
               transition={{ duration: 0.8 }}
               className="lg:col-span-5 relative"
             >
-              {/* Adesivo 17: Folha estilizada grandona, nascendo embaixo na esquerda, cruzando por trás da foto e despontando no topo esquerdo */}
-              <div className="absolute -left-16 sm:-left-20 -bottom-16 sm:-bottom-20 -top-16 sm:-top-20 w-[140%] max-w-[520px] pointer-events-none select-none z-0 flex items-center justify-center">
+              {/* Adesivo 17: Folha estilizada preenchendo o vazio inferior esquerdo, tombada para a esquerda e passando sutilmente por trás da foto */}
+              <div className="absolute -left-28 sm:-left-36 md:-left-44 -bottom-16 sm:-bottom-24 w-[340px] sm:w-[420px] md:w-[480px] h-[480px] pointer-events-none select-none z-0">
                 <img
                   src="/assets/v2/stickers/adesivo_17.png"
                   alt="Grafismo folha"
-                  className="w-full h-full object-contain filter brightness-125 contrast-125 opacity-75 transform -rotate-12 scale-110"
+                  className="w-full h-full object-contain filter brightness-125 contrast-125 opacity-70 transform -rotate-45"
                 />
               </div>
 
