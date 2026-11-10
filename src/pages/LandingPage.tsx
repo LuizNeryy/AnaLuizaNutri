@@ -214,7 +214,7 @@ export function LandingPage() {
           ==================================================================== */}
       <section
         id="home"
-        className="relative min-h-[92vh] flex flex-col justify-between pt-24 sm:pt-28 md:pt-32 pb-24 sm:pb-28 md:pb-32 bg-[#e6e6e8] overflow-hidden"
+        className="relative pt-24 sm:pt-28 md:pt-32 pb-36 sm:pb-40 md:pb-44 lg:pb-44 bg-[#e6e6e8] overflow-hidden"
       >
         {/* FOTO DESKTOP: presença de banner aberto em pé à direita, com fusão suave ao fundo */}
         <div className="hidden lg:flex absolute right-0 bottom-0 top-16 xl:top-12 w-[46%] xl:w-[48%] pointer-events-none select-none z-0 items-end justify-end pr-4 xl:pr-10">
@@ -222,18 +222,18 @@ export function LandingPage() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative flex items-end justify-end max-h-[820px] h-full"
+            className="relative flex items-end justify-end max-h-[720px] h-full"
           >
             <img
               src="/assets/v2/photos/ana_hero_feathered.png"
               alt="Nutricionista Ana Luiza Ribeiro"
-              className="max-h-[740px] xl:max-h-[800px] w-auto object-contain object-bottom drop-shadow-[0_12px_36px_rgba(40,77,44,0.06)]"
+              className="max-h-[660px] xl:max-h-[720px] w-auto object-contain object-bottom drop-shadow-[0_12px_36px_rgba(40,77,44,0.06)]"
             />
           </motion.div>
         </div>
 
         {/* CONTEÚDO EDITORIAL (LADO ESQUERDO) */}
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full my-auto">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
           <div className="max-w-2xl lg:max-w-xl xl:max-w-2xl flex flex-col items-center lg:items-start text-center lg:text-left">
             {/* Título Principal Amplo & Editorial */}
             <motion.h1
@@ -326,9 +326,9 @@ export function LandingPage() {
         </div>
 
         {/* Onda Orgânica de Transição para a próxima seção */}
-        <div className="absolute -bottom-[1px] left-0 right-0 w-full leading-none z-10 pointer-events-none">
+        <div className="absolute -bottom-[1px] left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
           <svg
-            className="relative block w-full h-20 sm:h-24 md:h-28 lg:h-32 text-[#284d2c]"
+            className="relative block w-full h-12 sm:h-16 md:h-20 lg:h-24 text-[#284d2c]"
             viewBox="0 0 1440 120"
             preserveAspectRatio="none"
           >
@@ -343,30 +343,9 @@ export function LandingPage() {
       {/* ====================================================================
           3. SEÇÃO APRESENTAÇÃO EDITORIAL (FUNDO VERDE COUVE #284D2C)
           ==================================================================== */}
-      <section id="sobre" className="pt-16 sm:pt-20 md:pt-24 pb-20 md:pb-28 bg-[#284d2c] text-[#efe9d2] relative">
-        {/* Destaque 5 ("sobre mim"): Fica no topo da seção Sobre Mim, encostado na onda superior, aparecendo só quando o usuário entra na seção */}
-        <div className="absolute -top-10 sm:-top-12 md:-top-14 left-[42%] sm:left-[43%] md:left-[44%] lg:left-[45%] -translate-x-1/2 pointer-events-none select-none z-30">
-          <motion.div
-            initial={{ opacity: 0, y: -20, scale: 0.6 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: false, amount: 0.35 }}
-            transition={{
-              type: 'spring',
-              stiffness: 300,
-              damping: 20
-            }}
-            className="w-16 h-16 sm:w-20 sm:h-20 md:w-22 md:h-22 lg:w-24 lg:h-24 filter brightness-105"
-          >
-            <img
-              src="/assets/v2/stickers/destaque_5.png"
-              alt="Etiqueta Sobre Mim"
-              className="w-full h-full object-contain"
-            />
-          </motion.div>
-        </div>
-
+      <section id="sobre" className="pt-10 md:pt-14 pb-20 md:pb-28 bg-[#284d2c] text-[#efe9d2] relative overflow-hidden">
         {/* Adesivo 17: Em pé, gigante na parte inferior esquerda da tela verde, saindo da tela e encostando apenas na quina inferior esquerda da foto */}
-        <div className="absolute -left-16 sm:-left-20 md:-left-24 -bottom-24 sm:-bottom-32 md:-bottom-36 w-[420px] sm:w-[520px] md:w-[620px] h-[650px] sm:h-[800px] md:h-[950px] pointer-events-none select-none z-0 opacity-80 rotate-[6deg] overflow-hidden">
+        <div className="absolute -left-16 sm:-left-20 md:-left-24 -bottom-24 sm:-bottom-32 md:-bottom-36 w-[420px] sm:w-[520px] md:w-[620px] h-[650px] sm:h-[800px] md:h-[950px] pointer-events-none select-none z-0 opacity-80 rotate-[6deg]">
           <img
             src="/assets/v2/stickers/adesivo_17.svg"
             alt=""
@@ -411,7 +390,7 @@ export function LandingPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.8 }}
-              className="lg:col-span-7 relative"
+              className="lg:col-span-7"
             >
               {/* Saudação Inicial Autoral */}
               <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#efe9d2] font-editorial-serif mb-4 leading-tight">
