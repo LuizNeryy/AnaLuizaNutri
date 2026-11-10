@@ -326,7 +326,7 @@ export function LandingPage() {
         </div>
 
         {/* Onda Orgânica de Transição para a próxima seção */}
-        <div className="absolute -bottom-[1px] left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
+        <div className="absolute -bottom-[1px] left-0 right-0 w-full leading-none z-20 pointer-events-none">
           <svg
             className="relative block w-full h-12 sm:h-16 md:h-20 lg:h-24 text-[#284d2c]"
             viewBox="0 0 1440 120"
@@ -337,6 +337,22 @@ export function LandingPage() {
               fill="currentColor"
             />
           </svg>
+
+          {/* Destaque 5 ("sobre mim"): Preso como uma etiquetinha/lingueta pendurada na linha da onda */}
+          <div className="absolute bottom-0 left-[42%] sm:left-[43%] md:left-[44%] lg:left-[45%] -translate-x-1/2 translate-y-[28%] sm:translate-y-[24%] md:translate-y-[20%] pointer-events-none select-none">
+            <motion.div
+              initial={{ rotate: -4 }}
+              animate={{ rotate: [-4, -1, -4] }}
+              transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
+              className="w-16 h-16 sm:w-20 sm:h-20 md:w-22 md:h-22 lg:w-24 lg:h-24 drop-shadow-[0_8px_16px_rgba(0,0,0,0.3)] filter brightness-105"
+            >
+              <img
+                src="/assets/v2/stickers/destaque_5.png"
+                alt="Etiqueta Sobre Mim"
+                className="w-full h-full object-contain"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -392,22 +408,6 @@ export function LandingPage() {
               transition={{ duration: 0.8 }}
               className="lg:col-span-7 relative"
             >
-              {/* Destaque 5: Posicionado exatamente em cima da crista da linha que divide o fundo claro do verde */}
-              <div className="absolute -top-12 sm:-top-16 md:-top-18 lg:-top-20 left-0 z-30 pointer-events-none select-none">
-                <motion.div
-                  initial={{ rotate: -6, scale: 0.95 }}
-                  animate={{ rotate: [-6, -2, -6] }}
-                  transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
-                  className="w-16 h-16 sm:w-20 sm:h-20 lg:w-22 lg:h-22 drop-shadow-[0_8px_20px_rgba(0,0,0,0.35)] filter brightness-105"
-                >
-                  <img
-                    src="/assets/v2/stickers/destaque_5.png"
-                    alt="Selo Sobre Mim"
-                    className="w-full h-full object-contain"
-                  />
-                </motion.div>
-              </div>
-
               {/* Saudação Inicial Autoral */}
               <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#efe9d2] font-editorial-serif mb-4 leading-tight">
                 Oi, eu sou a Ana Luiza!
