@@ -214,7 +214,7 @@ export function LandingPage() {
           ==================================================================== */}
       <section
         id="home"
-        className="relative pt-24 sm:pt-28 md:pt-32 pb-36 sm:pb-40 md:pb-44 lg:pb-44 bg-[#e6e6e8] overflow-hidden"
+        className="relative min-h-[92vh] flex flex-col justify-between pt-24 sm:pt-28 md:pt-32 pb-24 sm:pb-28 md:pb-32 bg-[#e6e6e8] overflow-hidden"
       >
         {/* FOTO DESKTOP: presença de banner aberto em pé à direita, com fusão suave ao fundo */}
         <div className="hidden lg:flex absolute right-0 bottom-0 top-16 xl:top-12 w-[46%] xl:w-[48%] pointer-events-none select-none z-0 items-end justify-end pr-4 xl:pr-10">
@@ -222,18 +222,18 @@ export function LandingPage() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative flex items-end justify-end max-h-[720px] h-full"
+            className="relative flex items-end justify-end max-h-[820px] h-full"
           >
             <img
               src="/assets/v2/photos/ana_hero_feathered.png"
               alt="Nutricionista Ana Luiza Ribeiro"
-              className="max-h-[660px] xl:max-h-[720px] w-auto object-contain object-bottom drop-shadow-[0_12px_36px_rgba(40,77,44,0.06)]"
+              className="max-h-[740px] xl:max-h-[800px] w-auto object-contain object-bottom drop-shadow-[0_12px_36px_rgba(40,77,44,0.06)]"
             />
           </motion.div>
         </div>
 
         {/* CONTEÚDO EDITORIAL (LADO ESQUERDO) */}
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full my-auto">
           <div className="max-w-2xl lg:max-w-xl xl:max-w-2xl flex flex-col items-center lg:items-start text-center lg:text-left">
             {/* Título Principal Amplo & Editorial */}
             <motion.h1
