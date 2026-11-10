@@ -344,13 +344,13 @@ export function LandingPage() {
           3. SEÇÃO APRESENTAÇÃO EDITORIAL (FUNDO VERDE COUVE #284D2C)
           ==================================================================== */}
       <section id="sobre" className="pt-10 md:pt-14 pb-20 md:pb-28 bg-[#284d2c] text-[#efe9d2] relative overflow-hidden">
-        {/* Adesivo 17 (Folha Couve Gigante) girada no sentido anti-horário (-25deg), deitando mais e cruzando diretamente atrás da foto */}
-        <div className="absolute -left-12 sm:-left-20 md:-left-24 -bottom-16 sm:-bottom-24 w-[380px] sm:w-[540px] md:w-[700px] lg:w-[760px] h-[550px] sm:h-[700px] md:h-[880px] lg:h-[960px] pointer-events-none select-none z-0 opacity-85 sm:opacity-90 -rotate-[25deg] transform-gpu origin-bottom-left">
+        {/* Adesivo 17 (Folha Couve Gigante) tombada/deitada na diagonal esquerda passando atrás da foto */}
+        <div className="absolute -left-28 sm:-left-36 md:-left-44 -bottom-16 sm:-bottom-24 w-[540px] sm:w-[680px] md:w-[780px] h-[750px] sm:h-[900px] md:h-[1050px] pointer-events-none select-none z-0 opacity-85 -rotate-[32deg] origin-bottom-left">
           <img
             src="/assets/v2/stickers/adesivo_17.svg"
             alt=""
             aria-hidden="true"
-            className="w-full h-full object-contain object-left-bottom filter brightness-125 drop-shadow-[0_10px_25px_rgba(0,0,0,0.2)]"
+            className="w-full h-full object-contain object-left-bottom filter brightness-125"
           />
         </div>
 
@@ -362,9 +362,9 @@ export function LandingPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.8 }}
-              className="lg:col-span-5 relative"
+              className="lg:col-span-5 relative z-10"
             >
-              <div className="relative mx-auto max-w-md z-10">
+              <div className="relative mx-auto max-w-md">
                 <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl border-4 border-[#efe9d2]/20 bg-[#284d2c]">
                   <img
                     src="/assets/v2/photos/ana_2.png"
