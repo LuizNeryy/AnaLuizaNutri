@@ -344,19 +344,9 @@ export function LandingPage() {
           3. SEÇÃO APRESENTAÇÃO EDITORIAL (FUNDO VERDE COUVE #284D2C)
           ==================================================================== */}
       <section id="sobre" className="pt-10 md:pt-14 pb-20 md:pb-28 bg-[#284d2c] text-[#efe9d2] relative overflow-hidden">
-        {/* Adesivo 17 (Folha Couve Gigante) tombada/deitada na diagonal esquerda passando atrás da foto */}
-        <div className="absolute -left-28 sm:-left-36 md:-left-44 -bottom-16 sm:-bottom-24 w-[540px] sm:w-[680px] md:w-[780px] h-[750px] sm:h-[900px] md:h-[1050px] pointer-events-none select-none z-0 opacity-85 -rotate-[32deg] origin-bottom-left">
-          <img
-            src="/assets/v2/stickers/adesivo_17.svg"
-            alt=""
-            aria-hidden="true"
-            className="w-full h-full object-contain object-left-bottom filter brightness-125"
-          />
-        </div>
-
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Foto Vertical com cantos arredondados */}
+            {/* Foto Vertical com cantos arredondados + Folha gigante ancorada nela */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -364,7 +354,17 @@ export function LandingPage() {
               transition={{ duration: 0.8 }}
               className="lg:col-span-5 relative z-10"
             >
-              <div className="relative mx-auto max-w-md">
+              {/* Adesivo 17 (Folha Couve) ancorada DIRETAMENTE atrás da foto, saindo grande na esquerda e em cima */}
+              <div className="absolute -left-28 sm:-left-36 md:-left-44 -bottom-12 sm:-bottom-16 -top-24 sm:-top-32 w-[160%] sm:w-[170%] pointer-events-none select-none z-0 -rotate-[22deg]">
+                <img
+                  src="/assets/v2/stickers/adesivo_17.svg"
+                  alt=""
+                  aria-hidden="true"
+                  className="w-full h-full object-contain filter brightness-150 drop-shadow-[0_0_15px_rgba(94,107,30,0.4)]"
+                />
+              </div>
+
+              <div className="relative mx-auto max-w-md z-10">
                 <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl border-4 border-[#efe9d2]/20 bg-[#284d2c]">
                   <img
                     src="/assets/v2/photos/ana_2.png"
