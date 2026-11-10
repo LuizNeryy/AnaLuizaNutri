@@ -328,7 +328,7 @@ export function LandingPage() {
         {/* Onda Orgânica de Transição para a próxima seção */}
         <div className="absolute -bottom-[1px] left-0 right-0 w-full leading-none z-30 pointer-events-none">
           <svg
-            className="relative block w-full h-16 sm:h-20 md:h-24 lg:h-28 text-[#284d2c]"
+            className="relative block w-full h-20 sm:h-24 md:h-28 lg:h-32 text-[#284d2c]"
             viewBox="0 0 1440 120"
             preserveAspectRatio="none"
           >
@@ -338,12 +338,18 @@ export function LandingPage() {
             />
           </svg>
 
-          {/* Destaque 5 ("sobre mim"): Encaixado dentro do verde, com o topo tangenciando a borda da onda sem invadir o cinza/branco */}
+          {/* Destaque 5 ("sobre mim"): Aparece e anima descendo com bounce somente quando entra no Sobre Mim */}
           <div className="absolute bottom-2 sm:bottom-3 md:bottom-4 lg:bottom-5 left-[42%] sm:left-[43%] md:left-[44%] lg:left-[45%] -translate-x-1/2 pointer-events-none select-none z-30">
             <motion.div
-              initial={{ rotate: -4 }}
-              animate={{ rotate: [-4, -1, -4] }}
-              transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
+              initial={{ opacity: 0, y: -28, scale: 0.7, rotate: -15 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1, rotate: -4 }}
+              viewport={{ once: false, amount: 0.1, margin: '-10% 0px 0px 0px' }}
+              transition={{
+                type: 'spring',
+                stiffness: 260,
+                damping: 18,
+                mass: 0.8
+              }}
               className="w-16 h-16 sm:w-20 sm:h-20 md:w-22 md:h-22 lg:w-24 lg:h-24 drop-shadow-[0_8px_16px_rgba(0,0,0,0.3)] filter brightness-105"
             >
               <img
