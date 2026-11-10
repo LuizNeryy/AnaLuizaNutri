@@ -326,9 +326,9 @@ export function LandingPage() {
         </div>
 
         {/* Onda Orgânica de Transição para a próxima seção */}
-        <div className="absolute -bottom-[1px] left-0 right-0 w-full leading-none z-20 pointer-events-none">
+        <div className="absolute -bottom-[1px] left-0 right-0 w-full leading-none z-30 pointer-events-none">
           <svg
-            className="relative block w-full h-12 sm:h-16 md:h-20 lg:h-24 text-[#284d2c]"
+            className="relative block w-full h-16 sm:h-20 md:h-24 lg:h-28 text-[#284d2c]"
             viewBox="0 0 1440 120"
             preserveAspectRatio="none"
           >
@@ -338,8 +338,8 @@ export function LandingPage() {
             />
           </svg>
 
-          {/* Destaque 5 ("sobre mim"): Preso como uma etiquetinha/lingueta pendurada na linha da onda */}
-          <div className="absolute bottom-0 left-[42%] sm:left-[43%] md:left-[44%] lg:left-[45%] -translate-x-1/2 translate-y-[28%] sm:translate-y-[24%] md:translate-y-[20%] pointer-events-none select-none">
+          {/* Destaque 5 ("sobre mim"): Encaixado dentro do verde, com o topo tangenciando a borda da onda sem invadir o cinza/branco */}
+          <div className="absolute bottom-2 sm:bottom-3 md:bottom-4 lg:bottom-5 left-[42%] sm:left-[43%] md:left-[44%] lg:left-[45%] -translate-x-1/2 pointer-events-none select-none z-30">
             <motion.div
               initial={{ rotate: -4 }}
               animate={{ rotate: [-4, -1, -4] }}
