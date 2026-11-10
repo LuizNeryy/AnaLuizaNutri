@@ -344,8 +344,8 @@ export function LandingPage() {
           3. SEÇÃO APRESENTAÇÃO EDITORIAL (FUNDO VERDE COUVE #284D2C)
           ==================================================================== */}
       <section id="sobre" className="pt-10 md:pt-14 pb-20 md:pb-28 bg-[#284d2c] text-[#efe9d2] relative overflow-hidden">
-        {/* Adesivo 17 (Folha Couve Gigante) inclinada em pé na diagonal, nascendo no canto inferior e cruzando atrás da foto */}
-        <div className="absolute -left-16 sm:-left-24 md:-left-28 -bottom-24 sm:-bottom-32 w-[340px] sm:w-[480px] md:w-[620px] lg:w-[680px] h-[550px] sm:h-[700px] md:h-[880px] lg:h-[960px] pointer-events-none select-none z-0 opacity-85 sm:opacity-90 rotate-[18deg] transform-gpu">
+        {/* Adesivo 17 (Folha Couve Gigante) girada no sentido anti-horário (-25deg), deitando mais e cruzando diretamente atrás da foto */}
+        <div className="absolute -left-12 sm:-left-20 md:-left-24 -bottom-16 sm:-bottom-24 w-[380px] sm:w-[540px] md:w-[700px] lg:w-[760px] h-[550px] sm:h-[700px] md:h-[880px] lg:h-[960px] pointer-events-none select-none z-0 opacity-85 sm:opacity-90 -rotate-[25deg] transform-gpu origin-bottom-left">
           <img
             src="/assets/v2/stickers/adesivo_17.svg"
             alt=""
