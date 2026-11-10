@@ -294,36 +294,32 @@ export function LandingPage() {
               </Link>
             </motion.div>
 
-            {/* Micro-credenciais / Badges dos Pilares */}
+            {/* Micro-credenciais / Badges dos Pilares com Cores Sólidas da Marca */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.4 }}
-              className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-[#284d2c]/10 grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 w-full text-center sm:text-left"
+              className="mt-8 sm:mt-10 pt-6 sm:pt-7 border-t border-[#284d2c]/10 flex flex-wrap items-center justify-center lg:justify-start gap-3 w-full"
             >
-              <div>
-                <p className="font-title text-base sm:text-lg font-bold text-[#284d2c]">
-                  100% Online
-                </p>
-                <p className="text-xs sm:text-sm text-[#284d2c]/70 font-medium mt-0.5">
-                  Todo o Brasil & exterior
-                </p>
+              {/* Badge 1: Verde Oliva sólido */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5e6b1e] text-white shadow-xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#c4b818]" />
+                <span className="text-xs font-semibold tracking-wide">100% Online</span>
+                <span className="text-[10px] text-white/80 font-light hidden sm:inline">• Brasil & Exterior</span>
               </div>
-              <div>
-                <p className="font-title text-base sm:text-lg font-bold text-[#284d2c]">
-                  100% Individual
-                </p>
-                <p className="text-xs sm:text-sm text-[#284d2c]/70 font-medium mt-0.5">
-                  Respeito à sua rotina real
-                </p>
+
+              {/* Badge 2: Mexerica Laranja sólido */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e85900] text-white shadow-xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-white" />
+                <span className="text-xs font-semibold tracking-wide">100% Individual</span>
+                <span className="text-[10px] text-white/80 font-light hidden sm:inline">• Rotina Real</span>
               </div>
-              <div className="col-span-2 sm:col-span-1 flex flex-col items-center sm:items-start justify-center">
-                <p className="font-title text-base sm:text-lg font-bold text-[#5e6b1e]">
-                  Pós-Graduada
-                </p>
-                <p className="text-xs sm:text-sm text-[#284d2c]/70 font-medium mt-0.5">
-                  Nutrição Clínica Avançada
-                </p>
+
+              {/* Badge 3: Goiaba Rosa sólido */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#eea4c2] text-[#284d2c] shadow-xs font-semibold">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#284d2c]" />
+                <span className="text-xs tracking-wide">Pós-Graduada</span>
+                <span className="text-[10px] text-[#284d2c]/80 font-medium hidden sm:inline">• Nutrição Clínica</span>
               </div>
             </motion.div>
           </div>
